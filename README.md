@@ -1,6 +1,6 @@
 Battle for the Net Widget
 -------------------------
-#### With our powers combined, we can save net neutrality!
+#### Join the battle for net neutrality with our action widget
 
 
 Introduction

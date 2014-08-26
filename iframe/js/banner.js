@@ -26,29 +26,52 @@ var animations = {
     banner: {
         options: {
             debug: false,
-            url: 'https://www.battleforthenet.com'
+            url: 'https://www.battleforthenet.com',
+            theme: 'dark'
         },
         init: function(options) {
             for (var k in options) this.options[k] = options[k];
             return this;
         },
         start: function() {
-            $('h1 a').click(function(e) {
-                e.preventDefault();
-                window.open(animations.banner.getUrl());
-                sendMessage('stop');
-            });
+
+            $('a.close').addClass(this.options.theme);
+            $('#banner').addClass(this.options.theme);
+            $('#banner').show();
+            $('#banner').click(this.doClick.bind(this));
+            $('#text2 a').click(this.doClick.bind(this));
             $('a.close').click(function(e) {
                 e.preventDefault();
                 sendMessage('stop');
             });
+
+            setInterval(function() {
+                if ($('#text2').css('opacity') == 0)
+                {
+                    $('#text1').css('opacity', 0);
+                    $('#text2').css('opacity', 1);
+                }
+                else
+                {
+                    $('#text1').css('opacity', 1);
+                    $('#text2').css('opacity', 0);
+                }
+
+            }, 5000);
         },
         log: function() {
             if (this.options.debug)
                 console.log.apply(console, arguments);
         },
+
         getUrl: function() {
             return sanitize(this.options.url)+'?from=banner';
+        },
+
+        doClick: function(e) {
+            e.preventDefault();
+            window.open(animations.banner.getUrl());
+            sendMessage('stop');
         }
     }
 }

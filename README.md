@@ -52,7 +52,7 @@ be embedding on your page.
 
 Installation Instructions (Modal)
 ---------------------------------
-([**See the demo!**][2])
+[**See the demo!**][2]
 
 The modal animation will show up front-and-center on your page, prompting
 visitors to contact the FCC and Congress. To install, simply embed this code:
@@ -65,10 +65,13 @@ visitors to contact the FCC and Congress. To install, simply embed this code:
 
 Installation Instructions (Banner)
 ----------------------------------
-([**See the demo!**][3])
+**See the demo:** [**Light**][3] | [**Dark**][7]
+
+![Banners](https://fightforthefuture.github.io/battleforthenet-widget/demos/banner.png)
 
 The banner shows up in one of the corners (you can customize), or as a strip
-along the top or bottom on mobile devices. To install, use this code:
+along the top or bottom on mobile devices. You can choose a light or dark theme.
+To install, use this code:
 
 ````
 <script type="text/javascript">
@@ -83,14 +86,14 @@ along the top or bottom on mobile devices. To install, use this code:
 Notice the `_bftn_options` object in the code snippet above? You can pass some
 other options in to customize the position of the banner on-screen.
 
-* `position`: The position of the banner. Can be _topright_, _topleft_,
-  _bottomright_ or _bottomleft_. Default is _topright_.
+* `theme`: The theme. Either _light_ (default) or _dark_
+* `position`: The position of the banner. Can be _topright_ (default), _topleft_,
+  _bottomright_ or _bottomleft_
 * `offsetX`: The number of pixels to "nudge" the banner away from the side of
-  the window. Default is _20_.
+  the window
 * `offsetY`: The number of pixels to "nudge" the banner away from the top of the
-  window. Default is _20_.
-* `url`: The URL that clicking the banner should go to. In order to prevent any
-  malicious activity, this can't contain any inline Javascript. Default is
+  window
+* `url`: The URL that clicking the banner should go to. Default is
   _https://www.battleforthenet.com_
 
 
@@ -112,3 +115,4 @@ Modern browsers, and the two latest versions of Internet Explorer.
 [4]: https://github.com/fightforthefuture/battleforthenet-widget/issues
 [5]: mailto:jeff@fightforthefuture.org
 [6]: https://github.com/fightforthefuture/battleforthenet-widget/blob/master/widget.js
+[7]: https://fightforthefuture.github.io/battleforthenet-widget/demos/banner.dark.html

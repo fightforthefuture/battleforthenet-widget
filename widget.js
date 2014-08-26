@@ -116,11 +116,12 @@ var _bftn_animations = {
 		options: {
 			modalAnimation: 'banner',
 			position: 'topright', // topright|bottomright|topleft|bottomleft
-			width: 600,
+			width: 500,
 			height: 100,
-			offsetX: 20,
+			offsetX: 10, 
 			offsetY: 20,
-			url: 'https://www.battleforthenet.com'
+			url: 'https://www.battleforthenet.com',
+			theme: 'light'
 		},
 
 		preload: ['button.png'],
@@ -133,6 +134,8 @@ var _bftn_animations = {
 
 		// what to do when the animation starts
 		start: function() {
+
+			console.log('width: ', this.options.width);
 
 			switch (this.options.position) {
 

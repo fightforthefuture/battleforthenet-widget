@@ -39,7 +39,6 @@ var animations = {
             $('#banner').addClass(this.options.theme);
             $('#banner').show();
             $('#banner').click(this.doClick.bind(this));
-            $('#text2 a').click(this.doClick.bind(this));
             $('a.close').click(function(e) {
                 e.preventDefault();
                 sendMessage('stop');

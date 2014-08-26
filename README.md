@@ -50,19 +50,6 @@ be embedding on your page.
   again (unless you override)
 
 
-Installation Instructions (Modal)
----------------------------------
-**See the demo:** [**Development version**][2]
-
-The modal animation will show up front-and-center on your page, prompting
-visitors to contact the FCC and Congress. To install, simply embed this code:
-
-```html
-<script src="//fightforthefuture.github.io/battleforthenet-widget/widget.min.js"
-    async></script>
-```
-
-
 Installation Instructions (Banner)
 ----------------------------------
 **See the demo:** [**Light**][3] | [**Dark**][7]
@@ -95,6 +82,19 @@ other options in to customize the position of the banner on-screen.
   window
 * `url`: The URL that clicking the banner should go to. Default is
   _https://www.battleforthenet.com_
+
+
+Installation Instructions (Modal)
+---------------------------------
+**See the demo:** [**Development version**][2]
+
+The modal animation will show up front-and-center on your page, prompting
+visitors to contact the FCC and Congress. To install, simply embed this code:
+
+```html
+<script src="//fightforthefuture.github.io/battleforthenet-widget/widget.min.js"
+    async></script>
+```
 
 
 How to test the widget

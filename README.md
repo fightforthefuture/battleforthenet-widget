@@ -12,10 +12,11 @@ neutrality. Simply embed a couple of lines of Javascript and you're good to go!
 
 WARNING: Under construction!
 ----------------------------
-The widget is still under active development, but we're providing early access
-to the code so you can start integrating it into your site and testing. The
-underlying architecture is mostly complete, so the code you actually embed on
-your page shouldn't change much. We're just working on the user experience now.
+The banner is ready but the modal is still under active development.
+We're providing early access to the code so you can start integrating it into
+your site and testing. The underlying architecture is mostly complete, so the
+code you actually embed on your page shouldn't change much. We're just working
+on the user experience now.
 
 To stay up-to-date on developments, please subscribe to our
 [**developer mailing list**][1]. If you have any problems or questions regarding

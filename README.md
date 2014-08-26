@@ -111,3 +111,4 @@ Modern browsers, and the two latest versions of Internet Explorer.
 [3]: https://fightforthefuture.github.io/battleforthenet-widget/demos/banner.html
 [4]: https://github.com/fightforthefuture/battleforthenet-widget/issues
 [5]: mailto:jeff@fightforthefuture.org
+[6]: https://github.com/fightforthefuture/battleforthenet-widget/blob/master/widget.js

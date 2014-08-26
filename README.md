@@ -18,7 +18,8 @@ underlying architecture is mostly complete, so the code you actually embed on
 your page shouldn't change much. We're just working on the user experience now.
 
 To stay up-to-date on developments, please subscribe to our
-[**developer mailing list**][1].
+[**developer mailing list**][1]. If you have any problems or questions regarding
+the widget, please [submit an issue][4] or email <<jeff@fightforthefuture.org>>.
 
 
 How it works
@@ -106,3 +107,4 @@ Modern browsers, and the two latest versions of Internet Explorer.
 [1]: https://www.battleforthenet.com/sept10th
 [2]: https://fightforthefuture.github.io/battleforthenet-widget/demos/modal.html
 [3]: https://fightforthefuture.github.io/battleforthenet-widget/demos/banner.html
+[4]: https://github.com/fightforthefuture/battleforthenet-widget/issues

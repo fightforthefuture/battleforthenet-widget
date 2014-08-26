@@ -32,6 +32,8 @@ How it works
 * A cookie is written so the user doesn't see the widget again
 
 #### Technical version:
+Please take a look at [**widget.js**][6] if you want to see exactly what you'll
+be embedding on your page.
 
 * Compatible with Firefox, Chrome, Safari and Internet Explorer 10+
 * Embed the widget Javascript code on your page

@@ -57,7 +57,7 @@ Installation Instructions (Modal)
 The modal animation will show up front-and-center on your page, prompting
 visitors to contact the FCC and Congress. To install, simply embed this code:
 
-```javascript
+```html
 <script src="//fightforthefuture.github.io/battleforthenet-widget/widget.min.js"
     async></script>
 ```
@@ -73,7 +73,7 @@ The banner shows up in one of the corners (you can customize), or as a strip
 along the top or bottom on mobile devices. You can choose a light or dark theme.
 To install, use this code:
 
-```javascript
+```html
 <script type="text/javascript">
     var _bftn_options = { animation: 'banner' }
 </script>

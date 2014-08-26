@@ -5,7 +5,7 @@ Battle for the Net Widget
 
 Introduction
 ------------
-September 10th, 2014 is [**Internet Slow Down Day!**][1] The goal of this
+September 10th, 2014 is [**Internet Slowdown Day!**][1] The goal of this
 project is to allow anyone with a web site to run their own campaign to save net
 neutrality. Simply embed a couple of lines of Javascript and you're good to go!
 
@@ -52,7 +52,7 @@ be embedding on your page.
 
 Installation Instructions (Modal)
 ---------------------------------
-[**See the demo!**][2]
+**(Still under development!)** [**See the demo**][2]
 
 The modal animation will show up front-and-center on your page, prompting
 visitors to contact the FCC and Congress. To install, simply embed this code:

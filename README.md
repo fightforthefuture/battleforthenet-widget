@@ -19,7 +19,7 @@ your page shouldn't change much. We're just working on the user experience now.
 
 To stay up-to-date on developments, please subscribe to our
 [**developer mailing list**][1]. If you have any problems or questions regarding
-the widget, please [submit an issue][4] or email <<jeff@fightforthefuture.org>>.
+the widget, please [submit an issue][4] or [email Jeff Lyon][5].
 
 
 How it works
@@ -108,3 +108,4 @@ Modern browsers, and the two latest versions of Internet Explorer.
 [2]: https://fightforthefuture.github.io/battleforthenet-widget/demos/modal.html
 [3]: https://fightforthefuture.github.io/battleforthenet-widget/demos/banner.html
 [4]: https://github.com/fightforthefuture/battleforthenet-widget/issues
+[5]: mailto:jeff@fightforthefuture.org

@@ -52,7 +52,7 @@ be embedding on your page.
 
 Installation Instructions (Modal)
 ---------------------------------
-**(Still under development!)** [**See the demo**][2]
+**See the demo:** [**Development version**][2]
 
 The modal animation will show up front-and-center on your page, prompting
 visitors to contact the FCC and Congress. To install, simply embed this code:

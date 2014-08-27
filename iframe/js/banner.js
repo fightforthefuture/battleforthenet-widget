@@ -74,3 +74,9 @@ var animations = {
         }
     }
 }
+
+if (window.location.href.indexOf('LIGHT') != -1) 
+    animations.banner.options.theme = 'light';
+
+if (window.location.href.indexOf('EMBED') != -1) 
+    animations.banner.start();

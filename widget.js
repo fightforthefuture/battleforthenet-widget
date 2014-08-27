@@ -315,13 +315,11 @@ var ready = function() {
 
 		// Only show on September 10th 2014.
 		// JL NOTE ~ Disabled during development
-		/*
 		var date = new Date();
 		var now = date.getFullYear()+'/'+(date.getMonth()+1)+'/'+date.getDate();
 		if (now !== '2014/9/10') {
 			return;
 		}
-		*/
 	}
 
 	_bftn_util.setCookie('_BFTN_WIDGET_SHOWN', 'true', 365);

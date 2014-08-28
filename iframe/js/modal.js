@@ -43,3 +43,10 @@ var animations = {
         }
     }
 }
+
+$('#header h1').html($('h1.headline').html());
+$('#header .cta p').html($('p.cta-hidden-trust-me').html());
+setTimeout(function() {
+    $('#header .cta').css('height', $('#header').outerHeight()+'px');
+}, 3000);
+

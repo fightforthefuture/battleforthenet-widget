@@ -3,28 +3,53 @@
 <head>
 	<!-- Styles -->
 	<link rel="stylesheet" type="text/css" href="css/min/modal.min.css">
+	<script type="text/javascript" src="//use.typekit.net/aml1eoz.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 
 <body>
+
+
+<div class="loading-region">
+    <h1>LOADING</h1>
+    <div class="spinner-css">      
+        <span class="side sp_left"><span class="fill"></span></span>
+        <span class="side sp_right"><span class="fill"></span></span>
+    </div>
+</div>
+
+<!-- trust me. -->
+<div id="header">
+	<h1></h1>	
+	<div class="cta"><p></p></div>
+</div>
 	
 <div id="modal">
 	<a class="close" href="#">Close</a>
-	<h1>battleforthenet modal</h1>
-	<p>
-		<a href="https://github.com/fightforthefuture/battleforthenet-widget"
-			target="_blank"><strong>See the documentation.</strong></a>
+	<h1 class="headline">Cable companies could make this page so slow, it would still be loading.</h1>
+	<p class="cta-hidden-trust-me">
+		The Internet and free speech would never be the same.
+		<br/>
+		<strong>Tell lawmakers: "Stop discrimination. Defend net neutrality."</strong>
 	</p>
-	<p>
-		This is just a test. In the final version this will actually look
-		decent and do stuff. This version is just to demonstrate
-		the embedding process, and basic mobile responsiveness.
-	</p>
-	<div><input type="text" placeholder="Name"/></div>
-	<div><input type="text" placeholder="Street Address"/></div>
-	<div><input type="text" placeholder="Zip"/></div>
-	<div><input type="text" placeholder="Save net neutrality"/></div>
-	<button onclick="alert('todo!');">Submit</button>
+	<div class="fields">
+		<input type="text" placeholder="Name"/>
+		<input type="text" placeholder="Email"/>
+		<input type="text" placeholder="Address"/>
+		<input type="text" placeholder="Zip"/>
+	</div>
+	<div class="clear"></div>
+	<div class="action">
+		<a href="javascript:alert('under development--coming soon!');" class="read">Read</a>
+		<button id="sign" onclick="alert('under development--coming soon!')"><strong>Sign the citizen letter</strong> for net neutrality</button>
+		<div class="clear"></div>
+		<div class="disclosure">
+			<input id="opt-in" type="checkbox" checked="checked">
+			<label class="checkbox" for="opt-in"><a href="https://www.fightforthefuture.org" target="_blank">Fight for the Future</a> and <a href="http://www.demandprogress.org" target="_blank">Demand Progress</a>  will send campaign-related updates, and won’t share your email with anyone. <a href="https://www.battleforthenet.com/privacy" target="_blank">Privacy policy.</a></label>
+		</div>
+	</div>
 </div>
+
 
 
 <!-- JavaScript -->

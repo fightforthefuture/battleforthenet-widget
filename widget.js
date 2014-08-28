@@ -84,7 +84,13 @@ var _bftn_animations = {
 			modalAnimation: 'modal'
 		},
 
-		preload: [],
+		preload: [
+			'envelope.png',
+			'envelope-hover.png',
+			'field-gradient.png',
+			'check-on.png',
+			'check-off.png'
+		],
 
 		// init copies the _bftn_options properties over the default options
 		init: function(options) {
@@ -124,7 +130,7 @@ var _bftn_animations = {
 			theme: 'light'
 		},
 
-		preload: ['button.png'],
+		preload: [],
 
 		// init copies the _bftn_options properties over the default options
 		init: function(options) {

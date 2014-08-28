@@ -36,6 +36,23 @@ var animations = {
                 e.preventDefault();
                 sendMessage('stop');
             });
+
+            $('a.read').click(function(e) {
+                e.preventDefault();
+                $('#overlay').css('display', 'block');
+                setTimeout(function() {
+                    $('#overlay').addClass('visible');
+                }, 50);
+                
+            });
+
+            $('a.continue').click(function(e) {
+                $('#overlay').removeClass('visible');
+
+                setTimeout(function() {
+                    $('#overlay').css('display', 'none');
+                }, 1000);
+            });
         },
         log: function() {
             if (this.options.debug)
@@ -44,9 +61,13 @@ var animations = {
     }
 }
 
-$('#header h1').html($('h1.headline').html());
-$('#header .cta p').html($('p.cta-hidden-trust-me').html());
+setTimeout(function() {
+    $('#header h1').html($('h1.headline').html());
+    $('#header .cta p').html($('p.cta-hidden-trust-me').html());
+}, 2000);
 setTimeout(function() {
     $('#header .cta').css('height', $('#header').outerHeight()+'px');
+    $('#letter').css('height', $('#modal').outerHeight()+'px');
+    $('#letter').css('opacity', 1);
 }, 3000);
 

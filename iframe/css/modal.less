@@ -70,7 +70,7 @@ body {
     top: 50%;
     margin: -140px 0px 0px -350px;
     width: 700px;
-    padding: @header_top_padding 20px @header_bottom_padding 20px;
+    padding: @header_top_padding 0px @header_bottom_padding 0px;
     box-sizing: border-box;
     z-index: 9001; /* OVER 9000! GET IT?! LOL */
     text-align: center;
@@ -84,7 +84,7 @@ body {
     transform: translate3d(0,0,0);
 
     h1 {
-        padding: 0px;
+        padding: 0px 20px;
         margin: 0px;
         font-size: @headline_font_size;
 
@@ -573,11 +573,10 @@ body {
 
         h1 {
             font-size: @headline_font_size_mobile;
-            background: green;
         }
 
         .cta {
-            background: red;
+            margin: 0px auto;
             line-height: @cta_line_height_mobile;
 
             strong {
@@ -640,12 +639,12 @@ body {
     @-webkit-keyframes zoom {
         0% { transform: scale(1); margin-top: 0px; }
         75% { transform: scale(1); margin-top: 0px; }
-        100% { transform: scale(.6); margin-top: -15px; }
+        100% { transform: scale(.61); margin-top: -15px; }
     }
     @keyframes zoom {
         0% { transform: scale(1); margin-top: 0px; }
         75% { transform: scale(1); margin-top: 0px; }
-        100% { transform: scale(.6); margin-top: -15px; }
+        100% { transform: scale(.61); margin-top: -15px; }
     }
 
     @-webkit-keyframes headerFade {

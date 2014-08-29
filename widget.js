@@ -89,7 +89,9 @@ var _bftn_animations = {
 			'envelope-hover.png',
 			'field-gradient.png',
 			'check-on.png',
-			'check-off.png'
+			'check-off.png',
+			'close.png',
+			'close-hover.png'
 		],
 
 		// init copies the _bftn_options properties over the default options

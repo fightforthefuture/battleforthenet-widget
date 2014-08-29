@@ -110,6 +110,30 @@ body {
     -o-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
 
+    opacity: 0;
+    transform: translateY(50px);
+
+    &.IE {
+        transform: translateY(0px);
+        margin-top: 50px;
+    }
+
+    &.fullyVisible {
+        -ms-transition: all .75s ease-out;
+        -o-transition: all .75s ease-out;
+        -moz-transition: all .75s ease-out;
+        -webkit-transition: all .75s ease-out;
+        transition: all .75s ease-out;
+        
+        opacity: 1;
+        transform: translateY(0px);
+
+        &.IE {
+            transform: translateY(0px);
+            margin-top: 0px;
+        }
+    }
+
     h1 {
         padding: 0px 20px;
         margin: 0px;
@@ -156,6 +180,30 @@ body {
     -ms-transform: translate3d(0,0,0);
     -o-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
+
+    opacity: 0;
+    transform: translateY(50px);
+
+    &.IE {
+        transform: translateY(0px);
+        margin-top: 50px;
+    }
+
+    &.fullyVisible {
+        -ms-transition: all .75s ease-out;
+        -o-transition: all .75s ease-out;
+        -moz-transition: all .75s ease-out;
+        -webkit-transition: all .75s ease-out;
+        transition: all .75s ease-out;
+        
+        opacity: 1;
+        transform: translateY(0px);
+
+        &.IE {
+            transform: translateY(0px);
+            margin-top: 0px;
+        }
+    }
 
     .close {
         position: absolute;
@@ -443,7 +491,7 @@ body {
     animation-timing-function: ease-out;
 }
 */
-
+/*
 @-webkit-keyframes modalFade {
     0% { opacity: 0; margin-top: 50px; }
     75% { opacity: 0; margin-top: 50px; }
@@ -467,7 +515,8 @@ body {
     -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
 }
-
+*/
+/*
 @-webkit-keyframes headerFade {
     0% { opacity: 0; }
     75% { opacity: 0; }
@@ -481,8 +530,8 @@ body {
 #header {
     -webkit-animation-duration: 3s; 
     animation-duration: 3s;
-    -webkit-animation-name: modalFade;
-    animation-name: modalFade;
+    -webkit-animation-name: headerFade;
+    animation-name: headerFade;
     -webkit-animation-fill-mode:forwards; 
     -moz-animation-fill-mode:forwards; 
     -o-animation-fill-mode:forwards; 
@@ -491,6 +540,7 @@ body {
     -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
 }
+*/
 
 @-webkit-keyframes headlineFade {
     0% { opacity: 1; }
@@ -612,11 +662,12 @@ body {
     }
 
     .loading-region {
-        top: 15px;
+        transform: translateY(15);
         margin-top: 0px;
         box-shadow: none;
 
         &.zoomedOut {
+            transform: translateY(0);
             top: 0px;
         }
     }

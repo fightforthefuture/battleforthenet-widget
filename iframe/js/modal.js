@@ -75,7 +75,7 @@ setTimeout(function() {
 if (window.location.href.indexOf('EMBED') != -1) 
 {
     document.body.className = 'embedded';
-    animations.modal.start();
+    animations.modal.start(); 
 }
 
 /**

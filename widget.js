@@ -92,8 +92,7 @@ var _bftn_animations = {
 			'check-off.png',
 			'check-on-big.png',
 			'check-off-big.png',
-			'close.png',
-			'close-hover.png'
+			'close.png'
 		],
 
 		// init copies the _bftn_options properties over the default options

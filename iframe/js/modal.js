@@ -72,6 +72,12 @@ setTimeout(function() {
     $('#letter').css('opacity', 1);
 }, 3000);
 
+if (window.location.href.indexOf('EMBED') != -1) 
+{
+    document.body.className = 'embedded';
+    animations.modal.start();
+}
+
 /**
  *  -------------------------- OMG ---------------------------------------------
  *  The rest of this file is all Internet Explorer's fault.

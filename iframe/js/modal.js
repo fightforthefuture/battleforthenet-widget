@@ -54,10 +54,84 @@ var animations = {
                     $('#overlay').css('display', 'none');
                 }, 1000);
             });
+
+            $("form[name=petition]").submit(function(e) {
+                e.preventDefault();
+                if (this.postUser($(this))) {
+                    
+                    $("input:not([type=image],[type=button],[type=submit])").val('');
+                    this.showFinal();
+                    
+                } else {
+                    // alert('Please complete the rest of the form. Thanks!');
+                }
+            }.bind(this));
         },
         log: function() {
             if (this.options.debug)
                 console.log.apply(console, arguments);
+        },
+
+        postUser: function() {
+            var formFields = [
+                // "action_comment",
+                "address1",
+                "email",
+                "name",
+                "zip"
+            ];
+            var doc = {};
+
+            var fail = false;
+
+            var actionForm = $("form[name=petition]");
+
+            formFields.forEach(function(field) {
+                $("input[name=" + field + "]", actionForm).removeClass('error');
+                if (
+                    $("input[name=" + field + "]", actionForm)[0]
+                    &&
+                    $("input[name=" + field + "]", actionForm).val() === ""
+                ) {
+                    fail = true;
+                    $("input[name=" + field + "]", actionForm).addClass('error');
+                } else {
+                    doc[field] = $("input[name=" + field + "]", actionForm).val();
+                }
+            });
+
+            if (fail)
+                return false;
+
+            // doc['action_comment'] = $("[name=action_comment]").val();
+            doc['action_comment'] = $("JL-TBD").val();  // JL HACK
+            doc['country'] = 'US';                      // JL HACK
+
+            
+            $.ajax({
+                url: "https://api.battleforthenet.com/submit",
+                // url: "http://debbie:3019/submit",    // JL TEST ~
+                type: "post",
+                dataType: "json",
+                data: doc,
+                success: function(res) {
+                    userID = res.userID;
+                }
+            });
+
+            return true;
+        },
+
+        showFinal: function() {
+            $('#step1').addClass('hidden');
+            $('#header').addClass('hidden');
+            setTimeout(function() {
+                $('#step1').css('visibility', 'hidden')
+            }, 1000);
+            $('#stepFinal').show();
+            setTimeout(function() {
+                $('#stepFinal').css('opacity', 1)
+            }, 10);
         }
     }
 }

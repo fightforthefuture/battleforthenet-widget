@@ -86,6 +86,8 @@ Installation Instructions (Modal)
 ---------------------------------
 **See the demo:** [**Development version**][2]
 
+![Modal](https://fightforthefuture.github.io/battleforthenet-widget/demos/modal.png)
+
 The modal animation will show up front-and-center on your page, prompting
 visitors to contact the FCC and Congress. To install, simply embed this code:
 

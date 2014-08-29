@@ -624,6 +624,15 @@ body {
             }
             .disclosure {
                 margin-left: 0px;
+
+                .checkbox:before {
+                    width: 20px;
+                    height: 17px;
+                    background: url(../../images/check-off-big.png) center center no-repeat;
+                }
+                input[type=checkbox]:checked + .checkbox:before {
+                    background: url(../../images/check-on-big.png) center center no-repeat;
+                }
             }
 
         }

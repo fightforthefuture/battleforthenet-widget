@@ -90,6 +90,8 @@ var _bftn_animations = {
 			'field-gradient.png',
 			'check-on.png',
 			'check-off.png',
+			'check-on-big.png',
+			'check-off-big.png',
 			'close.png',
 			'close-hover.png'
 		],

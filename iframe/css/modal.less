@@ -45,10 +45,10 @@ body {
 .loading-region {
     position: absolute;
     left: 50%;
-    top: 0px;
     margin-left: -100px;
     width: 200px;
     height: 200px;
+    top: 0px;
     background: #edfffb;
     border-radius: 100px;
     z-index: 9000;
@@ -65,8 +65,6 @@ body {
         -moz-transition: all .75s ease-out;
         -webkit-transition: all .75s ease-out;
         transition: all .75s ease-out;
-
-        top: 0px;
 
         &.notIE {
             transform: scale(.6);
@@ -662,12 +660,13 @@ body {
     }
 
     .loading-region {
-        transform: translateY(15);
+        transform: translateY(15px);
+        top: 0px;
         margin-top: 0px;
         box-shadow: none;
 
         &.zoomedOut {
-            transform: translateY(0);
+            transform: translateY(0px);
             top: 0px;
         }
     }
@@ -743,21 +742,6 @@ body {
 
         }
     }
-
-
-    @-webkit-keyframes zoom {
-        0% { transform: scale(1); }
-        75% { transform: scale(1); }
-        100% { transform: scale(.61); }
-    }
-    @keyframes zoom {
-        0% { transform: scale(1); }
-        75% { transform: scale(1); }
-        100% { transform: scale(.61); }
-    }
-
-
-    
 }
 
 

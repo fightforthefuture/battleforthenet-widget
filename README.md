@@ -97,6 +97,23 @@ visitors to contact the FCC and Congress. To install, simply embed this code:
 ```
 
 
+Embed the Modal on your blog
+----------------------------
+If you want to show off the modal to your users prior to September 10th
+(thanks!) you can use this code to directly embed it on your page:
+
+```html
+<iframe style="width: 750px; height: 467px;" frameborder="no"
+  src="https://fightforthefuture.github.io/battleforthenet-widget/iframe/modal.html#EMBED">
+  </iframe>
+```
+
+We'll be working on adding new features between now and September 10th, (the
+code you embed on your page won't change though). Be sure to let your users
+know this is under development and link them back to
+**https://www.battleforthenet.com/sept10th**
+
+
 How to test the widget
 ----------------------
 **The widget is designed to only appear on September 10th, 2014**, and only

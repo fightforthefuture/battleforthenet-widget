@@ -86,11 +86,15 @@ function stupidIEZoomFix() {
     if (ieVersion) {
         $('.loading-region').addClass('zoomedOut').addClass('IE');
         $('#modal').addClass('fullyVisible').addClass('IE');
-        $('#header').addClass('fullyVisible').addClass('IE');
+        setTimeout(function() {
+            $('#header').addClass('fullyVisible').addClass('IE');
+        }, 150);    
     } else {
         $('.loading-region').addClass('zoomedOut').addClass('notIE');
         $('#modal').addClass('fullyVisible').addClass('notIE');
-        $('#header').addClass('fullyVisible').addClass('notIE');
+        setTimeout(function() {
+            $('#header').addClass('fullyVisible').addClass('notIE');
+        }, 150);
     }
 }
 

@@ -10,6 +10,8 @@
 @input_color: #4b616c;
 @border_radius: 10px;
 @button_width_desktop: 534px;
+@scene_top_padding: 60px;
+@scene_margin_top: -200px;
 
 @headline_ellipsis_start_delay: 2s;
 @headline_ellipsis_delay_each: 1.5s;
@@ -30,12 +32,21 @@ body {
     clear: both;
 }
 
+#scene {
+    position: absolute;
+    width: 700px;
+    left: 50%;
+    top: 50%;
+    margin-top: @scene_margin_top;
+    margin-left: -350px;
+    padding-top: @scene_top_padding;
+}
+
 .loading-region {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 0px;
     margin-left: -100px;
-    margin-top: -100px;
     width: 200px;
     height: 200px;
     background: #edfffb;
@@ -43,13 +54,30 @@ body {
     z-index: 9000;
     pointer-events: none;
 
-    -webkit-transform: translate3d(0,0,0);
-    -moz-transform: translate3d(0,0,0);
-    -ms-transform: translate3d(0,0,0);
-    -o-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
 
     box-shadow: 0px 0px 150px white;
+
+    &.zoomedOut {
+        -ms-transition: all .75s ease-out;
+        -o-transition: all .75s ease-out;
+        -moz-transition: all .75s ease-out;
+        -webkit-transition: all .75s ease-out;
+        transition: all .75s ease-out;
+
+        top: 0px;
+
+        &.notIE {
+            transform: scale(.6);
+        }
+
+        &.IE {
+            margin-left: -60px;
+            zoom: .6;
+        }
+        
+    }
 
     h1 {
         position: absolute;
@@ -66,9 +94,8 @@ body {
 
 #header {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    margin: -140px 0px 0px -350px;
+    left: 0px;
+    top: @scene_top_padding;
     width: 700px;
     padding: @header_top_padding 0px @header_bottom_padding 0px;
     box-sizing: border-box;
@@ -118,11 +145,7 @@ body {
 }
 
 #modal {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-top: -140px;
-    margin-left: -350px;
+    position: static;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, .6);
     width: 700px;
     background: #edfffb;
@@ -370,19 +393,18 @@ body {
 
 
 /* --- Animations --- */
+/*
 @-webkit-keyframes zoom {
     0% { transform: scale(1); }
-    75% { transform: scale(1); margin-top: -100px; }
-    100% { transform: scale(.6); margin-top: -200px; }
+    75% { transform: scale(1); }
+    100% { transform: scale(.6); }
 }
 @keyframes zoom {
     0% { transform: scale(1); }
-    75% { transform: scale(1); margin-top: -100px; }
-    100% { transform: scale(.6); margin-top: -200px; }
+    75% { transform: scale(1); }
+    100% { transform: scale(.6); }
 }
 .loading-region {
-    -webkit-transform-origin: center top;
-    transform-origin: center top;
     -webkit-animation-duration: 3s; 
     animation-duration: 3s;
     -webkit-animation-name: zoom;
@@ -395,16 +417,42 @@ body {
     -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
 }
+*/
+/*
+@-webkit-keyframes sceneSlide {
+    0% { margin-top: @scene_margin_top + 50; }
+    75% { margin-top: @scene_margin_top + 50; }
+    100% { margin-top: @scene_margin_top; }
+}
+@keyframes sceneSlide {
+    0% { margin-top: @scene_margin_top + 50; }
+    75% { margin-top: @scene_margin_top + 50; }
+    100% { margin-top: @scene_margin_top; }
+}
+#scene {
+    -webkit-animation-duration: 3s; 
+    animation-duration: 3s;
+    -webkit-animation-name: sceneSlide;
+    animation-name: sceneSlide;
+    -webkit-animation-fill-mode:forwards; 
+    -moz-animation-fill-mode:forwards; 
+    -o-animation-fill-mode:forwards; 
+    -ms-animation-fill-mode:forwards; 
+    animation-fill-mode:forwards; 
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+}
+*/
 
 @-webkit-keyframes modalFade {
-    0% { opacity: 0; margin-top: -40px; }
-    75% { opacity: 0; margin-top: -40px; }
-    100% { opacity: 1; margin-top: -140px; }
+    0% { opacity: 0; margin-top: 50px; }
+    75% { opacity: 0; margin-top: 50px; }
+    100% { opacity: 1; margin-top: 0px; }
 }
 @keyframes modalFade {
-    0% { opacity: 0; margin-top: -40px; }
-    75% { opacity: 0; margin-top: -40px; }
-    100% { opacity: 1; margin-top: -140px; }
+    0% { opacity: 0; margin-top: 50px; }
+    75% { opacity: 0; margin-top: 50px; }
+    100% { opacity: 1; margin-top: 0px; }
 }
 #modal {
     -webkit-animation-duration: 3s; 
@@ -421,14 +469,14 @@ body {
 }
 
 @-webkit-keyframes headerFade {
-    0% { opacity: 0; margin-top: -40px; }
-    75% { opacity: 0; margin-top: -40px; }
-    100% { opacity: 1; margin-top: -140px; }
+    0% { opacity: 0; }
+    75% { opacity: 0; }
+    100% { opacity: 1; }
 }
 @keyframes headerFade {
-    0% { opacity: 0; margin-top: -40px; }
-    75% { opacity: 0; margin-top: -40px; }
-    100% { opacity: 1; margin-top: -140px; }
+    0% { opacity: 0; }
+    75% { opacity: 0; }
+    100% { opacity: 1; }
 }
 #header {
     -webkit-animation-duration: 3s; 
@@ -553,16 +601,26 @@ body {
         overflow-y: auto;
     }
 
+    #scene {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        margin: 0px;
+        -webkit-animation-name: none;
+        animation-name: none;
+    }
+
     .loading-region {
         top: 15px;
         margin-top: 0px;
         box-shadow: none;
+
+        &.zoomedOut {
+            top: 0px;
+        }
     }
     #header {
-        position: absolute;
-        left: 0px;
-        top: 70px;
-        margin: 0px;
         width: 100%;
 
         h1 {
@@ -584,11 +642,8 @@ body {
         }
     }
     #modal {
-        position: static;
-        margin: 0px 0px 0px 0px;
         width: 100%;
         border-radius: 0px;
-        padding-top: 70px;
 
         h1 {
             font-size: @headline_font_size_mobile;
@@ -640,37 +695,17 @@ body {
 
 
     @-webkit-keyframes zoom {
-        0% { transform: scale(1); margin-top: 0px; }
-        75% { transform: scale(1); margin-top: 0px; }
-        100% { transform: scale(.61); margin-top: -15px; }
+        0% { transform: scale(1); }
+        75% { transform: scale(1); }
+        100% { transform: scale(.61); }
     }
     @keyframes zoom {
-        0% { transform: scale(1); margin-top: 0px; }
-        75% { transform: scale(1); margin-top: 0px; }
-        100% { transform: scale(.61); margin-top: -15px; }
+        0% { transform: scale(1); }
+        75% { transform: scale(1); }
+        100% { transform: scale(.61); }
     }
 
-    @-webkit-keyframes headerFade {
-        0% { opacity: 0; }
-        75% { opacity: 0; }
-        100% { opacity: 1; }
-    }
-    @keyframes headerFade {
-        0% { opacity: 0; }
-        75% { opacity: 0; }
-        100% { opacity: 1; }
-    }
 
-    @-webkit-keyframes modalFade {
-        0% { opacity: 0; margin-top: 0px; }
-        75% { opacity: 0; margin-top: 0px; }
-        100% { opacity: 1; margin-top: 0px; }
-    }
-    @keyframes modalFade {
-        0% { opacity: 0; margin-top: 0px; }
-        75% { opacity: 0; margin-top: 0px; }
-        100% { opacity: 1; margin-top: 0px; }
-    }
     
 }
 

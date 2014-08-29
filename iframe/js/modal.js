@@ -32,6 +32,7 @@ var animations = {
             return this;
         },
         start: function() {
+
             $('a.close').click(function(e) {
                 e.preventDefault();
                 sendMessage('stop');
@@ -62,6 +63,9 @@ var animations = {
 }
 
 setTimeout(function() {
+    stupidIEZoomFix();
+}, 2250);
+setTimeout(function() {
     $('#header h1').html($('h1.headline').html());
     $('#header .cta p').html($('p.cta-hidden-trust-me').html());
 }, 2000);
@@ -71,3 +75,70 @@ setTimeout(function() {
     $('#letter').css('opacity', 1);
 }, 3000);
 
+function stupidIEZoomFix() {
+    /**
+    Target IE 10 with JavaScript and CSS property detection.
+
+    # 2013 by Tim Pietrusky
+    # timpietrusky.com
+    **/
+
+    // IE 10 only CSS properties
+    var ie10Styles = [
+        'msTouchAction',
+        'msWrapFlow',
+        'msWrapMargin',
+        'msWrapThrough',
+        'msOverflowStyle',
+        'msScrollChaining',
+        'msScrollLimit',
+        'msScrollLimitXMin',
+        'msScrollLimitYMin',
+        'msScrollLimitXMax',
+        'msScrollLimitYMax',
+        'msScrollRails',
+        'msScrollSnapPointsX',
+        'msScrollSnapPointsY',
+        'msScrollSnapType',
+        'msScrollSnapX',
+        'msScrollSnapY',
+        'msScrollTranslation',
+        'msFlexbox',
+        'msFlex',
+        'msFlexOrder'
+    ];
+
+    var ie11Styles = ['msTextCombineHorizontal']; 
+
+    /*
+    * Test all IE only CSS properties
+    */
+    var b = document.body;
+    var s = b.style;
+    var ieVersion = null;
+    var property;
+
+    // Test IE10 properties
+    for (var i = 0; i < ie10Styles.length; i++) {
+        property = ie10Styles[i];
+
+        if (s[property] != undefined) {
+            ieVersion = "ie10";
+        }
+    }
+
+    // Test IE11 properties
+    for (var i = 0; i < ie11Styles.length; i++) {
+        property = ie11Styles[i];
+
+        if (s[property] != undefined) {
+            ieVersion = "ie11";
+        }
+    }
+
+    if (ieVersion) {
+        $('.loading-region').addClass('zoomedOut').addClass('IE');
+    } else {
+        $('.loading-region').addClass('zoomedOut').addClass('notIE');
+    }
+}

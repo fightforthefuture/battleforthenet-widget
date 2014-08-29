@@ -251,12 +251,15 @@ var _bftn_util = {
 			data || (data = {});
 			data.requestType = requestType;
 			data.BFTN_WIDGET_MSG = true;
+			data.HOST_NAME = hostname;
 			iframe.contentWindow.postMessage(data, '*');
 		}
 
 		var method = window.addEventListener ? "addEventListener":"attachEvent";
 		var eventer = window[method];
 		var messageEvent = method == "attachEvent" ? "onmessage":"message";
+
+		var hostname = this.getHostname();
 
 		eventer(messageEvent,function(e) {
 			if (!e.data || !e.data.BFTN_IFRAME_MSG)
@@ -298,6 +301,12 @@ var _bftn_util = {
   				return c.substring(name.length,c.length);
   		}
 		return "";
+	},
+
+	// Get the hostname of the web page. Used to track stats for leaderboards
+	getHostname: function() {
+		var hostname = window.location.host.replace('www.', '');
+		return hostname;
 	},
 
 	// If _bftn_options.debug is on, then console.log some stuff

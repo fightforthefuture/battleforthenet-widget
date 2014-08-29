@@ -7,6 +7,16 @@ body {
     margin: 0px;
     padding: 0px 10px;
     overflow: hidden;
+
+    -ms-transition: opacity .75s ease-out;
+    -o-transition: opacity .75s ease-out;
+    -moz-transition: opacity .75s ease-out;
+    -webkit-transition: opacity .75s ease-out;
+    transition: opacity .75s ease-out;
+
+    &.closed {
+        opacity: 0;
+    }
 }
 #banner {
     display: none;

@@ -41,7 +41,11 @@ var animations = {
             $('#banner').click(this.doClick.bind(this));
             $('a.close').click(function(e) {
                 e.preventDefault();
-                sendMessage('stop');
+                $('body').addClass('closed');
+                trackLeaderboardStat({stat: 'close_widget', data: 'banner'});
+                setTimeout(function() {
+                    sendMessage('stop');
+                }, 750);
             });
 
             setInterval(function() {
@@ -70,7 +74,13 @@ var animations = {
         doClick: function(e) {
             e.preventDefault();
             window.open(animations.banner.getUrl());
-            sendMessage('stop');
+            trackLeaderboardStat({
+                stat: 'click',
+                data: animations.banner.getUrl(),
+                callback: function() {
+                    sendMessage('stop');
+                }
+            });
         }
     }
 }

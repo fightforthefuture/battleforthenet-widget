@@ -35,7 +35,11 @@ var animations = {
 
             $('a.close').click(function(e) {
                 e.preventDefault();
-                sendMessage('stop');
+                $('body').addClass('closed');
+                trackLeaderboardStat({stat: 'close_widget', data: 'modal'});
+                setTimeout(function() {
+                    sendMessage('stop');
+                }, 750);
             });
 
             $('a.read').click(function(e) {
@@ -66,6 +70,14 @@ var animations = {
                     // alert('Please complete the rest of the form. Thanks!');
                 }
             }.bind(this));
+
+            $('a.facebook').click(function(e) {
+                trackLeaderboardStat({stat: 'share', data: 'facebook'});
+            });
+
+            $('a.twitter').click(function(e) {
+                trackLeaderboardStat({stat: 'share', data: 'twitter'});
+            });
         },
         log: function() {
             if (this.options.debug)
@@ -118,6 +130,7 @@ var animations = {
                     userID = res.userID;
                 }
             });
+            trackLeaderboardStat({stat: 'submit_form'});
 
             return true;
         },

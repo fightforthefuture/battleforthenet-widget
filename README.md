@@ -6,15 +6,6 @@ September 10th, 2014 is [**Internet Slowdown Day!**][1] The goal of this
 project is to allow anyone with a web site to run their own campaign to save net
 neutrality. Simply embed a couple of lines of Javascript and you're good to go!
 
-
-WARNING: Under construction!
-----------------------------
-The banner is ready but the modal is still under active development.
-We're providing early access to the code so you can start integrating it into
-your site and testing. The underlying architecture is mostly complete, so the
-code you actually embed on your page shouldn't change much. We're just working
-on the user experience now.
-
 To stay up-to-date on developments, please subscribe to our
 [**developer mailing list**][1]. If you have any problems or questions regarding
 the widget, please [submit an issue][4] or [email Jeff Lyon][5].

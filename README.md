@@ -92,7 +92,7 @@ other options in to customize the position of the banner on-screen.
 <script type="text/javascript">
     var _bftn_options = {
       animation: 'banner',
-      url: 'https://www.fightforthefuture.org'
+      url: 'https://www.YOURPETITIONPAGEHERE.org'
     }
 </script>
 <script src="//fightforthefuture.github.io/battleforthenet-widget/widget.min.js"

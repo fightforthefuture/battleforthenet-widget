@@ -2,7 +2,7 @@ Battle for the Net Widget
 -------------------------
 #### Join the battle for net neutrality with our action widget!
 
-September 10th, 2014 is [**Internet Slowdown Day!**][1] The goal of this
+September 10th, 2014 is [**the Internet Slowdown!**][1] The goal of this
 project is to allow anyone with a web site to run their own campaign to save net
 neutrality. Simply embed a couple of lines of Javascript and you're good to go!
 

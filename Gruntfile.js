@@ -28,7 +28,8 @@ module.exports = function(grunt) {
       styles: {
         files: [
           'iframe/css/modal.less',
-          'iframe/css/banner.less'
+          'iframe/css/banner.less',
+          'iframe/css/spinner.less'
         ], // which files to watch
         tasks: [
           'less'

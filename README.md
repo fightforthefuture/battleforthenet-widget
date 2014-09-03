@@ -63,10 +63,8 @@ Notice the `_bftn_options` object in the code snippet above? You can pass some
 other options in to customize the position of the banner on-screen.
 
 * `theme`: The theme. Either _light_ (default) or _dark_
-* `position`: The position of the banner. Can be _topright_ (default), _topleft_,
-  _bottomright_ or _bottomleft_
-* `offsetX`: The number of pixels to "nudge" the banner away from the side of
-  the window
+* `position`: The position of the banner. Can be _topright_ (default) or
+  _bottomright_
 * `offsetY`: The number of pixels to "nudge" the banner away from the top of the
   window
 * `url`: The URL that clicking the banner should go to. Default is

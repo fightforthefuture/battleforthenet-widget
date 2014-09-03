@@ -124,10 +124,9 @@ var _bftn_animations = {
 		// Default options: Override these with _bftn_options object (see above)
 		options: {
 			modalAnimation: 'banner',
-			position: 'topright', // topright|bottomright|topleft|bottomleft
-			width: 500,
-			height: 100,
-			offsetX: 10, 
+			position: 'topright', // topright|bottomright
+			width: 430,
+			height: 104,
 			offsetY: 20,
 			url: 'https://www.battleforthenet.com',
 			theme: 'light'
@@ -148,34 +147,20 @@ var _bftn_animations = {
 
 			switch (this.options.position) {
 
-				case 'topright':
-					var pos = 'top: '+this.options.offsetY+'px; '
-							+ 'right: '+this.options.offsetX+'px; ';
-					var stripPos = 'top';
-					break;
-
-				case 'topleft':
-					var pos = 'top: '+this.options.offsetY+'px; '
-							+ 'left: '+this.options.offsetX+'px; ';
-					var stripPos = 'top';
-					break;
-
 				case 'bottomright':
-					var pos = 'bottom: '+this.options.offsetY+'px; '
-							+ 'right: '+this.options.offsetX+'px; ';
+					var pos = 'bottom: '+this.options.offsetY+'px; right: 0px;';
 					var stripPos = 'bottom';
 					break;
 
-				case 'bottomleft':
-					var pos = 'bottom: '+this.options.offsetY+'px; '
-							+ 'left: '+this.options.offsetX+'px; ';
-					var stripPos = 'bottom';
+				default:
+					var pos = 'top: '+this.options.offsetY+'px; right: 0px;'
+					var stripPos = 'top';
 					break;
 			}
 
 			// The window must be a certain width to show the floating banner
 			// otherwise it will be fixed to the top / bottom
-			var minFloatWidth = this.options.width+this.options.offsetX;
+			var minFloatWidth = this.options.width-1;
 
 			var css = '
 				#_bftn_iframe { \

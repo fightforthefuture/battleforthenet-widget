@@ -60,7 +60,7 @@ var animations = {
                     $('#text2').css('opacity', 0);
                 }
 
-            }, 5000);
+            }, 6000);
         },
         log: function() {
             if (this.options.debug)

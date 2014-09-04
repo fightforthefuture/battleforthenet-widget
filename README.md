@@ -48,7 +48,7 @@ Installation Instructions (Banner)
 The banner shows up in one of the corners (you can customize), or as a strip
 along the top or bottom on mobile devices. You can choose a light or dark theme.
 
-**To install the banner, paste this code into your `HEAD` tag:**
+**To show the banner on September 10th, paste this code into your `HEAD` tag:**
 ```html
 <script type="text/javascript">
     var _bftn_options = { animation: 'banner' }
@@ -107,7 +107,7 @@ Installation Instructions (Modal)
 The modal animation will show up front-and-center on your page, prompting
 visitors to contact the FCC and Congress.
 
-**To embed the modal, paste this into your `HEAD`:**
+**To show the modal on September 10th, paste this into your `HEAD`:**
 ```html
 <script src="//fightforthefuture.github.io/battleforthenet-widget/widget.min.js"
     async></script>

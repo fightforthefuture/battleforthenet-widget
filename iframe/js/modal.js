@@ -142,7 +142,7 @@ var animations = {
                     if (data.country && data.country.iso_code)
                     {
                         $('#country').val(data.country.iso_code);
-                        if (data.country.iso_code != "US" || true)
+                        if (data.country.iso_code != "US")
                         {
                             this.phoneCallAllowed = false;
 
@@ -203,7 +203,6 @@ var animations = {
             doc['action_comment'] = $("JL-TBD").val();  // JL HACK
             doc['country'] = 'US';                      // JL HACK
 
-            /*
             $.ajax({
                 url: "https://api.battleforthenet.com/submit",
                 // url: "http://debbie:3019/submit",    // JL TEST ~
@@ -214,7 +213,6 @@ var animations = {
                     userID = res.userID;
                 }
             });
-            */
             trackLeaderboardStat({stat: 'submit_form'});
 
             return true;

@@ -39,6 +39,27 @@ be embedding on your page.
   again (unless you override)
 
 
+Installation Instructions (Modal)
+---------------------------------
+**See the demo:** [**Development version**][2]
+
+![Modal](https://fightforthefuture.github.io/battleforthenet-widget/demos/modal.png)
+
+The modal animation will show up front-and-center on your page, prompting
+visitors to contact the FCC and Congress.
+
+**To show the modal on September 10th, paste this into your `HEAD`:**
+```html
+<script src="//fightforthefuture.github.io/battleforthenet-widget/widget.min.js"
+    async></script>
+```
+
+We'll be working on adding new features between now and September 10th, (the
+code you embed on your page won't change though). Be sure to let your users
+know this is under development and link them back to
+**https://www.battleforthenet.com/sept10th**
+
+
 Installation Instructions (Banner)
 ----------------------------------
 **See the demo:** [**Light**][3] | [**Dark**][7]
@@ -98,20 +119,11 @@ other options in to customize the position of the banner on-screen.
 ```
 
 
-Installation Instructions (Modal)
----------------------------------
-**See the demo:** [**Development version**][2]
-
-![Modal](https://fightforthefuture.github.io/battleforthenet-widget/demos/modal.png)
-
-The modal animation will show up front-and-center on your page, prompting
-visitors to contact the FCC and Congress.
-
-**To show the modal on September 10th, paste this into your `HEAD`:**
-```html
-<script src="//fightforthefuture.github.io/battleforthenet-widget/widget.min.js"
-    async></script>
-```
+How to test the banner/modal
+----------------------------
+**The widget is designed to only appear on September 10th, 2014**, and only
+once, per user, per device. If you'd like to force it to show up on your page
+for testing, please (re)load the page with #SHOW_BFTN_WIDGET in the URL.
 
 
 Embed the Modal on your blog
@@ -125,18 +137,6 @@ If you want to show off the modal to your users prior to September 10th
   src="https://fightforthefuture.github.io/battleforthenet-widget/iframe/modal.html#EMBED">
   </iframe>
 ```
-
-We'll be working on adding new features between now and September 10th, (the
-code you embed on your page won't change though). Be sure to let your users
-know this is under development and link them back to
-**https://www.battleforthenet.com/sept10th**
-
-
-How to test the widget
-----------------------
-**The widget is designed to only appear on September 10th, 2014**, and only
-once, per user, per device. If you'd like to force it to show up on your page
-for testing, please (re)load the page with #SHOW_BFTN_WIDGET in the URL.
 
 
 Which browsers are supported

@@ -201,7 +201,10 @@ var animations = {
 
             // doc['action_comment'] = $("[name=action_comment]").val();
             doc['action_comment'] = $("JL-TBD").val();  // JL HACK
-            doc['country'] = 'US';                      // JL HACK
+            doc['country'] = $('#country').val();
+
+            if ($('#opt-in').is(':checked') == false)
+                doc['opt_out'] = true;
 
             $.ajax({
                 url: "https://api.battleforthenet.com/submit",

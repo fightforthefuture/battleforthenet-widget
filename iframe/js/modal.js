@@ -26,12 +26,25 @@ var animations = {
     modal: {
         options: {
             debug: false,
+            skipEmailSignup: false
         },
+
+        // If international, phone call functionality is disallowed
+        phoneCallAllowed: true,
+        zipcode: null,
+
         init: function(options) {
             for (var k in options) this.options[k] = options[k];
             return this;
         },
         start: function() {
+
+            if (this.options.skipEmailSignup)
+            {
+                $('#direct_call').show();
+                $('#petition').hide();
+                $('.bottom-link').hide();
+            }
 
             $('a.close').click(function(e) {
                 e.preventDefault();
@@ -56,18 +69,42 @@ var animations = {
 
                 setTimeout(function() {
                     $('#overlay').css('display', 'none');
-                }, 1000);
+                }, 2000);
             });
+
+            $('a#cantcall').click(function(e) {
+                e.preventDefault();
+                this.showFinal()
+            }.bind(this));
 
             $("form[name=petition]").submit(function(e) {
                 e.preventDefault();
                 if (this.postUser($(this))) {
                     
                     $("input:not([type=image],[type=button],[type=submit])").val('');
-                    this.showFinal();
+
+                    if (this.phoneCallAllowed)
+                        this.showPhoneCall();
+                    else
+                        this.showFinal();
                     
                 } else {
                     // alert('Please complete the rest of the form. Thanks!');
+                }
+            }.bind(this));
+
+            $("form[name=direct_call]").submit(function(e) {
+                e.preventDefault();
+                var phone = this.validatePhone($('#phone_front').val());
+
+                if (!phone)
+                {
+                    $('#phone_front').addClass('error');
+                }
+                else
+                {
+                    this.placePhonecall(phone);
+                    this.showFinalWithCallInstructions();
                 }
             }.bind(this));
 
@@ -77,6 +114,46 @@ var animations = {
 
             $('a.twitter').click(function(e) {
                 trackLeaderboardStat({stat: 'share', data: 'twitter'});
+            });
+
+            $('#call').click(function(e) {
+                e.preventDefault();
+
+                var phone = this.validatePhone($('#phone').val());
+
+                if (!phone)
+                    return $('#phone').addClass('error');
+
+                $('#call').attr('disabled', true);
+                $('#phone').attr('disabled', true);
+
+                this.placePhonecall(phone);
+
+                setTimeout(function() {
+                    this.showFinalWithCallInstructions();
+                }.bind(this), 1000);
+            }.bind(this));
+
+            $.ajax({
+                url: '//fftf-geocoder.herokuapp.com/',
+                dataType: 'json',
+                type: 'get',
+                success: function(data) {
+                    if (data.country && data.country.iso_code)
+                    {
+                        $('#country').val(data.country.iso_code);
+                        if (data.country.iso_code != "US" || true)
+                        {
+                            this.phoneCallAllowed = false;
+
+                            if (this.options.skipEmailSignup)
+                            {
+                                // Nothing to do. Close the modal now.
+                                sendMessage('stop');
+                            }
+                        }
+                    }
+                }.bind(this)
             });
         },
         log: function() {
@@ -115,11 +192,18 @@ var animations = {
             if (fail)
                 return false;
 
+            this.zipcode = $('#zip').val();
+            var regex = /^\d{5}$/;
+            
+            if (!regex.test(this.zipcode))
+                this.phoneCallAllowed = false;
+
+
             // doc['action_comment'] = $("[name=action_comment]").val();
             doc['action_comment'] = $("JL-TBD").val();  // JL HACK
             doc['country'] = 'US';                      // JL HACK
 
-            
+            /*
             $.ajax({
                 url: "https://api.battleforthenet.com/submit",
                 // url: "http://debbie:3019/submit",    // JL TEST ~
@@ -130,20 +214,78 @@ var animations = {
                     userID = res.userID;
                 }
             });
+            */
             trackLeaderboardStat({stat: 'submit_form'});
 
             return true;
         },
 
+        showFinalWithCallInstructions: function() {
+            $('#stepFinal .defaultText').hide();
+            $('#stepFinal .altText').show();
+            this.showFinal();
+        },
+
+        validatePhone: function(num) {
+            num = num.replace(/\s/g, '').replace(/\(/g, '').replace(/\)/g, '');
+            num = num.replace("+", "").replace(/\-/g, '');
+
+            if (num.charAt(0) == "1")
+                num = num.substr(1);
+
+            if (num.length != 10)
+                return false;
+
+            return num;
+        },
+
+        placePhonecall: function(num) {
+            $('#call').html('Calling...');
+
+            var data = {
+                campaignId: 'battleforthenet',
+                userPhone: num,
+                fftfCampaign: 'internetslowdown',
+                fftfReferer: host,
+                fftfSession: session
+            }
+            if (this.zipcode)
+                data.zipcode = this.zipcode;
+
+            $.ajax({
+                url: 'https://call-congress.fightforthefuture.org/create',
+                type: "get",
+                dataType: "json",
+                data: data,
+                success: function(res) {
+                    console.log('Placed call-congress call: ', res);
+                }
+            });
+        },
+
         showFinal: function() {
             $('#step1').addClass('hidden');
             $('#header').addClass('hidden');
+            $('#stepCall').css('opacity', 0);
             setTimeout(function() {
-                $('#step1').css('visibility', 'hidden')
+                $('#step1').css('visibility', 'hidden');
+                $('#stepCall').css('visibility', 'hidden');
             }, 1000);
             $('#stepFinal').show();
             setTimeout(function() {
-                $('#stepFinal').css('opacity', 1)
+                $('#stepFinal').css('opacity', 1);
+            }, 10);
+        },
+
+        showPhoneCall: function() {
+            $('#step1').addClass('hidden');
+            $('#header').addClass('hidden');
+            setTimeout(function() {
+                $('#step1').css('visibility', 'hidden');
+            }, 1000);
+            $('#stepCall').show();
+            setTimeout(function() {
+                $('#stepCall').css('opacity', 1);
             }, 10);
         }
     }

@@ -44,13 +44,14 @@
 				Slow lanes would change the Internet and free speech forever.
 				<strong>Tell lawmakers: "Protect Internet freedom. Defend net neutrality."</strong>
 			</p>
-			<form name="petition" method="post">
+			<form name="petition" id="petition" method="post">
 				<div class="fields">
 					<input type="text" name="name" placeholder="Name"/>
 					<input type="text" name="email" placeholder="Email"/>
 					<input type="text" name="address1" placeholder="Address"/>
-					<input type="text" name="zip" placeholder="Zip"/>
+					<input type="text" name="zip" id="zip" placeholder="Zip / Postcode"/>
 				</div>
+				<input type="hidden" name="country" id="country" value="US"/>
 				<div class="clear"></div>
 				<div class="action">
 					<a href="#" class="read">Read</a>
@@ -62,17 +63,52 @@
 					</div>
 				</div>
 			</form>
+			<form name="direct_call" id="direct_call" method="post" style="display: none;">
+				<div class="fields">
+					<input class="long" type="text" name="phone" id="phone_front" placeholder="Enter your phone number"/>
+					<button id="skip_to_call" type="submit"><strong>Get connected</strong> to Congress</button>
+				</div>
+				<div class="clear"></div>
+				<div class="action">
+					<div class="disclosure text-only">
+						Calls have 10 times the impact of emails. Calling is easy: we'll call your phone and
+						tell you exactly what to say. We won't save your number or use it for anything else.
+					</div>
+				</div>
+			</form>
 		</div>
-		<div id="stepFinal">
-			<h2>Thanks for taking action&mdash;now spread the word!</h2>
-			<p>To win, we need tons more people to do what you just did. Lead by example!</p>
+		<div id="stepCall" class="extra-modal">
+			<h2>Thanks! Now can you call?</h2>
+			<p>
+				Calls have 10 times the impact of emails. Calling is easy: we'll call your phone and
+				tell you exactly what to say. We won't save your number or use it for anything else.
+			</p>
+			<div class="fields centered">
+				<input type="text" name="phone" id="phone" placeholder="Enter your phone number" autocomplete="off"/>
+			</div>
+			<button id="call" type="button" autocomplete="off"><strong>Get connected</strong> to Congress</button>
+			
+			<div class="clear"></div>
+			<a href="#" id="cantcall">can't call?</a>
+		</div>
+		<div id="stepFinal" class="extra-modal">
+			<div class="defaultText">
+				<h2>Thanks for taking action&mdash;now spread the word!</h2>
+				<p>To win, we need tons more people to do what you just did. Lead by example!</p>
+			</div>
+			<div class="altText" style="display: none;">
+				<h2>Awesome&mdash;we're calling your phone!</h2>
+				<p>Remember to ask your congressperson to sign the Internet Freedom Letter and support Title&nbsp;II reclassification of broadband providers.</p>
+				<h4>Help us spread the word:</h4>
+			</div>
 			<div class="share-links">
 				<a href="https://www.facebook.com/sharer.php?u=battleforthenet.com" target="_blank" class="btn btn-primary share facebook">Share on Facebook</a>
 				<a href="https://twitter.com/intent/tweet?text=Cable%E2%80%99s%20trying%20to%20end%20%23netneutrality%20%26%20break%20the%20Internet%20for%20profit.%20How%20we%20stop%20them%3A%20battleforthenet.com%20pic.twitter.com%2FGoDrMZb4Co" target="_blank" class="btn btn-primary share twitter">Share on Twitter</a>
 			</div>
-			<a class="site-owners" href="https://www.battleforthenet.com/sept10th" target="_blank">PREVIEW ACCESS &mdash; get this on your site for the Sept 10th Internet Slowdown!</a>
+			<a class="bottom-link" href="https://www.battleforthenet.com/sept10th" target="_blank">Thank you so much!</a>
 				
 		</div>
+
 	</div>
 </div>
 

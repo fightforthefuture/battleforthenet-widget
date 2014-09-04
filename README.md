@@ -47,8 +47,8 @@ Installation Instructions (Banner)
 
 The banner shows up in one of the corners (you can customize), or as a strip
 along the top or bottom on mobile devices. You can choose a light or dark theme.
-To install, paste this code into your `HEAD` tag:
 
+**To install the banner, paste this code into your `HEAD` tag:**
 ```html
 <script type="text/javascript">
     var _bftn_options = { animation: 'banner' }
@@ -72,7 +72,7 @@ other options in to customize the position of the banner on-screen.
 
 #### Customized banner examples:
 
-**Dark theme, bottom right corner**
+**Banner with dark theme, bottom right corner. Paste this into your `HEAD`:**
 ```html
 <script type="text/javascript">
     var _bftn_options = {
@@ -85,7 +85,7 @@ other options in to customize the position of the banner on-screen.
     async></script>
 ```
 
-**Custom link**
+**Banner with custom link, paste this into your `HEAD`:**
 ```html
 <script type="text/javascript">
     var _bftn_options = {
@@ -105,9 +105,9 @@ Installation Instructions (Modal)
 ![Modal](https://fightforthefuture.github.io/battleforthenet-widget/demos/modal.png)
 
 The modal animation will show up front-and-center on your page, prompting
-visitors to contact the FCC and Congress. To install, simply embed this code
-into your `HEAD` tag:
+visitors to contact the FCC and Congress.
 
+**To embed the modal, paste this into your `HEAD`:**
 ```html
 <script src="//fightforthefuture.github.io/battleforthenet-widget/widget.min.js"
     async></script>
@@ -119,6 +119,7 @@ Embed the Modal on your blog
 If you want to show off the modal to your users prior to September 10th
 (thanks!) you can use this code to directly embed it on your page:
 
+**To embed the action form on your page, use this code:**
 ```html
 <iframe style="width: 750px; height: 467px;" frameborder="no"
   src="https://fightforthefuture.github.io/battleforthenet-widget/iframe/modal.html#EMBED">

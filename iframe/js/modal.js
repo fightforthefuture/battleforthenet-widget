@@ -26,7 +26,9 @@ var animations = {
     modal: {
         options: {
             debug: false,
-            skipEmailSignup: false
+            skipEmailSignup: false,
+            skipCallTool: false,
+            fastAnimation: false
         },
 
         // If international, phone call functionality is disallowed
@@ -44,6 +46,18 @@ var animations = {
                 $('#direct_call').show();
                 $('#petition').hide();
                 $('.bottom-link').hide();
+            }
+            if (this.options.skipCallTool)
+                this.phoneCallAllowed = false;
+
+            if (this.options.fastAnimation)
+            {
+                $('body').addClass('fast-animation');
+                setTimeout(stupidIEZoomFix, 10);
+            }
+            else
+            {
+                setTimeout(stupidIEZoomFix, 2250);
             }
 
             $('a.close').click(function(e) {
@@ -292,21 +306,26 @@ var animations = {
     }
 }
 
-setTimeout(function() {
+$(document).ready(function() {
+
     $('#header h1').html($('h1.headline').html());
     $('#header .cta p').html($('p.cta-hidden-trust-me').html());
-}, 2000);
-setTimeout(function() {
-    $('#header .cta').css('height', $('#header').outerHeight()+'px');
-    $('#letter').css('height', $('#modal').outerHeight()+'px');
-    $('#letter').css('opacity', 1);
-}, 3000);
 
-if (window.location.href.indexOf('EMBED') != -1) 
-{
-    document.body.className = 'embedded';
-    animations.modal.start(); 
-}
+    setTimeout(function() {
+        $('#header .cta').css('height', $('#header').outerHeight()+'px');
+        $('#letter').css('height', $('#modal').outerHeight()+'px');
+        $('#letter').css('opacity', 1);
+    }, 1000);
+
+    if (window.location.href.indexOf('EMBED') != -1) 
+    {
+        document.body.className = 'embedded';
+        animations.modal.options.fastAnimation = true;
+        animations.modal.start(); 
+    } 
+});
+
+
 
 /**
  *  -------------------------- OMG ---------------------------------------------
@@ -314,9 +333,7 @@ if (window.location.href.indexOf('EMBED') != -1)
  *  -------------------------- OMG ---------------------------------------------
  */
 
-setTimeout(function() {
-    stupidIEZoomFix();
-}, 2250);
+
 
 function stupidIEZoomFix() {
     if (ieVersion) {

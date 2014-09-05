@@ -15,9 +15,10 @@
 @scene_top_padding: 60px;
 @scene_margin_top: -200px;
 
-@headline_ellipsis_start_delay: 2s;
+@headline_ellipsis_fast_start: 1.5s;
+@headline_ellipsis_start_delay: 4s;
 @headline_ellipsis_delay_each: 1.5s;
-@headline_after_ellipsis_delay: 3s;
+@headline_after_ellipsis_delay: 3.5s;
 
 html {
     height: 100%;
@@ -50,6 +51,42 @@ body {
         #modal {
             .close {
                 display: none;
+            }
+        }
+    }
+
+    &.fast-animation {
+
+        #header h1 {
+            -webkit-animation-delay: @headline_ellipsis_fast_start + (4 * @headline_ellipsis_delay_each) + @headline_after_ellipsis_delay;
+            animation-delay: @headline_ellipsis_fast_start + (4 * @headline_ellipsis_delay_each) + @headline_after_ellipsis_delay;
+        }
+
+        #header .cta {
+            -webkit-animation-delay: @headline_ellipsis_fast_start + (4 * @headline_ellipsis_delay_each) + @headline_after_ellipsis_delay;
+            animation-delay: @headline_ellipsis_fast_start + (4 * @headline_ellipsis_delay_each) + @headline_after_ellipsis_delay;
+        }
+
+        #header h1 span {
+            &.e1 {
+                -webkit-animation-delay: @headline_ellipsis_fast_start + (0 * @headline_ellipsis_delay_each);
+                animation-delay: @headline_ellipsis_fast_start + (0 * @headline_ellipsis_delay_each);
+            }
+            &.e2 {
+                -webkit-animation-delay: @headline_ellipsis_fast_start + (1 * @headline_ellipsis_delay_each);
+                animation-delay: @headline_ellipsis_fast_start + (1 * @headline_ellipsis_delay_each);
+            }
+            &.e3 {
+                -webkit-animation-delay: @headline_ellipsis_fast_start + (2 * @headline_ellipsis_delay_each);
+                animation-delay: @headline_ellipsis_fast_start + (2 * @headline_ellipsis_delay_each);
+            }
+            &.e4 {
+                -webkit-animation-delay: @headline_ellipsis_fast_start + (3 * @headline_ellipsis_delay_each);
+                animation-delay: @headline_ellipsis_fast_start + (3 * @headline_ellipsis_delay_each);
+            }
+            &.e5 {
+                -webkit-animation-delay: @headline_ellipsis_fast_start + (4 * @headline_ellipsis_delay_each);
+                animation-delay: @headline_ellipsis_fast_start + (4 * @headline_ellipsis_delay_each);
             }
         }
     }

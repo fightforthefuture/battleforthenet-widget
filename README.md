@@ -54,10 +54,42 @@ visitors to contact the FCC and Congress.
     async></script>
 ```
 
-We'll be working on adding new features between now and September 10th, (the
-code you embed on your page won't change though). Be sure to let your users
-know this is under development and link them back to
-**https://www.battleforthenet.com/sept10th**
+#### Modal customization options:
+
+If you define an object called `_bftn_options` before including the widget code,
+you can pass some properties in to customize the default behavior.
+
+* `skipEmailSignup`: (Boolean, default _false_) Disables the email signup and
+  only shows the Call Congress tool.
+* `skipCallTool`: (Boolean, default _false_) Disables the Call Congress tool and
+  only shows the email signup form. Creates a quantum singularity if the
+  `skipEmailSignup` option is also used.
+* `fastAnimation`: (Boolean, default _false_) Fast forwards through the intro
+  animation and makes the action form appear much faster.
+
+#### Customized modal examples:
+
+**Call Congress modal with email signup disabled. Paste this into your `HEAD`:**
+```html
+<script type="text/javascript">
+    var _bftn_options = {
+      skipEmailSignup: true
+    }
+</script>
+<script src="//fightforthefuture.github.io/battleforthenet-widget/widget.min.js"
+    async></script>
+```
+
+**Modal with Call Congress tool disabled. Paste this into your `HEAD`:**
+```html
+<script type="text/javascript">
+    var _bftn_options = {
+      skipCallTool: true
+    }
+</script>
+<script src="//fightforthefuture.github.io/battleforthenet-widget/widget.min.js"
+    async></script>
+```
 
 
 Installation Instructions (Banner)

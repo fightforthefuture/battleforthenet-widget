@@ -82,7 +82,9 @@ var _bftn_animations = {
 		// Default options: Override these with _bftn_options object (see above)
 		options: {
 			modalAnimation: 'modal',
-			skipEmailSignup: false
+			skipEmailSignup: false,
+			skipCallTool: true,
+			fastAnimation: false
 		},
 
 		preload: [

@@ -50,7 +50,7 @@ visitors to contact the FCC and Congress.
 
 **To show the modal on September 10th, paste this into your `HEAD`:**
 ```html
-<script src="//fightforthefuture.github.io/battleforthenet-widget/widget.min.js"
+<script src="//widget.battleforthenet.com/widget.min.js"
     async></script>
 ```
 
@@ -76,7 +76,7 @@ you can pass some properties in to customize the default behavior.
       skipEmailSignup: true
     }
 </script>
-<script src="//fightforthefuture.github.io/battleforthenet-widget/widget.min.js"
+<script src="//widget.battleforthenet.com/widget.min.js"
     async></script>
 ```
 
@@ -87,7 +87,7 @@ you can pass some properties in to customize the default behavior.
       skipCallTool: true
     }
 </script>
-<script src="//fightforthefuture.github.io/battleforthenet-widget/widget.min.js"
+<script src="//widget.battleforthenet.com/widget.min.js"
     async></script>
 ```
 
@@ -106,7 +106,7 @@ along the top or bottom on mobile devices. You can choose a light or dark theme.
 <script type="text/javascript">
     var _bftn_options = { animation: 'banner' }
 </script>
-<script src="//fightforthefuture.github.io/battleforthenet-widget/widget.min.js"
+<script src="//widget.battleforthenet.com/widget.min.js"
     async></script>
 ```
 
@@ -134,7 +134,7 @@ other options in to customize the position of the banner on-screen.
       theme: 'dark'
     }
 </script>
-<script src="//fightforthefuture.github.io/battleforthenet-widget/widget.min.js"
+<script src="//widget.battleforthenet.com/widget.min.js"
     async></script>
 ```
 
@@ -146,7 +146,7 @@ other options in to customize the position of the banner on-screen.
       url: 'https://www.YOURPETITIONPAGEHERE.org'
     }
 </script>
-<script src="//fightforthefuture.github.io/battleforthenet-widget/widget.min.js"
+<script src="//widget.battleforthenet.com/widget.min.js"
     async></script>
 ```
 
@@ -166,7 +166,7 @@ If you want to show off the modal to your users prior to September 10th
 **To embed the action form on your page, use this code:**
 ```html
 <iframe style="width: 750px; height: 467px;" frameborder="no"
-  src="https://fightforthefuture.github.io/battleforthenet-widget/iframe/modal.html#EMBED">
+  src="https://widget.battleforthenet.com/iframe/modal.html#EMBED">
   </iframe>
 ```
 
@@ -177,9 +177,9 @@ Modern browsers, and the two latest versions of Internet Explorer.
 
 
 [1]: https://www.battleforthenet.com/sept10th
-[2]: https://fightforthefuture.github.io/battleforthenet-widget/demos/modal.html
-[3]: https://fightforthefuture.github.io/battleforthenet-widget/demos/banner.html
+[2]: https://widget.battleforthenet.com/demos/modal.html
+[3]: https://widget.battleforthenet.com/demos/banner.html
 [4]: https://github.com/fightforthefuture/battleforthenet-widget/issues
 [5]: mailto:jeff@fightforthefuture.org
 [6]: https://github.com/fightforthefuture/battleforthenet-widget/blob/master/widget.js
-[7]: https://fightforthefuture.github.io/battleforthenet-widget/demos/banner.dark.html
+[7]: https://widget.battleforthenet.com/demos/banner.dark.html

@@ -50,8 +50,7 @@ visitors to contact the FCC and Congress.
 
 **To show the modal on September 10th, paste this into your `HEAD`:**
 ```html
-<script src="//widget.battleforthenet.com/widget.min.js"
-    async></script>
+<script src="//widget.battleforthenet.com/widget.min.js" async></script>
 ```
 
 #### Modal customization options:
@@ -76,8 +75,7 @@ you can pass some properties in to customize the default behavior.
       skipEmailSignup: true
     }
 </script>
-<script src="//widget.battleforthenet.com/widget.min.js"
-    async></script>
+<script src="//widget.battleforthenet.com/widget.min.js" async></script>
 ```
 
 **Modal with Call Congress tool disabled. Paste this into your `HEAD`:**
@@ -87,8 +85,7 @@ you can pass some properties in to customize the default behavior.
       skipCallTool: true
     }
 </script>
-<script src="//widget.battleforthenet.com/widget.min.js"
-    async></script>
+<script src="//widget.battleforthenet.com/widget.min.js" async></script>
 ```
 
 
@@ -106,8 +103,7 @@ along the top or bottom on mobile devices. You can choose a light or dark theme.
 <script type="text/javascript">
     var _bftn_options = { animation: 'banner' }
 </script>
-<script src="//widget.battleforthenet.com/widget.min.js"
-    async></script>
+<script src="//widget.battleforthenet.com/widget.min.js" async></script>
 ```
 
 #### Banner customization options:
@@ -134,8 +130,7 @@ other options in to customize the position of the banner on-screen.
       theme: 'dark'
     }
 </script>
-<script src="//widget.battleforthenet.com/widget.min.js"
-    async></script>
+<script src="//widget.battleforthenet.com/widget.min.js" async></script>
 ```
 
 **Banner with custom link, paste this into your `HEAD`:**
@@ -146,8 +141,7 @@ other options in to customize the position of the banner on-screen.
       url: 'https://www.YOURPETITIONPAGEHERE.org'
     }
 </script>
-<script src="//widget.battleforthenet.com/widget.min.js"
-    async></script>
+<script src="//widget.battleforthenet.com/widget.min.js" async></script>
 ```
 
 

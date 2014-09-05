@@ -317,9 +317,13 @@ $(document).ready(function() {
         $('#letter').css('opacity', 1);
     }, 1000);
 
-    if (window.location.href.indexOf('EMBED') != -1) 
-    {
+    if (window.location.href.indexOf('EMBED') != -1) {
+
         document.body.className = 'embedded';
+
+        if (window.location.href.indexOf('NOCALL') != -1)
+            animations.modal.options.skipCallTool = true; 
+               
         animations.modal.options.fastAnimation = true;
         animations.modal.start(); 
     } 

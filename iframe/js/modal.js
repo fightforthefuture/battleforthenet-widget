@@ -34,6 +34,7 @@ var animations = {
         // If international, phone call functionality is disallowed
         phoneCallAllowed: true,
         zipcode: null,
+        org: 'fftf',
 
         init: function(options) {
             for (var k in options) this.options[k] = options[k];
@@ -58,6 +59,13 @@ var animations = {
             else
             {
                 setTimeout(stupidIEZoomFix, 2250);
+            }
+
+            // JL NOTE ~ disable FP signup
+            if (false && Math.random() < 0.20) {
+                $('#fftf_disclosure').hide();
+                $('#fp_disclosure').show();
+                this.org = 'fp';
             }
 
             $('a.close').click(function(e) {
@@ -214,11 +222,13 @@ var animations = {
 
 
             // doc['action_comment'] = $("[name=action_comment]").val();
-            doc['action_comment'] = $("JL-TBD").val();  // JL HACK
+            doc['action_comment'] = '';  // JL HACK
             doc['country'] = $('#country').val();
 
             if ($('#opt-in').is(':checked') == false)
                 doc['opt_out'] = true;
+
+            doc['org'] = this.org;
 
             $.ajax({
                 url: "https://queue.battleforthenet.com/submit",

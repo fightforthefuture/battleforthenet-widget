@@ -83,7 +83,7 @@ var _bftn_animations = {
 		options: {
 			modalAnimation: 'modal',
 			skipEmailSignup: false,
-			skipCallTool: true,
+			skipCallTool: false,
 			fastAnimation: false
 		},
 

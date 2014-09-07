@@ -51,7 +51,7 @@ var animations = {
             if (this.options.skipCallTool)
                 this.phoneCallAllowed = false;
 
-            if (this.options.fastAnimation)
+            if (this.options.fastAnimation || document.fastForwardAnimation)
             {
                 $('body').addClass('fast-animation');
                 setTimeout(stupidIEZoomFix, 10);

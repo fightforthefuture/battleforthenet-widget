@@ -249,7 +249,14 @@ var animations = {
             });
             trackLeaderboardStat({stat: 'submit_form'});
 
+            this.trackOptimizely('fcc_post');
+
             return true;
+        },
+
+        trackOptimizely: function(ev) {
+            window['optimizely'] = window['optimizely'] || [];
+            window.optimizely.push(["trackEvent", ev]);
         },
 
         showFinalWithCallInstructions: function() {
@@ -293,6 +300,8 @@ var animations = {
                     console.log('Placed call-congress call: ', res);
                 }
             });
+
+            this.trackOptimizely('call_congress');
         },
 
         showFinal: function() {

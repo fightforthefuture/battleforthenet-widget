@@ -87,17 +87,6 @@ var _bftn_animations = {
 			fastAnimation: false
 		},
 
-		preload: [
-			'envelope.png',
-			'envelope-hover.png',
-			'field-gradient.png',
-			'check-on.png',
-			'check-off.png',
-			'check-on-big.png',
-			'check-off-big.png',
-			'close.png'
-		],
-
 		// init copies the _bftn_options properties over the default options
 		init: function(options) {
 			for (var k in options) this.options[k] = options[k];
@@ -134,8 +123,6 @@ var _bftn_animations = {
 			url: 'https://www.battleforthenet.com',
 			theme: 'light'
 		},
-
-		preload: [],
 
 		// init copies the _bftn_options properties over the default options
 		init: function(options) {
@@ -338,37 +325,9 @@ var ready = function() {
 	var images = new Array()
 	var preloaded = 0;
 
-	var beginAnimation = function() {
-		setTimeout(function() {
-			animation.init(_bftn_options).start();
-		}, _bftn_options.delay);
-	}
-
-	if (typeof animation.preload != "undefined" && animation.preload.length)
-	{
-		for (i = 0; i < animation.preload.length; i++) {
-
-			var src = animation.preload[i];
-
-			images[i] = new Image()
-			images[i].src = _bftn_options.iframe_base_path+'/images/'+src;
-			images[i].onload = function() {
-				preloaded++;
-				_bftn_util.log('Preloaded ' + preloaded + ' images.');
-				if (preloaded == images.length)
-				{
-					_bftn_util.log('DONE PRELOADING IMAGES.')
-					_bftn_util.log('Animate in '+_bftn_options.delay+' ms');
-
-					beginAnimation();
-				}
-			}
-		}
-	}
-	else	// no preload, just start the animation
-	{
-		beginAnimation();
-	}
+	setTimeout(function() {
+		animation.init(_bftn_options).start();
+	}, _bftn_options.delay);
 }
 
 // Wait for DOM content to load.

@@ -68,8 +68,7 @@ var animations = {
                 $('#header .cta').css('opacity', 1);
             }
 
-            // JL NOTE ~ disable FP signup
-            if (false && Math.random() < 0.20) {
+            if (Math.random() < 0.20) {
                 $('#fftf_disclosure').hide();
                 $('#fp_disclosure').show();
                 this.org = 'fp';

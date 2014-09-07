@@ -61,6 +61,13 @@ var animations = {
                 setTimeout(stupidIEZoomFix, 2250);
             }
 
+            // Optimizely test
+            if (document.showCTATextImmediately)
+            {
+                $('#header h1').css('opacity', 0);
+                $('#header .cta').css('opacity', 1);
+            }
+
             // JL NOTE ~ disable FP signup
             if (false && Math.random() < 0.20) {
                 $('#fftf_disclosure').hide();

@@ -28,7 +28,8 @@ var animations = {
             debug: false,
             skipEmailSignup: false,
             skipCallTool: false,
-            fastAnimation: false
+            fastAnimation: false,
+            boxUnchecked: false
         },
 
         // If international, phone call functionality is disallowed
@@ -50,6 +51,9 @@ var animations = {
             }
             if (this.options.skipCallTool)
                 this.phoneCallAllowed = false;
+
+            if (this.options.boxUnchecked)
+                $('#opt-in').attr('checked', false);
 
             if (this.options.fastAnimation || document.fastForwardAnimation)
             {
@@ -350,7 +354,10 @@ $(document).ready(function() {
             animations.modal.options.skipCallTool = true; 
 
         if (window.location.href.indexOf('NOEMAIL') != -1)
-            animations.modal.options.skipEmailSignupp = true; 
+            animations.modal.options.skipEmailSignup = true;
+
+        if (window.location.href.indexOf('UNCHECK') != -1)
+            animations.modal.options.boxUnchecked = true; 
                
         animations.modal.options.fastAnimation = true;
         animations.modal.start(); 

@@ -152,8 +152,7 @@ var _bftn_animations = {
 			// otherwise it will be fixed to the top / bottom
 			var minFloatWidth = this.options.width-1;
 
-			var css = '
-				#_bftn_iframe { \
+			var css = '#_bftn_iframe { \
 					position: fixed; '+pos+' \
 					width: '+this.options.width+'px; \
 					height: '+this.options.height+'px; \

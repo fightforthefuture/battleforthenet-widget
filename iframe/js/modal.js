@@ -348,6 +348,9 @@ $(document).ready(function() {
 
         if (window.location.href.indexOf('NOCALL') != -1)
             animations.modal.options.skipCallTool = true; 
+
+        if (window.location.href.indexOf('NOEMAIL') != -1)
+            animations.modal.options.skipEmailSignupp = true; 
                
         animations.modal.options.fastAnimation = true;
         animations.modal.start(); 

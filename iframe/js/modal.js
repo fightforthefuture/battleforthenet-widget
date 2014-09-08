@@ -87,7 +87,7 @@ var animations = {
                 }, 750);
             });
 
-            $('a.read').click(function(e) {
+            $('a.letter').click(function(e) {
                 e.preventDefault();
                 $('#overlay').css('display', 'block');
                 setTimeout(function() {
@@ -101,7 +101,7 @@ var animations = {
 
                 setTimeout(function() {
                     $('#overlay').css('display', 'none');
-                }, 2000);
+                }, 750);
             });
 
             $('a#cantcall').click(function(e) {

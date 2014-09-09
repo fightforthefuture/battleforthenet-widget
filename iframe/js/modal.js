@@ -76,7 +76,7 @@ var animations = {
             // Optimizely test vvv
             this.optimizelyTextAB();
 
-            if (Math.random() < 0.20) {
+            if (Math.random() < 0.16) {
                 $('#fftf_disclosure').hide();
                 $('#fp_disclosure').show();
                 this.org = 'fp';

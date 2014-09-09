@@ -29,13 +29,14 @@ var animations = {
             skipEmailSignup: false,
             skipCallTool: false,
             fastAnimation: false,
-            boxUnchecked: false
+            boxUnchecked: false,
+            org: null
         },
 
         // If international, phone call functionality is disallowed
         phoneCallAllowed: true,
         zipcode: null,
-        org: 'fftf',
+        default_org: 'fftf',
 
         init: function(options) {
             for (var k in options) this.options[k] = options[k];
@@ -76,10 +77,11 @@ var animations = {
             // Optimizely test vvv
             this.optimizelyTextAB();
 
-            if (Math.random() < 0.16) {
+            // If no org is set, then 16% chance of free press
+            if (!this.options.org && Math.random() < 0.16) {
                 $('#fftf_disclosure').hide();
                 $('#fp_disclosure').show();
-                this.org = 'fp';
+                this.options.org = 'fp';
             }
 
             $('a.close').click(function(e) {
@@ -242,7 +244,10 @@ var animations = {
             if ($('#opt-in').is(':checked') == false)
                 doc['opt_out'] = true;
 
-            doc['org'] = this.org;
+            if (this.options.org)
+                doc['org'] = this.options.org;
+            else
+                doc['org'] = this.default_org;
 
             $.ajax({
                 url: "https://queue.battleforthenet.com/submit",
@@ -339,6 +344,9 @@ var animations = {
 
         optimizelyTextAB: function() {
 
+            // JL NOTE ~ disabled
+            return false;
+
             var textVariation = null;
 
             if (document.textVariation)
@@ -402,18 +410,26 @@ $(document).ready(function() {
         $('#letter').css('opacity', 1);
     }, 1000);
 
-    if (window.location.href.indexOf('EMBED') != -1) {
+    var loc = window.location.href;
+
+    if (loc.indexOf('EMBED') != -1) {
 
         document.body.className = 'embedded';
 
-        if (window.location.href.indexOf('NOCALL') != -1)
+        if (loc.indexOf('NOCALL') != -1)
             animations.modal.options.skipCallTool = true; 
 
-        if (window.location.href.indexOf('NOEMAIL') != -1)
+        if (loc.indexOf('NOEMAIL') != -1)
             animations.modal.options.skipEmailSignup = true;
 
-        if (window.location.href.indexOf('UNCHECK') != -1)
-            animations.modal.options.boxUnchecked = true; 
+        if (loc.indexOf('UNCHECK') != -1)
+            animations.modal.options.boxUnchecked = true;
+
+        if (loc.indexOf('DP') != -1)
+            animations.modal.options.org = 'dp';
+
+        if (loc.indexOf('FP') != -1)
+            animations.modal.options.org = 'fp'; 
                
         animations.modal.options.fastAnimation = true;
         animations.modal.start(); 

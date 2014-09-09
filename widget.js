@@ -85,7 +85,8 @@ var _bftn_animations = {
 			skipEmailSignup: false,
 			skipCallTool: false,
 			fastAnimation: false,
-			boxUnchecked: false
+			boxUnchecked: false,
+			org: null
 		},
 
 		// init copies the _bftn_options properties over the default options

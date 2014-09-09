@@ -187,6 +187,9 @@ body {
     z-index: 9000;
     pointer-events: none;
 
+    -ms-transform-origin: center top;
+    -moz-transform-origin: center top;
+    -os-transform-origin: center top;
     -webkit-transform-origin: center top;
     transform-origin: center top;
 
@@ -198,6 +201,10 @@ body {
         transition: all .75s ease-out;
 
         &.notIE {
+            -ms-transform: scale(.6);
+            -webkit-transform: scale(.6);
+            -o-transform: scale(.6);
+            -moz-transform: scale(.6);
             transform: scale(.6);
         }
 
@@ -255,9 +262,17 @@ a.close{
     transform: translate3d(0,0,0);
 
     opacity: 0;
+    -ms-transform: translateY(50px);
+    -moz-transform: translateY(50px);
+    -o-transform: translateY(50px);
+    -webkit-transform: translateY(50px);
     transform: translateY(50px);
 
     &.IE {
+        -ms-transform: translateY(0px);
+        -moz-transform: translateY(0px);
+        -o-transform: translateY(0px);
+        -webkit-transform: translateY(0px);
         transform: translateY(0px);
         margin-top: 50px;
     }
@@ -270,9 +285,18 @@ a.close{
         transition: all .75s ease-out;
         
         opacity: 1;
+
+        -o-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+        -moz-transform: translateY(0px);
+        -webkit-transform: translateY(0px);
         transform: translateY(0px);
 
         &.IE {
+            -o-transform: translateY(0px);
+            -ms-transform: translateY(0px);
+            -moz-transform: translateY(0px);
+            -webkit-transform: translateY(0px);
             transform: translateY(0px);
             margin-top: 0px;
         }

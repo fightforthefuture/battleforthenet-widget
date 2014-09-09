@@ -79,9 +79,18 @@ var animations = {
 
             // If no org is set, then 16% chance of free press
             if (!this.options.org && Math.random() < 0.16) {
+                this.options.org = 'fp';
+            }
+
+            if (this.options.org == 'fp')
+            {
                 $('#fftf_disclosure').hide();
                 $('#fp_disclosure').show();
-                this.options.org = 'fp';
+            }
+            else if (this.options.org == 'dp')
+            {
+                $('#fftf_disclosure').hide();
+                $('#dp_disclosure').show();
             }
 
             $('a.close').click(function(e) {

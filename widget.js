@@ -318,6 +318,10 @@ var ready = function() {
 
 	_bftn_util.setCookie('_BFTN_WIDGET_SHOWN', 'true', 365);
 
+	// JL HACK ~ Force iPhone / iPod to show banner while we fix issues
+	if(/(iPhone|iPod)/g.test(navigator.userAgent))
+		_bftn_options.animation = 'banner';
+
 	if (typeof _bftn_animations[_bftn_options.animation] == "undefined")
 		return _bftn_util.log('Animation undefined: '+_bftn_options.animation);
 

@@ -237,7 +237,7 @@ var animations = {
             });
 
             if (fail)
-                return false;
+                return alert('Please enter your info so we can sign the letter.');
 
             this.zipcode = $('#zip').val();
             var regex = /^\d{5}$/;

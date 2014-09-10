@@ -98,7 +98,7 @@ var _bftn_animations = {
 		// what to do when the animation starts
 		start: function() {
 			var css = '#_bftn_iframe { position: fixed; left: 0px; top: 0px; \
-				width: 100%; height: 100%; z-index: 20000; }'
+				width: 100%; height: 100%; z-index: 100001; }'
 
 			_bftn_util.injectCSS('_bftn_iframe_css', css);
 
@@ -158,7 +158,7 @@ var _bftn_animations = {
 					position: fixed; '+pos+' \
 					width: '+this.options.width+'px; \
 					height: '+this.options.height+'px; \
-					z-index: 20000; \
+					z-index: 100001; \
 				} \
 				@media (max-width:'+minFloatWidth+'px) { \
 					#_bftn_iframe { \

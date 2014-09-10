@@ -97,6 +97,11 @@ var animations = {
                 $('#fftf_disclosure').hide();
                 $('#dp_disclosure').show();
             }
+            else if (this.options.org == 'fftf_org')
+            {
+                $('#fftf_disclosure').hide();
+                $('#fftf_org_disclosure').show();
+            }
 
             $('a.close').click(function(e) {
                 e.preventDefault();

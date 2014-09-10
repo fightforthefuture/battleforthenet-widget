@@ -26,7 +26,7 @@
 (function(){ // :)
 
 // Default URL for animation iframe. This gets overlay'ed over your page.
-var dfurl = 'https://fightforthefuture.github.io/battleforthenet-widget/iframe';
+var dfurl = 'https://widget.battleforthenet.com/iframe';
 
 
 /**

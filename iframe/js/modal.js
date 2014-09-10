@@ -49,6 +49,8 @@ var animations = {
                 $('#direct_call').show();
                 $('#petition').hide();
                 $('.bottom-link').hide();
+                $('.bottom-link').hide();
+                $('#last-donation-ask').hide();
             }
             if (this.options.skipCallTool)
                 this.phoneCallAllowed = false;

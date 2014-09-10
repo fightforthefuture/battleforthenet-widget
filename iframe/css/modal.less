@@ -12,6 +12,7 @@
 @footer_text_color: #9dbbd1;
 @header_link_color: #92a4b1;
 @header_link_color_hover: darken(@header_link_color, 10%);
+@donation_link_color: darken(@button_bottom_color, 10%);
 
 @header_top_padding: 45px;
 @header_bottom_padding: 30px;
@@ -241,6 +242,17 @@ a.close{
 
     &:before {
         content: "×";
+    }
+}
+
+.donate-ask {
+    margin-top: 15px;
+    padding: 0px 20px;
+    line-height: 23px;
+
+    a {
+        color: @donation_link_color;
+        font-weight: bold;
     }
 }
 
@@ -729,10 +741,6 @@ a.close{
     }
 }
 
-#cantcall {
-    display: block;
-    margin-top: 10px;
-}
 
 #overlay {
     position: absolute;

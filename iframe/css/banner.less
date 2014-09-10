@@ -19,6 +19,10 @@ body {
 
     &.closed {
         opacity: 0;
+
+        a.close {
+            opacity: 0;
+        }
     }
 }
 #banner {
@@ -128,33 +132,49 @@ body {
 
 a.close {
     position: absolute;
-    right: 15px;
-    top: 33px;
-    box-sizing: border-box;
-    padding: 5px;
-    width: 22px;
-    height: 22px;
-    border-radius: 22px;
-    text-align: center;
-    font-size: 20px;
-    font-weight: 800;
-    background: #d8d8d8;
-    color: white;
+    right: 0px;
+    top: 0px;
     text-decoration: none;
-    line-height: 13px;
-    -ms-transition: background-color .1s linear;
-    -o-transition: background-color .1s linear;
-    -moz-transition: background-color .1s linear;
-    -webkit-transition: background-color .1s linear;
-    transition: background-color .1s linear;
+    box-sizing: border-box;
+    width: 45px;
+    height: 95px;
+    -ms-transition: opacity .75s ease-out;
+    -o-transition: opacity .75s ease-out;
+    -moz-transition: opacity .75s ease-out;
+    -webkit-transition: opacity .75s ease-out;
+    transition: opacity .75s ease-out; 
+
+    span {
+        display: block;
+        margin: 35px auto;
+        box-sizing: border-box;
+        width: 23px;
+        height: 23px;
+        border-radius: 23px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 800;
+        background: #d8d8d8;
+        color: white;
+        line-height: 24px;
+        -ms-transition: background-color .1s linear;
+        -o-transition: background-color .1s linear;
+        -moz-transition: background-color .1s linear;
+        -webkit-transition: background-color .1s linear;
+        transition: background-color .1s linear;
+    }
 
     &.dark {
-        color: black;
-        background: #7c7c7c;
+        span {
+            color: black;
+            background: #7c7c7c;
+        }
     }
 
     &:hover {
-        background: #aaa;
+        span {
+            background: #aaa;
+        }
     }
 }
 
@@ -179,7 +199,4 @@ a.close {
             }
         }
     } 
-    a.close {
-        right: 15px;
-    }
 }

@@ -54,10 +54,13 @@ var animations = {
                 this.phoneCallAllowed = false;
 
             if (this.options.boxUnchecked)
+            {
                 $('#opt-in').attr('checked', false);
+                $('.disclosure').removeClass('nice-check');
+            }
 
             // ------------------------------ Optimizely test vvv
-            if (this.options.fastAnimation || document.fastForwardAnimation)
+            if (this.options.fastAnimation || (!document.skipOptimizely && document.fastForwardAnimation))
             {
                 $('body').addClass('fast-animation');
                 setTimeout(stupidIEZoomFix, 10);
@@ -68,7 +71,7 @@ var animations = {
             }
 
             // Optimizely test vvv
-            if (document.showCTATextImmediately)
+            if (!document.skipOptimizely && document.showCTATextImmediately)
             {
                 $('#header h1').css('opacity', 0);
                 $('#header .cta').css('opacity', 1);
@@ -424,6 +427,7 @@ $(document).ready(function() {
     if (loc.indexOf('EMBED') != -1) {
 
         document.body.className = 'embedded';
+        document.skipOptimizely = true;
 
         if (loc.indexOf('NOCALL') != -1)
             animations.modal.options.skipCallTool = true; 

@@ -691,29 +691,38 @@ a.close{
                     text-decoration: underline;
                 }
             }
-
-            .checkbox {
-                display: inline-block;
-                cursor: pointer;
-            }
             input[type=checkbox] {
-                display:none; 
-            }
-            .checkbox:before {
-                content: "";
-                display: inline-block;
-                vertical-align: middle;
-                width: 13px;
-                height: 12px;
-                background: url(../../images/check-off.png) center center no-repeat;
-                margin-right: 6px;
-            }
-            input[type=checkbox]:checked + .checkbox:before {
-                background: url(../../images/check-on.png) center center no-repeat;
-            }
-            p {
+                width: auto;
+                height: auto;
+                float: none;
                 padding: 0px;
-                margin: 10px 0 0 0;
+                line-height: 0px;
+                vertical-align: middle;
+            }
+            &.nice-check {
+                .checkbox {
+                    display: inline-block;
+                    cursor: pointer;
+                }
+                input[type=checkbox] {
+                    display:none; 
+                }
+                .checkbox:before {
+                    content: "";
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 13px;
+                    height: 12px;
+                    background: url(../../images/check-off.png) center center no-repeat;
+                    margin-right: 6px;
+                }
+                input[type=checkbox]:checked + .checkbox:before {
+                    background: url(../../images/check-on.png) center center no-repeat;
+                }
+                p {
+                    padding: 0px;
+                    margin: 10px 0 0 0;
+                }
             }
         }
 

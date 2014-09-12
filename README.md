@@ -167,7 +167,7 @@ If you want to show off the modal to your users prior to September 10th
 
 Which browsers are supported
 ----------------------------
-Modern browsers, and the two latest versions of Internet Explorer.
+Modern browsers, and the two latest versions of Internet Explorer (10 and 11).
 
 
 [1]: https://www.battleforthenet.com/sept10th

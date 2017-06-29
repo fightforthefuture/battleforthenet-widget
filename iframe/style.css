@@ -182,6 +182,10 @@ h1 {
   text-decoration: underline;
 }
 
+#call h1 {
+  margin-top: 0;
+}
+
 /* Variations */
 body.fullscreen {
   background-color: #1e1b33;

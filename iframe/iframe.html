@@ -20,10 +20,8 @@
         </section>
 
         <main id="main" class="fade">
-          <header>
-            <div id="logos"></div>
-            <h1 id="headline"></h1>
-          </header>
+          <div id="logos"></div>
+          <h1 id="headline"></h1>
           <p id="content"></p>
           <form id="form" method="post" action="https://queue.fightforthefuture.org/action" accept-charset="UTF-8">
             <input type="text" name="member[first_name]" placeholder="Full Name" title="Full Name" autocomplete="name" required>
@@ -61,13 +59,15 @@
         </main>
 
         <section id="call" class="hidden invisible fade">
+          <h1>Thanks for emailing them!<br />Now, can you call?</h1>
+          <p>Enter your number and we'll connect you to Congress and the FCC.<br />(We'll also give you suggestions on what to say)</p>
           <form id="form" method="post" action="https://call-congress.fightforthefuture.org/create" accept-charset="UTF-8">
             <input type="phone" name="userPhone" placeholder="Phone" title="Phone" required>
             <input type="hidden" name="campaignId" value="battleforthenet-2017">
             <button type="submit">Call Now</button>
 
             <div class="disclaimer">
-              <p>Your phone number will only be used to make this call.</p>
+              <p>Your phone number will only be used to make this call. <a href="/privacy/" target="_blank">Privacy Policy</a></p>
             </div>
           </form>
         </section>

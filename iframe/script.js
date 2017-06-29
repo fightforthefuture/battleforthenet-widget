@@ -31,28 +31,28 @@
         return {
           className: theme,
           logos: ['images/money.png'],
-          headline: 'Please upgrade your<br/>plan to proceed.',
+          headline: 'Please upgrade your plan to proceed.',
           body: 'Just kidding. You can still get to this site *for now*. But if the FCC ends net neutrality, your cable company could charge you extra fees just to use the websites and apps you want. We can stop them and keep the Internet open, fast, and awesome if we all contact Congress and the FCC, but we only have a few days left.'
         };
       case 'stop':
         return {
           className: theme,
           logos: ['images/stop.png'],
-          headline: 'This site has been<br/>blocked by your ISP.',
+          headline: 'This site has been blocked by your ISP.',
           body: 'Well, not yet. But without net neutrality, cable companies could censor websites, favoring their own business partners. We can stop them and keep the Internet open, fast, and awesome if we all contact Congress and the FCC, but we only have a few days left.'
         };
       case 'slow':
         return {
           className: theme,
           logos: ['images/slow.png'],
-          headline: 'Sorry, we\'re stuck<br/>in the slow lane.',
+          headline: 'Sorry, we\'re stuck in the slow lane.',
           body: 'Well, not yet. Cable companies want to get rid of net neutrality, so they can slow sites like ours to a crawl and shake us down for extra fees just to reach you. If they get their way, the Internet will never be the same. We can stop them and keep the web fast, open, and awesome if we all contact Congress and the FCC, but we only have a few days left.'
         };
       default:
         return {
           className: 'without',
           logos: ['images/slow.png', 'images/stop_gradient.png', 'images/money_gradient.png'],
-          headline: 'This is the web<br/>without net neutrality.',
+          headline: 'This is the web without net neutrality.',
           body: 'Cable companies want to get rid of net neutrality. Without it, sites like ours could be censored, slowed down, or forced to charge extra fees. We can stop them and keep the Internet open, fast, and awesome if we all contact Congress and the FCC, but we only have a few days left.'
         };
     }
@@ -74,7 +74,7 @@
     document.getElementById('logos').appendChild(fragment);
 
     // Render headline and body copy
-    document.getElementById('headline').innerHTML = content.headline;
+    document.getElementById('headline').textContent = content.headline;
     document.getElementById('content').innerText = content.body;
   }
 

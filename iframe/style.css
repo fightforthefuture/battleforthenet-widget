@@ -10,13 +10,11 @@ body {
 }
 
 h1 {
-  margin: 1.4rem 0;
-  padding: 0.1em 0;
+  margin: 1rem 0;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  font-size: 48px;
+  font-size: 32px;
   text-align: center;
-  line-height: 1em;
 }
 
 .hidden {
@@ -51,10 +49,10 @@ h1 {
 .modal {
   position: relative;
   margin: 0 auto;
-  padding: 30px;
+  padding: 2rem;
   width: 620px;
   display: table;
-  border-radius: 1em;
+  border-radius: 0.5rem;
   background-color: #0d0a24;
   box-shadow: 0px 3px 20px rgba(0, 0, 0, .4);
 }
@@ -93,7 +91,7 @@ h1 {
 }
 
 .modal #content {
-  margin: 1.5rem 0;
+  margin-bottom: 1.6rem;
 }
 
 .modal form {
@@ -105,8 +103,9 @@ h1 {
 .modal input,
 .modal textarea,
 .modal button {
-  border: none;
   padding: 1rem;
+  background-color: transparent;
+  border: none;
   border-radius: 0.2rem;
   font-size: 1rem;
   font-weight: bold;
@@ -114,18 +113,21 @@ h1 {
 }
 
 .modal form ::placeholder {
-  color: #8887a1;
+  color: #9399c7;
 }
 
 .modal input,
 .modal textarea {
-  min-width: 28%;
+  min-width: 8%;
+  border: 1px solid #6679fc;
+  color: #9399c7;
   margin-bottom: 0.5rem;
   flex: 1;
 }
 
 .modal input[name="member[first_name]"],
 .modal input[name="member[email]"] {
+  min-width: 40%;
   max-width: 50%;
 }
 
@@ -138,8 +140,13 @@ h1 {
 }
 
 .modal input[name="member[street_address]"] {
-  flex: 3;
   margin-right: 0.5rem;
+  flex: 4;
+}
+
+.modal input[name="member[phone]"] {
+  margin-left: 0.5rem;
+  flex: 6;
 }
 
 .modal textarea {
@@ -156,8 +163,14 @@ h1 {
 }
 
 .modal .disclaimer {
+  width: 100%;
+  margin-top: 0.4rem;
   color: #717093;
   font-size: 0.8rem;
+}
+
+.modal .disclaimer p {
+  margin: 0.2rem;
 }
 
 .modal .disclaimer a {
@@ -197,6 +210,14 @@ body.without h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #279cff;
+}
+
+body.money .modal button {
+  background-color: #dea50a;
+}
+
+body.stop .modal button {
+  background-color: #ff3232;
 }
 
 body.slow .modal button,
@@ -242,5 +263,22 @@ body.slow #logos img {
     width: initial;
     max-width: 100%;
     height: 100%;
+  }
+
+  .modal input[name="member[first_name]"],
+  .modal input[name="member[email]"] {
+    min-width: 36%;
+  }
+
+  .modal input[name="member[phone]"] {
+    min-width: 80%;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 375px) {
+  .modal input[name="member[first_name]"],
+  .modal input[name="member[email]"] {
+    min-width: 33%;
   }
 }

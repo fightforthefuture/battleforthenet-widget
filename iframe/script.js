@@ -211,6 +211,11 @@
     sendMessage('stop');
   });
 
+  document.getElementById('background').addEventListener('mousedown', function(e) {
+    // Ignore events that propagate up
+    if (e.target == document.getElementById('background')) sendMessage('stop');
+  });
+
   // Start animation
   sendMessage('getAnimation');
 })();

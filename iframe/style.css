@@ -354,6 +354,17 @@ body.without .modal input[type="submit"] {
 }
 
 /* Animations */
+@keyframes background {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+body {
+  animation-duration: 1s;
+  animation-name: background;
+  animation-timing-function: cubic-bezier(.1, .9, 0, 1);
+}
+
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

@@ -354,14 +354,14 @@ body.without .modal input[type="submit"] {
 }
 
 /* Animations */
-@keyframes background {
+@keyframes fade-in {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
 body {
   animation-duration: 1s;
-  animation-name: background;
+  animation-name: fade-in;
   animation-timing-function: cubic-bezier(.1, .9, 0, 1);
 }
 
@@ -392,7 +392,7 @@ body.slow #logos img {
 /* Disable animations if user prefers */
 @media (prefers-reduced-motion: reduce) {
   body, .modal, body.slow #logos img {
-    animation: none;
+    animation-name: fade-in;
   }
 }
 

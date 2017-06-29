@@ -60,7 +60,7 @@ h2 {
 
 .modal {
   position: relative;
-  margin: 0 auto;
+  margin: 1rem auto;
   padding: 2rem;
   width: 620px;
   display: table;
@@ -279,12 +279,12 @@ body.slow #logos img {
   .gutter {
     width: initial;
     max-width: 100%;
-    margin: 1em;
   }
 
   .modal { 
     width: initial;
     max-width: 100%;
+    margin: 1rem;
   }
 
   .modal input[name="member[first_name]"],

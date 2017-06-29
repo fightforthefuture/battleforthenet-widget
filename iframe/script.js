@@ -135,7 +135,7 @@
   function showAfterAction(e) {
     if (transitionTimer) clearTimeout(transitionTimer);
 
-    document.getElementById('call').classList.remove('hidden', 'invisible');
+    document.getElementById('after-action').classList.remove('hidden', 'invisible');
     document.getElementById('main').classList.add('invisible', 'hidden');
     document.getElementById('loading').classList.add('hidden');
   }
@@ -149,7 +149,7 @@
     var phone = document.getElementById('phone').value
     if (phone) document.getElementById('userPhone').value = phone;
 
-    var formData = new FormData('form');
+    var formData = new FormData(form);
     var xhr = new XMLHttpRequest();
 
     var loading = document.getElementById('loading');
@@ -167,6 +167,42 @@
     xhr.open(form.getAttribute('method'), form.getAttribute('action'), true);
     xhr.send(formData);
     */
+  });
+
+  function showCallScript(e) {
+    if (transitionTimer) clearTimeout(transitionTimer);
+
+    document.getElementById('script').classList.remove('hidden', 'invisible');
+    document.getElementById('prompt').classList.add('invisible', 'hidden');
+    document.getElementById('loading').classList.add('hidden');
+  }
+
+  function onCall(e) {
+    if (transitionTimer) clearTimeout(transitionTimer);
+
+    var loading = document.getElementById('loading');
+    loading.addEventListener('transitionend', showCallScript);
+    loading.classList.add('invisible');
+
+    transitionTimer = setTimeout(showCallScript, 500);
+  }
+
+  var call = document.getElementById('call')
+  call.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var formData = new FormData(call);
+    var xhr = new XMLHttpRequest();
+
+    var loading = document.getElementById('loading');
+    loading.addEventListener('transitionend', onCall);
+    transitionTimer = setTimeout(onCall, 500);
+    loading.classList.remove('hidden', 'invisible');
+
+    document.getElementById('prompt').classList.add('invisible');
+
+    xhr.open(call.getAttribute('method'), call.getAttribute('action'), true);
+    xhr.send(formData);
   });
 
   // Add close button listener.

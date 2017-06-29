@@ -4,9 +4,17 @@ body {
   padding: 0;
   background: rgba(0, 0, 0, .56);
   font-family: 'Open Sans', sans-serif;
-  color: white;
+  color: #cccaea;
   overflow-y: scroll;
   text-align: center;
+}
+
+em {
+  color: #ff3232;
+}
+
+strong {
+  color: #fff;
 }
 
 h1 {
@@ -15,6 +23,10 @@ h1 {
   font-weight: bold;
   font-size: 32px;
   text-align: center;
+}
+
+h2 {
+  font-size: 18px;
 }
 
 .hidden {
@@ -182,8 +194,13 @@ h1 {
   text-decoration: underline;
 }
 
-#call h1 {
+#after-action h1 {
   margin-top: 0;
+}
+
+#script p {
+  text-align: left;
+  font-size: 0.8rem;
 }
 
 /* Variations */

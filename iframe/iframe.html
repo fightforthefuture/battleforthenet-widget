@@ -58,18 +58,27 @@
           </form>
         </main>
 
-        <section id="call" class="hidden invisible fade">
-          <h1>Thanks for emailing them!<br />Now, can you call?</h1>
-          <p>Enter your number and we'll connect you to Congress and the FCC.<br />(We'll also give you suggestions on what to say)</p>
-          <form method="post" action="https://call-congress.fightforthefuture.org/create" accept-charset="UTF-8">
-            <input id="userPhone" type="phone" name="userPhone" placeholder="Phone" title="Phone" required>
-            <input type="hidden" name="campaignId" value="battleforthenet-2017">
-            <button type="submit">Call Now</button>
+        <section id="after-action" class="hidden invisible fade">
+          <section id="prompt" class="fade">
+            <h1>Thanks for emailing them!<br />Now, can you call?</h1>
+            <p>Enter your number and we'll connect you to Congress and the FCC.<br />(We'll also give you suggestions on what to say)</p>
+            <form id="call" method="post" action="https://call-congress.fightforthefuture.org/create" accept-charset="UTF-8">
+              <input id="userPhone" type="phone" name="userPhone" placeholder="Phone" title="Phone" required>
+              <input type="hidden" name="campaignId" value="battleforthenet-2017">
+              <button type="submit">Call Now</button>
 
-            <div class="disclaimer">
-              <p>Your phone number will only be used to make this call. <a href="/privacy/" target="_blank">Privacy Policy</a></p>
-            </div>
-          </form>
+              <div class="disclaimer">
+                <p>Your phone number will only be used to make this call. <a href="/privacy/" target="_blank">Privacy Policy</a></p>
+              </div>
+            </form>
+          </section>
+          <section id="script" class="hidden invisible fade">
+            <h1>Calling you now!</h1>
+            <h2>Press * after each call to start the next. Hang up whenever, but<br /><em>more calls = more impact.</em></h2>
+            <p><strong>You can introduce yourself and say,</strong></p>
+            <p>I’m concerned about net neutrality. Millions of people spoke out for the strong net neutrality rules we currently have because they protect us from Internet service providers like Comcast and Verizon that want to block, throttle, and charge us extra fees to access information equally online.</p>
+            <p>I support Title II net neutrality rules and I urge you to oppose the FCC’s plan to repeal them.</p>
+          </section>
         </section>
       </div>
     </div>

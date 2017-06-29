@@ -119,6 +119,7 @@ h2 {
   background-color: transparent;
   border: none;
   border-radius: 0.2rem;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1rem;
   font-weight: bold;
   color: #8887a1;
@@ -126,6 +127,7 @@ h2 {
 
 .modal form ::placeholder {
   color: #9399c7;
+  opacity: 1;
 }
 
 .modal input,

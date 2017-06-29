@@ -38,7 +38,7 @@ you can pass some properties in to customize the default behavior.
 <script type="text/javascript">
     var _bftn_options = {};
 </script>
-<script src="//widget.battleforthenet.com/widget.min.js" async></script>
+<script src="https://widget.battleforthenet.com/widget.js" async></script>
 ```
 
 MORE DETAILS COMING SOON

@@ -27,7 +27,10 @@
 
       // Always show the widget? Useful for testing.
       always_show_widget: true
-    }
+    };
+
+    var params = new URLSearchParams(window.location.search.substring(1));
+    if (!!params.get('theme')) _bftn_options.theme = params.get('theme');
   </script>
   <script type="text/javascript" src="../widget.js"></script>
   <!-- END WIDGET EMBED CODE -->

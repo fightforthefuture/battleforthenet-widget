@@ -389,6 +389,12 @@ body.slow #logos img {
   animation-timing-function: ease-out;
 }
 
+/* Disable animations if user prefers */
+@media (prefers-reduced-motion: reduce) {
+  body, .modal, body.slow #logos img {
+    animation: none;
+  }
+}
 
 /* Mobile */
 @media (max-width: 674px) {

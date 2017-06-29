@@ -6,17 +6,26 @@
 </head>
 
 <body>
-  <div class="gutter">
-    <div class="modal_container">
-      <div class="modal">
+  <div class="gutter table">
+    <div class="cell">
+      <div class="modal fade">
         <a id="close" href="#">X</a>
-        <header>
-          <div id="logos"></div>
-          <h1 id="headline"></h1>
-        </header>
-        <main>
+
+        <section id="loading" class="hidden invisible fade">
+          <div class="table">
+            <div class="cell">
+              <img src="images/slow.png">
+            </div>
+          </div>
+        </section>
+
+        <main id="main" class="fade">
+          <header>
+            <div id="logos"></div>
+            <h1 id="headline"></h1>
+          </header>
           <p id="content"></p>
-          <form method="post" action="https://queue.fightforthefuture.org/action" accept-charset="UTF-8">
+          <form id="form" method="post" action="https://queue.fightforthefuture.org/action" accept-charset="UTF-8">
             <input type="text" name="member[first_name]" placeholder="Full Name" title="Full Name" autocomplete="name" required>
             <input type="email" name="member[email]" placeholder="Email" title="Email" required>
             <input type="text" name="member[street_address]" placeholder="Street Address" title="Street Address" required>
@@ -27,11 +36,11 @@
             <button type="submit">Send Letter</button>
 
             <div class="disclaimer">
+              <p>This form will be transmitted to the FCC, which may post your name and address in a public database.</p>
               <p>
                 <input type="checkbox" name="opt_in" checked="checked" />
                 <span id="org"><a href="https://www.fightforthefuture.org/" target="_blank">Fight for the Future</a></span> will contact you about future campaigns. <a href="/privacy/" target="_blank">Privacy Policy</a>
               </p>
-              <p>The information submitted here will be transmitted to the FCC, which may post your name and street address in a searchable database.</p>
             </div>
 
             <!-- Mothership Honeypot Bot Defense -->
@@ -49,6 +58,18 @@
             <input type="hidden" name="an_petition_id" value="2ddb0663-1282-4b17-bb13-ee89cb92efc1"/>
           </form>
         </main>
+
+        <section id="call" class="hidden invisible fade">
+          <form id="form" method="post" action="https://call-congress.fightforthefuture.org/create" accept-charset="UTF-8">
+            <input type="phone" name="userPhone" placeholder="Phone" title="Phone" required>
+            <input type="hidden" name="campaignId" value="battleforthenet-2017">
+            <button type="submit">Call Now</button>
+
+            <div class="disclaimer">
+              <p>Your phone number will only be used to make this call.</p>
+            </div>
+          </form>
+        </section>
       </div>
     </div>
   </div>

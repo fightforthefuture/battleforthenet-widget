@@ -59,7 +59,7 @@
   }
 
   function setContent(content) {
-    document.body.className += (' ' + content.className);
+    document.body.classList.add(content.className);
 
     // Render logos
     var fragment = document.createDocumentFragment();
@@ -113,6 +113,56 @@
         animations[e.data.modalAnimation].init(e.data);
         break;
     }
+  });
+
+  function onError(e) {
+  }
+
+  var transitionTimer;
+
+  function onSuccess(e) {
+    if (transitionTimer) clearTimeout(transitionTimer);
+
+    if (e && e.code >= 400) return onError(e);
+
+    var loading = document.getElementById('loading');
+    loading.addEventListener('transitionend', showAfterAction);
+    loading.classList.add('invisible');
+
+    transitionTimer = setTimeout(showAfterAction, 500);
+  }
+
+  function showAfterAction(e) {
+    if (transitionTimer) clearTimeout(transitionTimer);
+
+    document.getElementById('call').classList.remove('hidden', 'invisible');
+    document.getElementById('main').classList.add('invisible', 'hidden');
+    document.getElementById('loading').classList.add('hidden');
+  }
+
+  // Handle form submission
+  var form = document.getElementById('form')
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var formData = new FormData('form');
+    var xhr = new XMLHttpRequest();
+
+    var loading = document.getElementById('loading');
+    loading.addEventListener('transitionend', onSuccess);
+    loading.classList.remove('hidden', 'invisible');
+
+    transitionTimer = setTimeout(onSuccess, 500);
+
+    document.getElementById('main').classList.add('invisible');
+
+    /*
+    xhr.addEventListener('error', onError);
+    xhr.addEventListener('complete', onSuccess);
+
+    xhr.open(form.getAttribute('method'), form.getAttribute('action'), true);
+    xhr.send(formData);
+    */
   });
 
   // Add close button listener.

@@ -1,6 +1,6 @@
 (function() {
   if (typeof _bftn_options == "undefined") _bftn_options = {};
-  if (typeof _bftn_options.iframe_base_path == "undefined") _bftn_options.iframe_base_path = 'https://fightforthefuture.github.io/battleforthenet-widget/iframe';
+  if (typeof _bftn_options.iframe_base_path == "undefined") _bftn_options.iframe_base_path = 'https://widget.battleforthenet.com/iframe';
   if (typeof _bftn_options.animation == "undefined") _bftn_options.animation = 'main';
   if (typeof _bftn_options.delay == "undefined") _bftn_options.delay = 0;
   if (typeof _bftn_options.debug == "undefined") _bftn_options.debug = false;

@@ -146,8 +146,9 @@
     e.preventDefault();
 
     // Prefill after-action call form
-    var phone = document.getElementById('phone').value
+    var phone = document.getElementById('phone').value;
     if (phone) document.getElementById('userPhone').value = phone;
+    document.getElementById('zipcode').value = document.getElementById('postcode').value;
 
     var formData = new FormData(form);
     var xhr = new XMLHttpRequest();

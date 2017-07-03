@@ -58,7 +58,7 @@ h2 {
   position: relative;
   margin: 0 auto;
   padding: 2rem;
-  width: 470px;
+  width: 476px;
   display: table;
   border-radius: 0.5rem;
   background-color: #0d0a24;
@@ -109,8 +109,7 @@ h2 {
 }
 
 .modal input,
-.modal textarea,
-.modal button {
+.modal textarea {
   padding: 0.6rem;
   background-color: transparent;
   border: none;
@@ -118,6 +117,10 @@ h2 {
   font-family: 'Open Sans', sans-serif;
   font-size: 0.9rem;
   color: #8887a1;
+}
+
+.modal input[type="checkbox"] {
+  min-width: 0;
 }
 
 .modal form ::placeholder {
@@ -163,8 +166,8 @@ h2 {
   max-width: 100%;
 }
 
-.modal button {
-  width: 100%;
+.modal input[type="submit"] {
+  min-width: 100%;
   padding: 1rem;
   background-color: #49c7ae;
   color: white;
@@ -172,6 +175,11 @@ h2 {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
+}
+
+
+.modal input[type="submit"]:hover {
+  cursor: pointer;
 }
 
 .modal .disclaimer {
@@ -233,16 +241,16 @@ body.without h1 {
   color: #279cff;
 }
 
-body.money .modal button {
+body.money .modal input[type="submit"] {
   background-color: #dea50a;
 }
 
-body.stop .modal button {
+body.stop .modal input[type="submit"] {
   background-color: #ff3232;
 }
 
-body.slow .modal button,
-body.without .modal button {
+body.slow .modal input[type="submit"],
+body.without .modal input[type="submit"] {
   background-color: #6679fc;
 }
 
@@ -287,6 +295,10 @@ body.slow #logos img {
   .modal input[name="member[first_name]"],
   .modal input[name="member[email]"] {
     min-width: 36%;
+  }
+
+  .modal input[name="member[street_address]"] {
+    min-width: 15%;
   }
 
   .modal input[name="member[phone]"] {

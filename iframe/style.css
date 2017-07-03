@@ -14,7 +14,7 @@ strong {
 }
 
 h1 {
-  margin: 1rem 0;
+  margin: 0 0 1rem;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 26px;
@@ -23,6 +23,11 @@ h1 {
 
 h2 {
   font-size: 18px;
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
 }
 
 .hidden {
@@ -55,9 +60,7 @@ h2 {
 }
 
 .modal {
-  position: relative;
   margin: 0 auto;
-  padding: 2rem;
   width: 476px;
   display: table;
   border-radius: 0.5rem;
@@ -65,15 +68,24 @@ h2 {
   box-shadow: 0px 3px 20px rgba(0, 0, 0, .4);
 }
 
+.modal main {
+  position: relative;
+  padding: 2rem 2rem 0.5rem;
+}
+
 .modal #close {
   position: absolute;
-  right: 1em;
-  top: 1em;
-  padding: 0 6px;
-  color: white;
+  right: 0.8rem;
+  top: 0.8rem;
   text-decoration: none;
-  border: 1px solid white;
-  border-radius: 100%;
+}
+
+.modal #close:hover {
+  cursor: pointer;
+}
+
+.modal #close img {
+  width: 1.4rem;
 }
 
 .modal #loading {
@@ -89,12 +101,13 @@ h2 {
 }
 
 .modal #logos {
+  margin-bottom: 1rem;
   text-align: center;
 }
 
 .modal #logos img {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   margin: 0 0.5rem;
 }
 
@@ -161,6 +174,11 @@ h2 {
   flex: 6;
 }
 
+.modal input[name="userPhone"] {
+  margin-right: 0.5rem;
+  flex: 3;
+}
+
 .modal textarea {
   min-width: 80%;
   max-width: 100%;
@@ -168,29 +186,39 @@ h2 {
 
 .modal input[type="submit"] {
   min-width: 100%;
+  margin-bottom: 0;
   padding: 1rem;
   background-color: #49c7ae;
   color: white;
   font-size: 1.2rem;
   font-weight: bold;
+  border: none;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
 }
-
 
 .modal input[type="submit"]:hover {
   cursor: pointer;
 }
 
+.modal .prompt input {
+  margin-bottom: 0;
+}
+
+.modal .prompt input[type="submit"] {
+  min-width: 0;
+  flex: 2;
+}
+
 .modal .disclaimer {
   width: 100%;
-  margin-top: 0.4rem;
+  margin: 0.5rem 0;
   color: #717093;
   font-size: 0.8rem;
 }
 
 .modal .disclaimer p {
-  margin: 0.2rem;
+  margin: 0.5rem 0;
 }
 
 .modal .disclaimer a {
@@ -202,8 +230,60 @@ h2 {
   text-decoration: underline;
 }
 
-#after-action h1 {
-  margin-top: 0;
+.modal footer {
+  padding: 0.5rem 2rem;
+  background-color: #141037;
+  border-radius: 0 0 0.5rem 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.modal footer.hidden {
+  display: none;
+}
+
+.modal footer h3 {
+  margin-right: 0.3rem;
+}
+
+.modal footer button {
+  height: 2rem;
+  margin-left: 0.5rem;
+  padding: 0 0.7rem;
+  border: none;
+  border-radius: 0.2rem;
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  flex: 1;
+  flex-basis: auto;
+}
+
+.modal footer button:hover {
+  cursor: pointer;
+}
+
+.modal footer button img {
+  height: 1rem;
+  margin-right: 0.4rem;
+}
+
+.modal footer button span {
+  line-height: 1.1rem;
+}
+
+.modal footer button.facebook {
+  background-color: #2b48a7;
+}
+
+.modal footer button.twitter {
+  background-color: #2c8be4;
+}
+
+.modal footer button.map {
+  background-color: #49418f;
 }
 
 #script p {

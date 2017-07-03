@@ -135,7 +135,7 @@
   function showAfterAction(e) {
     if (transitionTimer) clearTimeout(transitionTimer);
 
-    document.getElementById('after-action').classList.remove('hidden', 'invisible');
+    document.getElementById('prompt').classList.remove('invisible');
     document.getElementById('main').classList.add('invisible', 'hidden');
     document.getElementById('loading').classList.add('hidden');
   }
@@ -155,10 +155,12 @@
     var loading = document.getElementById('loading');
     loading.addEventListener('transitionend', onSuccess);
     loading.classList.remove('hidden', 'invisible');
+    document.getElementById('footer').classList.remove('hidden', 'invisible');
 
     transitionTimer = setTimeout(onSuccess, 500);
 
-    document.getElementById('main').classList.add('invisible');
+    document.getElementById('prompt').classList.remove('hidden');
+    document.getElementById('main').classList.add('hidden');
 
     /*
     xhr.addEventListener('error', onError);

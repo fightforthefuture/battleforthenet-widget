@@ -2,7 +2,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: rgba(0, 0, 0, .56);
+  background: rgba(9,6,36,.80);
   font-family: 'Open Sans', sans-serif;
   color: #cccaea;
   overflow-y: scroll;
@@ -17,7 +17,7 @@ h1 {
   margin: 1rem 0;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 26px;
   text-align: center;
 }
 
@@ -58,7 +58,7 @@ h2 {
   position: relative;
   margin: 0 auto;
   padding: 2rem;
-  width: 620px;
+  width: 470px;
   display: table;
   border-radius: 0.5rem;
   background-color: #0d0a24;
@@ -111,13 +111,12 @@ h2 {
 .modal input,
 .modal textarea,
 .modal button {
-  padding: 1rem;
+  padding: 0.6rem;
   background-color: transparent;
   border: none;
   border-radius: 0.2rem;
   font-family: 'Open Sans', sans-serif;
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 0.9rem;
   color: #8887a1;
 }
 
@@ -128,7 +127,7 @@ h2 {
 
 .modal input,
 .modal textarea {
-  min-width: 8%;
+  min-width: 9%;
   border: 1px solid #6679fc;
   color: #9399c7;
   margin-bottom: 0.5rem;
@@ -166,10 +165,13 @@ h2 {
 
 .modal button {
   width: 100%;
+  padding: 1rem;
   background-color: #49c7ae;
   color: white;
+  font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
+  letter-spacing: 0.1rem;
 }
 
 .modal .disclaimer {

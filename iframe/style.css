@@ -246,6 +246,10 @@ h3 {
   margin-right: 0.3rem;
 }
 
+.modal footer a {
+  text-decoration: none;
+}
+
 .modal footer button {
   height: 2rem;
   margin-left: 0.5rem;

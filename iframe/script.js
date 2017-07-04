@@ -1,4 +1,6 @@
 (function() {
+  var transitionTimer;
+
   function getOrganiztion(org) {
     switch(org) {
       case 'dp':
@@ -116,14 +118,14 @@
   });
 
   function onError(e) {
+    // TODO: Error handling
   }
-
-  var transitionTimer;
 
   function onSuccess(e) {
     if (transitionTimer) clearTimeout(transitionTimer);
 
-    if (e && e.code >= 400) return onError(e);
+    // TODO: Error handling
+    // if (e && e.code >= 400) return onError(e);
 
     var loading = document.getElementById('loading');
     loading.addEventListener('transitionend', showAfterAction);
@@ -150,26 +152,27 @@
     if (phone) document.getElementById('userPhone').value = phone;
     document.getElementById('zipcode').value = document.getElementById('postcode').value;
 
-    var formData = new FormData(form);
-    var xhr = new XMLHttpRequest();
-
-    var loading = document.getElementById('loading');
-    loading.addEventListener('transitionend', onSuccess);
-    loading.classList.remove('hidden', 'invisible');
     document.getElementById('footer').classList.remove('hidden', 'invisible');
-
-    transitionTimer = setTimeout(onSuccess, 500);
-
     document.getElementById('prompt').classList.remove('hidden');
     document.getElementById('main').classList.add('hidden');
 
-    /*
-    xhr.addEventListener('error', onError);
-    xhr.addEventListener('complete', onSuccess);
+    var loading = document.getElementById('loading');
+
+    // TODO: Add config option to skip real submit?
+    // loading.addEventListener('transitionend', onSuccess);
+    // transitionTimer = setTimeout(onSuccess, 500);
+
+    var formData = new FormData(form);
+    var xhr = new XMLHttpRequest();
+
+    // TODO: Error handling
+    xhr.addEventListener('error', onSuccess);
+    xhr.addEventListener('load', onSuccess);
 
     xhr.open(form.getAttribute('method'), form.getAttribute('action'), true);
     xhr.send(formData);
-    */
+
+    loading.classList.remove('hidden', 'invisible');
   });
 
   function showCallScript(e) {

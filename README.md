@@ -36,7 +36,9 @@ you can pass some properties in to customize the default behavior.
 
 ```html
 <script type="text/javascript">
-    var _bftn_options = {};
+    var _bftn_options = {
+        theme: 'slow' // Choose from 'money', 'stop', and 'slow'. Remove this property to get the default theme.
+};
 </script>
 <script src="https://widget.battleforthenet.com/widget.js" async></script>
 ```

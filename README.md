@@ -52,6 +52,12 @@ you can pass some properties in to customize the default behavior.
     org: 'fftf',
 
     /*
+     * Specify a delay (in milliseconds) before showing the widget. Defaults to one 
+     * second.
+     */
+    delay: 1000,
+
+    /*
      * Specify a date on which to display the widget. Defaults to July 12th, 2017 if 
      * omitted. Useful for testing.
      */

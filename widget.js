@@ -2,7 +2,7 @@
   if (typeof _bftn_options == "undefined") _bftn_options = {};
   if (typeof _bftn_options.iframe_base_path == "undefined") _bftn_options.iframe_base_path = 'https://widget.battleforthenet.com/iframe';
   if (typeof _bftn_options.animation == "undefined") _bftn_options.animation = 'main';
-  if (typeof _bftn_options.delay == "undefined") _bftn_options.delay = 0;
+  if (typeof _bftn_options.delay == "undefined") _bftn_options.delay = 1000;
   if (typeof _bftn_options.debug == "undefined") _bftn_options.debug = false;
   if (typeof _bftn_options.date == "undefined") _bftn_options.date = new Date('2017-07-12');
   if (typeof _bftn_options.always_show_widget == "undefined") _bftn_options.always_show_widget = false;

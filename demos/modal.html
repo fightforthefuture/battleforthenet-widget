@@ -26,9 +26,34 @@
       always_show_widget: true
     };
 
-    var params = new URLSearchParams(window.location.search.substring(1));
-    if (!!params.get('theme')) _bftn_options.theme = params.get('theme');
-    if (!!params.get('org')) _bftn_options.org = params.get('org');
+    var paramKeys = ['theme', 'org'];
+    var paramString = window.location.search.substring(1);
+    var params;
+    var paramKey;
+
+    // IE/Edge does not support `URLSearchParams`
+    if (typeof URLSearchParams === 'function') {
+      params = new URLSearchParams(paramString);
+
+      for (var i = 0; i < paramKeys.length; i++) {
+        paramKey = paramKeys[i];
+
+        if (!!params.get(paramKey)) {
+          _bftn_options[paramKey] = params.get(paramKey);
+        }
+      }
+    } else {
+      params = paramString.split('&');
+
+      for (var i = 0; i < params.length; i++) {
+        var paramSplit = params[i].split('=');
+        paramKey = paramSplit[0];
+
+        if (paramKeys.indexOf(paramKey) != -1) {
+          _bftn_options[paramKey] = paramSplit[1];
+        }
+      }
+    }
   </script>
   <script type="text/javascript" src="../widget.js"></script>
   <!-- END WIDGET EMBED CODE -->

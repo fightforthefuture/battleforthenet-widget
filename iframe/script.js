@@ -1,33 +1,41 @@
 (function() {
   var transitionTimer;
 
-  function getOrganiztion(org) {
-    switch(org) {
-      case 'dp':
-        return {
-          code: 'dp',
-          name: 'Demand Progress',
-          url: 'https://demandprogress.org/'
-        };
-      case 'fp':
-        return {
-          code: 'fp',
-          name: 'Free Press',
-          url: 'https://www.freepress.net/'
-        };
-      case 'fftf':
-      default:
-        return {
-          code: 'fftf',
-          name: 'Fight for the Future',
-          url: 'https://www.fightforthefuture.org/'
-        };
+  function getOrg(org) {
+    function getRandomOrg() {
+      var coinToss = Math.random();
+
+      if (coinToss < .20) {
+        return 'fp';
+      } else if (coinToss < .60) {
+        return 'dp';
+      } else {
+        return 'fftf';
+      }
     }
+
+    var orgs = {
+      'dp': {
+        code: 'dp',
+        name: 'Demand Progress',
+        url: 'https://demandprogress.org/'
+      },
+      'fp': {
+        code: 'fp',
+        name: 'Free Press',
+        url: 'https://www.freepress.net/'
+      },
+      'fftf': {
+        code: 'fftf',
+        name: 'Fight for the Future',
+        url: 'https://www.fightforthefuture.org/'
+      }
+    };
+
+    return orgs.hasOwnProperty(org) ? orgs[org] : orgs[getRandomOrg()];
   }
 
-  function getTheme(options) {
-    var theme = options.theme;
-
+  function getTheme(theme) {
     switch(theme) {
       case 'money':
         return {
@@ -60,24 +68,52 @@
     }
   }
 
-  function setContent(content) {
-    document.body.classList.add(content.className);
+  function renderContent(theme) {
+    document.body.classList.add(theme.className);
 
     // Render logos
     var fragment = document.createDocumentFragment();
     var img;
 
-    for (var i = 0; i < content.logos.length; i++) {
+    for (var i = 0; i < theme.logos.length; i++) {
       img = document.createElement('img');
-      img.setAttribute('src', content.logos[i]);
+      img.setAttribute('src', theme.logos[i]);
       fragment.appendChild(img);
     }
 
     document.getElementById('logos').appendChild(fragment);
 
     // Render headline and body copy
-    document.getElementById('headline').textContent = content.headline;
-    document.getElementById('content').innerText = content.body;
+    document.getElementById('headline').textContent = theme.headline;
+    document.getElementById('content').innerText = theme.body;
+  }
+
+  function renderDisclaimer(org) {
+    var fragment = document.createDocumentFragment();
+
+    var orgInput = document.createElement('input');
+    orgInput.setAttribute('type', 'hidden');
+    orgInput.setAttribute('name', 'org');
+    orgInput.setAttribute('value', org.code);
+    fragment.appendChild(orgInput);
+
+    var checkbox = document.createElement('input');
+    checkbox.setAttribute('type', 'checkbox');
+    checkbox.setAttribute('name', 'opt_in');
+    checkbox.setAttribute('checked', 'checked');
+    fragment.appendChild(checkbox);
+
+    var orgLink = document.createElement('a');
+    orgLink.setAttribute('href', org.url);
+    orgLink.setAttribute('target', '_blank');
+    orgLink.textContent = org.name;
+    fragment.appendChild(orgLink);
+
+    var disclaimer = document.createElement('span');
+    disclaimer.textContent = ' will contact you about future campaigns.';
+    fragment.appendChild(disclaimer);
+
+    document.getElementById('rotation').appendChild(fragment);
   }
 
   function sendMessage(requestType, data) {
@@ -94,8 +130,10 @@
       },
       init: function(options) {
         for (var k in options) this.options[k] = options[k];
-        setContent(getTheme(this.options));
-        this.log('BFTN ANIMATION STARTING');
+
+        renderContent(getTheme(this.options.theme));
+        renderDisclaimer(getOrg(this.options.org));
+
         return this;
       },
       log: function() {

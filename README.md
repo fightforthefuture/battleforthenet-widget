@@ -37,7 +37,9 @@ you can pass some properties in to customize the default behavior.
 ```html
 <script type="text/javascript">
     var _bftn_options = {
-        theme: 'slow' // Choose from 'money', 'stop', and 'slow'. Remove this property to get the default theme.
+        theme: 'slow', // Choose from 'money', 'stop', and 'slow'. Omit this property to get the default theme.
+
+        org: 'fftf' // Choose from 'fp' for Free Press, 'dp' for Demand Progress or 'fftf' for Fight for the Future. Omit this property to randomly split traffic between all organizations in the Battle for the Net coalition.
 };
 </script>
 <script src="https://widget.battleforthenet.com/widget.js" async></script>

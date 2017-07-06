@@ -37,10 +37,11 @@
 
               <div class="disclaimer">
                 <p>This form will be transmitted to the FCC, which may post your name and address in a public database.</p>
-                <p>
-                  <input type="checkbox" name="opt_in" checked="checked" />
-                  <span id="org"><a href="https://www.fightforthefuture.org/" target="_blank">Fight for the Future</a></span> will contact you about future campaigns. <a href="https://www.battleforthenet.com/privacy/" target="_blank">Privacy Policy</a>. <a href="https://widget.battleforthenet.com/">Get this modal</a>. <a href="https://github.com/fightforthefuture/battleforthenet-widget/issues">Issues?</a> 
-                </p>
+
+                <!-- Content set in renderDisclaimer() -->
+                <p id="rotation"></p>
+
+                <p><a href="https://www.battleforthenet.com/privacy/" target="_blank">Privacy Policy</a> | <a href="https://github.com/fightforthefuture/battleforthenet-widget#how-to-install-the-widget">Get the Code</a> | <a href="https://github.com/fightforthefuture/battleforthenet-widget/issues">Issues?</a></p>
               </div>
 
               <!-- Mothership Honeypot Bot Defense -->
@@ -51,7 +52,6 @@
               <!-- Mothership -->
               <input type="hidden" name="contact_congress" value="1"/>
               <input type="hidden" name="fcc_ecfs_docket" value="17-108"/>
-              <input type="hidden" name="org" value="fftf"/>
 
               <!-- Action Network -->
               <input type="hidden" name="an_tags" value="[&quot;net-neutrality&quot;]"/>

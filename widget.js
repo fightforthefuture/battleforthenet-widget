@@ -4,6 +4,7 @@
   if (typeof _bftn_options.animation == "undefined") _bftn_options.animation = 'main';
   if (typeof _bftn_options.delay == "undefined") _bftn_options.delay = 0;
   if (typeof _bftn_options.debug == "undefined") _bftn_options.debug = false;
+  if (typeof _bftn_options.date == "undefined") _bftn_options.date = new Date('2017-07-12');
   if (typeof _bftn_options.always_show_widget == "undefined") _bftn_options.always_show_widget = false;
 
   var _bftn_animations = {
@@ -141,10 +142,11 @@
       // Only show once.
       if (_bftn_util.getCookie('_BFTN_WIDGET_SHOWN')) return;
 
-      // Only show on July 12th, 2017.
-      var date = new Date();
-      var dateString = date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + date.getDate();
-      if (dateString !== '2017/7/12') {
+      // Only show on configured date.
+      var today = new Date();
+      if (today.getFullYear() !== _bftn_options.date.getFullYear() ||
+          today.getMonth() !== _bftn_options.date.getMonth() ||
+          today.getDate() !== _bftn_options.date.getDate()) {
           return;
       }
     }

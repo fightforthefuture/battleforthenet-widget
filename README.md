@@ -49,7 +49,18 @@ you can pass some properties in to customize the default behavior.
      * form submissions between all organizations in the Battle for the Net 
      * coalition.
      */
-    org: 'fftf'
+    org: 'fftf',
+
+    /*
+     * Specify a date on which to display the widget. Defaults to July 12th, 2017 if 
+     * omitted. Useful for testing.
+     */
+    date: new Date('2017-07-12'),
+
+    /*
+     * Always show the widget. Useful for testing.
+     */
+    always_show_widget: true
   };
 </script>
 <script src="https://widget.battleforthenet.com/widget.js" async></script>

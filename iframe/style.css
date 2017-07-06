@@ -231,6 +231,13 @@ h3 {
   text-decoration: underline;
 }
 
+.modal .disclaimer .github {
+  max-width: 0.8rem;
+  margin-left: 0.2rem;
+  padding-bottom: 0.2rem;
+  vertical-align: middle;
+}
+
 .modal footer {
   padding: 0.5rem 2rem;
   background-color: #141037;

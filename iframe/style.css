@@ -9,6 +9,11 @@ body {
   text-align: center;
 }
 
+main {
+  /* IE11 doesn't know that `main` HTML element is a block element. */
+  display: block;
+}
+
 strong {
   color: #fff;
 }
@@ -31,7 +36,7 @@ h3 {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .invisible {
@@ -244,10 +249,6 @@ h3 {
   border-radius: 0 0 0.5rem 0.5rem;
   display: flex;
   align-items: center;
-}
-
-.modal footer.hidden {
-  display: none;
 }
 
 .modal footer h3 {

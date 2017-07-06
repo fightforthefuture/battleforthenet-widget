@@ -43,6 +43,7 @@
         }
       }
     } else {
+      // IE11 and Edge do not support `URLSearchParams`
       params = paramString.split('&');
 
       for (var i = 0; i < params.length; i++) {

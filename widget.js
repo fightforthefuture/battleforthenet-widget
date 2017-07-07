@@ -4,7 +4,7 @@
   if (typeof _bftn_options.animation == "undefined") _bftn_options.animation = 'main';
   if (typeof _bftn_options.delay == "undefined") _bftn_options.delay = 1000;
   if (typeof _bftn_options.debug == "undefined") _bftn_options.debug = false;
-  if (typeof _bftn_options.date == "undefined") _bftn_options.date = new Date('2017-07-12');
+  if (typeof _bftn_options.date == "undefined") _bftn_options.date = new Date(2017, 6 /* Zero-based month */, 12);
   if (typeof _bftn_options.always_show_widget == "undefined") _bftn_options.always_show_widget = false;
 
   var _bftn_animations = {

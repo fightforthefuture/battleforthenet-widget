@@ -328,10 +328,16 @@ body.stop h1 {
 
 body.slow h1,
 body.without h1 {
-  background: linear-gradient(#39ebfd, #6b74fb);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   color: #279cff;
+}
+
+@supports(-webkit-background-clip: text) {
+  body.slow h1,
+  body.without h1 {
+    background: linear-gradient(#39ebfd, #6b74fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 body.money .modal input[type="submit"] {

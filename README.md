@@ -9,12 +9,14 @@ Add this to any page, and you're golden: ([**See the demo!**](https://widget.bat
 The goal of this project is to allow anyone with a web site to run their own campaign to save net neutrality. Simply add one line of JavaScript and you're good to go! The modal animation will show up front-and-center on your page, prompting
 visitors to contact Congress and the FCC.
 
+**NOTE: By default, the widget will not display until midnight July 12. If you'd like to deploy it on your site before then, just set a different date (the current date) using the method below.**
+
 If you have any problems or questions regarding the widget, please [submit an issue](https://github.com/fightforthefuture/battleforthenet-widget/issues).
 
 
 # How it works
 
-The widget is designed to only appear on July 12, 2017, and only once, per user, per device. If you'd like to force it to show up on your page for testing, please reload the page with `#ALWAYS_SHOW_BFTN_WIDGET` at the end of the URL.
+The widget is designed to appear on July 12, 2017, and only once, per user, per device. If you'd like to force it to show up on your page for testing, please reload the page with `#ALWAYS_SHOW_BFTN_WIDGET` at the end of the URL.
 
 Please take a look at [**widget.js**](https://github.com/fightforthefuture/battleforthenet-widget/blob/master/widget.js) if you want to see exactly what you'll
 be embedding on your page.

@@ -187,9 +187,13 @@
     e.preventDefault();
 
     // Prefill after-action call form
-    var phone = document.getElementById('phone').value;
-    if (phone) document.getElementById('userPhone').value = phone;
-    document.getElementById('zipcode').value = document.getElementById('postcode').value;
+    var userPhone = document.getElementById('userPhone');
+    var phone = document.getElementById('phone');
+    if (userPhone && phone && phone.value) userPhone.value = phone.value;
+
+    var zipcode = document.getElementById('zipcode');
+    var postcode = document.getElementById('postcode');
+    if (zipcode && postcode && postcode.value) zipcode.value = postcode.value;
 
     document.getElementById('footer').classList.remove('hidden');
     document.getElementById('footer').classList.remove('invisible');

@@ -195,10 +195,17 @@
     var postcode = document.getElementById('postcode');
     if (zipcode && postcode && postcode.value) zipcode.value = postcode.value;
 
-    document.getElementById('footer').classList.remove('hidden');
-    document.getElementById('footer').classList.remove('invisible');
-    document.getElementById('prompt').classList.remove('hidden');
-    document.getElementById('main').classList.add('hidden');
+    var footer = document.getElementById('footer');
+    if (footer) {
+      footer.classList.remove('hidden');
+      footer.classList.remove('invisible');
+    }
+
+    var callPrompt = document.getElementById('prompt');
+    if (callPrompt) callPrompt.classList.remove('hidden');
+
+    var main = document.getElementById('main');
+    if (main) main.classList.add('hidden');
 
     var loading = document.getElementById('loading');
 
@@ -216,8 +223,10 @@
     xhr.open(form.getAttribute('method'), form.getAttribute('action'), true);
     xhr.send(formData);
 
-    loading.classList.remove('hidden');
-    loading.classList.remove('invisible');
+    if (loading) {
+      loading.classList.remove('hidden');
+      loading.classList.remove('invisible');
+    }
   });
 
   function showCallScript(e) {

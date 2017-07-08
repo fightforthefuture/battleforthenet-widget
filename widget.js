@@ -37,18 +37,21 @@
     },
 
     createIframe: function() {
+      var wrapper = document.createElement('div');
+      wrapper.id = '_bftn_wrapper';
       var iframe = document.createElement('iframe');
       iframe.id = '_bftn_iframe';
       iframe.src = _bftn_options.iframe_base_path + '/iframe.html';
       iframe.frameBorder = 0;
       iframe.allowTransparency = true; 
       iframe.style.display = 'none';
-      document.body.appendChild(iframe);
-      return iframe;
+      wrapper.appendChild(iframe);
+      document.body.appendChild(wrapper);
+      return wrapper;
     },
 
     destroyIframe: function() {
-      var iframe = document.getElementById('_bftn_iframe');
+      var iframe = document.getElementById('_bftn_wrapper');
       iframe.parentNode.removeChild(iframe);
     },
 
@@ -153,7 +156,7 @@
 
     _bftn_util.setCookie('_BFTN_WIDGET_SHOWN', 'true', 365);
 
-    _bftn_util.injectCSS('_bftn_iframe_css', '#_bftn_iframe { position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 20000; }');
+    _bftn_util.injectCSS('_bftn_iframe_css', '#_bftn_wrapper { position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 20000; -webkit-overflow-scrolling: touch; overflow-y: scroll; } #_bftn_iframe { width: 100%; height: 100%;  }');
 
     // Preload images before showing the animation
     // preload();

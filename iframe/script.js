@@ -1,6 +1,11 @@
 (function() {
   var transitionTimer;
 
+  var loading = document.getElementById('loading');
+  var main = document.getElementById('main');
+  var callPrompt = document.getElementById('prompt');
+  var callScript = document.getElementById('script');
+
   function getOrg(org) {
     function getRandomOrg() {
       var coinToss = Math.random();
@@ -165,9 +170,10 @@
     // TODO: Error handling
     // if (e && e.code >= 400) return onError(e);
 
-    var loading = document.getElementById('loading');
-    loading.addEventListener('transitionend', showAfterAction);
-    loading.classList.add('invisible');
+    if (loading) {
+      loading.addEventListener('transitionend', showAfterAction);
+      loading.classList.add('invisible');
+    }
 
     transitionTimer = setTimeout(showAfterAction, 500);
   }
@@ -175,15 +181,19 @@
   function showAfterAction(e) {
     if (transitionTimer) clearTimeout(transitionTimer);
 
-    document.getElementById('prompt').classList.remove('invisible');
-    document.getElementById('main').classList.add('invisible');
-    document.getElementById('main').classList.add('hidden');
-    document.getElementById('loading').classList.add('hidden');
+    if (callPrompt) callPrompt.classList.remove('invisible');
+
+    if (main) {
+      main.classList.add('invisible');
+      main.classList.add('hidden');
+    }
+
+    if (loading) loading.classList.add('hidden');
   }
 
   // Handle form submission
-  var form = document.getElementById('form')
-  form.addEventListener('submit', function(e) {
+  var form = document.getElementById('form');
+  form.addEventListener('submit', function submitForm(e) {
     e.preventDefault();
 
     // Prefill after-action call form
@@ -201,13 +211,8 @@
       footer.classList.remove('invisible');
     }
 
-    var callPrompt = document.getElementById('prompt');
     if (callPrompt) callPrompt.classList.remove('hidden');
-
-    var main = document.getElementById('main');
     if (main) main.classList.add('hidden');
-
-    var loading = document.getElementById('loading');
 
     // TODO: Add config option to skip real submit?
     // loading.addEventListener('transitionend', onSuccess);
@@ -232,37 +237,46 @@
   function showCallScript(e) {
     if (transitionTimer) clearTimeout(transitionTimer);
 
-    document.getElementById('script').classList.remove('hidden');
-    document.getElementById('script').classList.remove('invisible');
-    document.getElementById('prompt').classList.add('invisible');
-    document.getElementById('prompt').classList.add('hidden');
-    document.getElementById('loading').classList.add('hidden');
+    if (callScript) {
+      callScript.classList.remove('hidden');
+      callScript.classList.remove('invisible');
+    }
+
+    if (callPrompt) {
+      callPrompt.classList.add('invisible');
+      callPrompt.classList.add('hidden');
+    }
+
+    if (loading) loading.classList.add('hidden');
   }
 
   function onCall(e) {
     if (transitionTimer) clearTimeout(transitionTimer);
 
-    var loading = document.getElementById('loading');
-    loading.addEventListener('transitionend', showCallScript);
-    loading.classList.add('invisible');
+    if (loading) {
+      loading.addEventListener('transitionend', showCallScript);
+      loading.classList.add('invisible');
+    }
 
     transitionTimer = setTimeout(showCallScript, 500);
   }
 
-  var call = document.getElementById('call')
-  call.addEventListener('submit', function(e) {
+  var call = document.getElementById('call');
+  call.addEventListener('submit', function submitCall(e) {
     e.preventDefault();
 
     var formData = new FormData(call);
     var xhr = new XMLHttpRequest();
 
-    var loading = document.getElementById('loading');
-    loading.addEventListener('transitionend', onCall);
-    transitionTimer = setTimeout(onCall, 500);
-    loading.classList.remove('hidden');
-    loading.classList.remove('invisible');
+    if (loading) {
+      loading.addEventListener('transitionend', onCall);
+      loading.classList.remove('hidden');
+      loading.classList.remove('invisible');
+    }
 
-    document.getElementById('prompt').classList.add('invisible');
+    transitionTimer = setTimeout(onCall, 500);
+
+    if (callPrompt) callPrompt.classList.add('invisible');
 
     xhr.open(call.getAttribute('method'), call.getAttribute('action'), true);
     xhr.send(formData);

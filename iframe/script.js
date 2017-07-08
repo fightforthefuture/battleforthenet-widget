@@ -176,7 +176,8 @@
     if (transitionTimer) clearTimeout(transitionTimer);
 
     document.getElementById('prompt').classList.remove('invisible');
-    document.getElementById('main').classList.add('invisible', 'hidden');
+    document.getElementById('main').classList.add('invisible');
+    document.getElementById('main').classList.add('hidden');
     document.getElementById('loading').classList.add('hidden');
   }
 
@@ -190,7 +191,8 @@
     if (phone) document.getElementById('userPhone').value = phone;
     document.getElementById('zipcode').value = document.getElementById('postcode').value;
 
-    document.getElementById('footer').classList.remove('hidden', 'invisible');
+    document.getElementById('footer').classList.remove('hidden');
+    document.getElementById('footer').classList.remove('invisible');
     document.getElementById('prompt').classList.remove('hidden');
     document.getElementById('main').classList.add('hidden');
 
@@ -210,14 +212,17 @@
     xhr.open(form.getAttribute('method'), form.getAttribute('action'), true);
     xhr.send(formData);
 
-    loading.classList.remove('hidden', 'invisible');
+    loading.classList.remove('hidden');
+    loading.classList.remove('invisible');
   });
 
   function showCallScript(e) {
     if (transitionTimer) clearTimeout(transitionTimer);
 
-    document.getElementById('script').classList.remove('hidden', 'invisible');
-    document.getElementById('prompt').classList.add('invisible', 'hidden');
+    document.getElementById('script').classList.remove('hidden');
+    document.getElementById('script').classList.remove('invisible');
+    document.getElementById('prompt').classList.add('invisible');
+    document.getElementById('prompt').classList.add('hidden');
     document.getElementById('loading').classList.add('hidden');
   }
 
@@ -241,7 +246,8 @@
     var loading = document.getElementById('loading');
     loading.addEventListener('transitionend', onCall);
     transitionTimer = setTimeout(onCall, 500);
-    loading.classList.remove('hidden', 'invisible');
+    loading.classList.remove('hidden');
+    loading.classList.remove('invisible');
 
     document.getElementById('prompt').classList.add('invisible');
 

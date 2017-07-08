@@ -61,9 +61,10 @@ you can pass some properties in to customize the default behavior.
 
     /*
      * Specify a date on which to display the widget. Defaults to July 12th, 2017 if 
-     * omitted. Useful for testing.
+     * omitted. ISO-8601 dates are UTC time, three-argument dates (with a zero-based
+     * month) are local time.
      */
-    date: new Date('2017-07-12'),
+    date: new Date(2017, 6, 12),
 
     /*
      * Always show the widget. Useful for testing.

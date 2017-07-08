@@ -218,7 +218,7 @@
     // loading.addEventListener('transitionend', onSuccess);
     // transitionTimer = setTimeout(onSuccess, 500);
 
-    document.getElementById('referrer').value = document.referrer;
+    document.getElementById('source').value = document.referrer;
 
     var formData = new FormData(form);
     var xhr = new XMLHttpRequest();

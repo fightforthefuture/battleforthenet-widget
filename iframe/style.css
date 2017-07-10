@@ -32,7 +32,8 @@ h2 {
 
 h3 {
   font-family: 'Montserrat', sans-serif;
-  font-weight: normal;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
 .hidden {
@@ -66,14 +67,14 @@ h3 {
 
 .modal {
   margin: 0 auto;
-  width: 476px;
+  width: 520px;
   display: table;
   border-radius: 0.5rem;
   background-color: #0d0a24;
   box-shadow: 0px 3px 20px rgba(0, 0, 0, .4);
 }
 
-.modal main {
+.modal > main {
   position: relative;
   padding: 2rem 2rem 0.5rem;
 }
@@ -247,15 +248,32 @@ h3 {
 }
 
 .modal footer {
-  padding: 0.5rem 2rem;
+  padding: 1rem 2rem;
   background-color: #141037;
   border-radius: 0 0 0.5rem 0.5rem;
-  display: flex;
-  align-items: center;
 }
 
 .modal footer h3 {
-  margin-right: 0.3rem;
+  margin: 0 0 1rem;
+  color: #908dc4;
+  text-align: left;
+}
+
+.modal footer ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: left;
+  list-style-type: none;
+}
+
+.modal footer li {
+  margin-left: 0.5rem;
+  flex: 1 0 auto;
+}
+
+.modal footer li:first-child {
+  margin-left: 0;
 }
 
 .modal footer a {
@@ -263,17 +281,20 @@ h3 {
 }
 
 .modal footer button {
+  width: 100%;
   height: 2rem;
-  margin-left: 0.5rem;
   padding: 0 0.6rem;
-  border: none;
+  background: transparent;
+  border: 1px solid #3d459a;
   border-radius: 0.2rem;
   color: #fff;
   font-size: 0.6rem;
   font-weight: bold;
   text-transform: uppercase;
   display: flex;
-  flex: 1 0 auto;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
   line-height: 2rem;
 }
 
@@ -282,22 +303,19 @@ h3 {
 }
 
 .modal footer button img {
-  width: 1rem;
-  height: 1rem;
-  margin-top: 0.4rem;
-  margin-right: 0.4rem;
+  max-width: 1rem;
+  max-height: 1rem;
+  margin-right: 0.5rem;
 }
 
 .modal footer button.facebook {
   background-color: #2b48a7;
+  border: none;
 }
 
 .modal footer button.twitter {
   background-color: #2c8be4;
-}
-
-.modal footer button.map {
-  background-color: #49418f;
+  border: none;
 }
 
 #script p {

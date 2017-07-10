@@ -23,17 +23,20 @@
       'dp': {
         code: 'dp',
         name: 'Demand Progress',
-        url: 'https://demandprogress.org/'
+        url: 'https://demandprogress.org/',
+        donate: 'https://secure.actblue.com/contribute/page/demanding'
       },
       'fp': {
         code: 'fp',
         name: 'Free Press',
-        url: 'https://www.freepress.net/'
+        url: 'https://www.freepress.net/',
+        donate: 'https://freepress.actionkit.com/donate/single/'
       },
       'fftf': {
         code: 'fftf',
         name: 'Fight for the Future',
-        url: 'https://www.fightforthefuture.org/'
+        url: 'https://www.fightforthefuture.org/',
+        donate: 'https://donate.fightforthefuture.org/'
       }
     };
 
@@ -93,7 +96,7 @@
     document.getElementById('content').innerText = theme.body;
   }
 
-  function renderDisclaimer(org) {
+  function renderOrgRotation(org) {
     var fragment = document.createDocumentFragment();
 
     var orgInput = document.createElement('input');
@@ -119,6 +122,9 @@
     fragment.appendChild(disclaimer);
 
     document.getElementById('rotation').appendChild(fragment);
+
+    var donate = document.getElementById('donate');
+    if (org.donate) donate.setAttribute('href', org.donate);
   }
 
   function sendMessage(requestType, data) {
@@ -137,7 +143,7 @@
         for (var k in options) this.options[k] = options[k];
 
         renderContent(getTheme(this.options.theme));
-        renderDisclaimer(getOrg(this.options.org));
+        renderOrgRotation(getOrg(this.options.org));
 
         return this;
       },

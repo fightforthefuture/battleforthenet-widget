@@ -111,7 +111,17 @@
 
     // Render headline and body copy
     document.getElementById('headline').textContent = theme.headline;
-    document.getElementById('content').innerText = theme.body;
+
+    var bodyFragment = document.createDocumentFragment();
+    bodyFragment.textContent = theme.body + ' ';
+
+    var learnMore = document.createElement('a');
+    learnMore.setAttribute('href', 'https://www.battleforthenet.com/#widget-learn-more');
+    learnMore.setAttribute('target', '_blank');
+    learnMore.textContent = 'Learn more.';
+    bodyFragment.appendChild(learnMore);
+
+    document.getElementById('content').appendChild(bodyFragment);
   }
 
   function renderOrgRotation(org) {

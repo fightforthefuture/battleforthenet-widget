@@ -207,9 +207,15 @@
     var phone = document.getElementById('phone');
     if (userPhone && phone && phone.value) userPhone.value = phone.value;
 
-    var zipcode = document.getElementById('zipcode');
     var postcode = document.getElementById('postcode');
-    if (zipcode && postcode && postcode.value) zipcode.value = postcode.value;
+
+    var protest = document.getElementById('protest');
+    if (postcode && postcode.value) {
+      protest.setAttribute('href', [protest.href, '?zipcode=', postcode.value].join(''));
+    }
+
+    var zipcode = document.getElementById('zipcode');
+    if (postcode && postcode.value && zipcode) zipcode.value = postcode.value;
 
     var footer = document.getElementById('footer');
     if (footer) {

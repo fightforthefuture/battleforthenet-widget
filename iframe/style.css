@@ -36,6 +36,11 @@ h3 {
   text-transform: uppercase;
 }
 
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .hidden {
   display: none !important;
 }
@@ -128,34 +133,32 @@ h3 {
   flex-wrap: wrap;
 }
 
-.modal input,
-.modal textarea {
-  padding: 0.6rem;
-  background-color: transparent;
-  border: none;
-  border-radius: 0.2rem;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 0.9rem;
-  color: #8887a1;
-}
-
-.modal input[type="checkbox"] {
-  min-width: 0;
-  margin: 0 0.5rem 0 0;
-}
-
 .modal form ::placeholder {
   color: #9399c7;
   opacity: 1;
 }
 
+.modal form .flex {
+  max-width: 50%;
+}
+
 .modal input,
 .modal textarea {
   min-width: 9%;
-  border: 1px solid #6679fc;
-  color: #9399c7;
   margin-bottom: 0.5rem;
+  padding: 0.6rem;
+  color: #9399c7;
+  background-color: transparent;
+  border: 1px solid #6679fc;
+  border-radius: 0.2rem;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
   flex: 1;
+}
+
+.modal input[type="checkbox"] {
+  min-width: 0;
+  margin: 0 0.5rem 0 0;
 }
 
 .modal input[name="member[first_name]"],
@@ -174,12 +177,16 @@ h3 {
 
 .modal input[name="member[street_address]"] {
   margin-right: 0.5rem;
-  flex: 4;
+  flex: 3;
+}
+
+.modal input[name="member[postcode]"] {
+  margin-right: 0.25rem;
+  flex: 2;
 }
 
 .modal input[name="member[phone]"] {
-  margin-left: 0.5rem;
-  flex: 6;
+  margin-left: 0.25rem;
 }
 
 .modal input[name="userPhone"] {
@@ -421,6 +428,11 @@ body.slow #logos img {
     max-width: 100%;
   }
 
+  .modal form .flex {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
   .modal input[name="member[first_name]"],
   .modal input[name="member[email]"] {
     min-width: 36%;
@@ -428,6 +440,10 @@ body.slow #logos img {
 
   .modal input[name="member[street_address]"] {
     min-width: 15%;
+  }
+
+  .modal input[name="member[postcode]"] {
+    margin-right: 0;
   }
 
   .modal input[name="member[phone]"] {

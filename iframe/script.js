@@ -136,7 +136,7 @@
     fragment.appendChild(orgLink);
 
     var disclaimer = document.createElement('span');
-    disclaimer.textContent = ' will contact you about future campaigns.';
+    disclaimer.textContent = ' will contact you about future campaigns. FCC comments are public records.';
     fragment.appendChild(disclaimer);
 
     document.getElementById('rotation').appendChild(fragment);

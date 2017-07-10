@@ -147,7 +147,9 @@ a:hover {
 }
 
 .modal form .flex {
+  min-width: 50%;
   max-width: 50%;
+  flex: 1;
 }
 
 .modal input,
@@ -203,7 +205,7 @@ a:hover {
 }
 
 .modal textarea {
-  min-width: 80%;
+  min-width: 90%;
   max-width: 100%;
 }
 
@@ -219,6 +221,7 @@ a:hover {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   -webkit-appearance: none;
+  flex: 1;
 }
 
 .modal input[type="submit"]:hover {

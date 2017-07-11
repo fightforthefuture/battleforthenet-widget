@@ -204,7 +204,7 @@
           addCloseListeners();
         }
 
-        if (!this.options.disableGoogleAnalytics) initGoogleAnalytics();
+        if (!(this.options.disableGoogleAnalytics || navigator.doNotTrack)) initGoogleAnalytics();
 
         return this;
       },

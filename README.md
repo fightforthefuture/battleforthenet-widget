@@ -6,6 +6,8 @@ Add this to any page, and you're golden: ([**See the demo!**](https://widget.bat
 <script src="https://widget.battleforthenet.com/widget.js" async></script>
 ```
 
+Or, follow these [easy instructions for Tumblr](http://tumblr.fightforthefuture.org/post/162878793988/how-to-stand-up-for-netneutrality-on-tumblr).
+
 The goal of this project is to allow anyone with a web site to run their own campaign to save net neutrality. Simply add one line of JavaScript and you're good to go! The modal animation will show up front-and-center on your page, prompting
 visitors to contact Congress and the FCC.
 

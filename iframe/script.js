@@ -24,7 +24,7 @@
         code: 'dp',
         name: 'Demand Progress',
         url: 'https://demandprogress.org/',
-        donate: 'https://secure.actblue.com/contribute/page/demanding'
+        donate: 'https://secure.actblue.com/donate/nndayofaction?refcode=20170712-bftn'
       },
       'fp': {
         code: 'fp',

@@ -191,7 +191,7 @@ a:hover {
   flex: 2;
 }
 
-.modal input[name="member[phone]"] {
+.modal input[name="member[phone_number]"] {
   margin-left: 0.25rem;
 }
 
@@ -452,7 +452,7 @@ body.slow #logos img {
     margin-right: 0;
   }
 
-  .modal input[name="member[phone]"] {
+  .modal input[name="member[phone_number]"] {
     min-width: 80%;
     margin-left: 0;
   }

@@ -26,10 +26,6 @@ h1 {
   text-align: center;
 }
 
-h2 {
-  font-size: 18px;
-}
-
 h3 {
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
@@ -325,11 +321,6 @@ a:hover {
 .modal footer button.twitter {
   background-color: #2c8be4;
   border: none;
-}
-
-#script p {
-  text-align: left;
-  font-size: 0.8rem;
 }
 
 /* Variations */

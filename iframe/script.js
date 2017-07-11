@@ -36,7 +36,7 @@
         code: 'fftf',
         name: 'Fight for the Future',
         url: 'https://www.fightforthefuture.org/',
-        donate: 'https://donate.fightforthefuture.org/'
+        donate: 'https://donate.fightforthefuture.org/campaigns/bftnlanding/'
       }
     };
 

@@ -85,6 +85,11 @@ you can pass some properties in to customize the default behavior.
      * to false.
      */
     uncloseable: false, // @type {Boolean}
+
+    /*
+     * Prevents the widget iframe from loading Google Analytics. Defaults to false.
+     */
+    disableGoogleAnalytics: false, // @type {Boolean}
     
     /*
      * Always show the widget. Useful for testing.

@@ -105,3 +105,4 @@ you can pass some properties in to customize the default behavior.
 - [Cloudflare](https://www.cloudflare.com/apps/net-neutrality)
 - [Cat Signal (WordPress)](https://wordpress.org/plugins/cat-signal/)
 - [Fight for the Future Alerts (WordPress)](https://wordpress.org/plugins/fftf-alerts/)
+- [Net Neutrality (WordPress)](https://wordpress.org/plugins/net-neutrality/)

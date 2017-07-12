@@ -77,7 +77,7 @@ a:hover {
 
 .modal {
   margin: 0 auto;
-  width: 520px;
+  width: 532px;
   display: table;
   border-radius: 0.5rem;
   background-color: #0d0a24;
@@ -143,15 +143,14 @@ a:hover {
 }
 
 .modal form .flex {
-  min-width: 50%;
   max-width: 50%;
-  flex: 1;
+  flex: 1 50%;
 }
 
 .modal input,
 .modal textarea {
   min-width: 9%;
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.5rem 0;
   padding: 0.6rem;
   color: #9399c7;
   background-color: transparent;
@@ -159,7 +158,7 @@ a:hover {
   border-radius: 0.2rem;
   font-family: 'Open Sans', sans-serif;
   font-size: 0.9rem;
-  flex: 1;
+  flex: 1 0 40%;
 }
 
 .modal input[type="checkbox"] {
@@ -169,8 +168,7 @@ a:hover {
 
 .modal input[name="member[first_name]"],
 .modal input[name="member[email]"] {
-  min-width: 43%;
-  max-width: 50%;
+  flex: 1 0 43%;
 }
 
 .modal input[name="member[first_name]"] {
@@ -201,12 +199,11 @@ a:hover {
 }
 
 .modal textarea {
-  min-width: 90%;
-  max-width: 100%;
+  flex: 1 100%;
 }
 
 .modal input[type="submit"] {
-  min-width: 100%;
+  flex: 1 100%;
   margin-bottom: 0;
   padding: 1rem;
   background-color: #49c7ae;
@@ -217,7 +214,6 @@ a:hover {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   -webkit-appearance: none;
-  flex: 1;
 }
 
 .modal input[type="submit"]:hover {
@@ -229,7 +225,8 @@ a:hover {
 }
 
 .modal .prompt input[type="submit"] {
-  min-width: 0;
+  min-width: 20%;
+  max-width: 40%;
   flex: 2;
 }
 
@@ -272,17 +269,15 @@ a:hover {
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
   align-items: left;
+  justify-content: space-between;
   list-style-type: none;
 }
 
 .modal footer li {
-  margin-left: 0.5rem;
+  margin: 0 0.25rem 0.5rem;
   flex: 1 0 auto;
-}
-
-.modal footer li:first-child {
-  margin-left: 0;
 }
 
 .modal footer button {
@@ -296,11 +291,14 @@ a:hover {
   font-size: 0.6rem;
   font-weight: bold;
   text-transform: uppercase;
+  line-height: 2rem;
+}
+
+.modal footer button div {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  line-height: 2rem;
 }
 
 .modal footer button:hover {
@@ -435,17 +433,13 @@ body.slow #logos img {
   }
 
   .modal form .flex {
-    min-width: 100%;
     max-width: 100%;
+    flex: 0 0 100%;
   }
 
   .modal input[name="member[first_name]"],
   .modal input[name="member[email]"] {
-    min-width: 36%;
-  }
-
-  .modal input[name="member[street_address]"] {
-    min-width: 15%;
+    flex: 1 36%;
   }
 
   .modal input[name="member[postcode]"] {
@@ -453,14 +447,35 @@ body.slow #logos img {
   }
 
   .modal input[name="member[phone_number]"] {
-    min-width: 80%;
+    flex: 1 80%;
     margin-left: 0;
+  }
+}
+
+@media (min-width: 530px) {
+  .modal footer li:first-child {
+    margin-left: 0;
+  }
+
+  .modal footer li:last-child {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 430px) {
+  .modal input[name="userPhone"] {
+    min-width: 90%;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .modal .prompt input[type="submit"] {
+    max-width: 100%;
   }
 }
 
 @media (max-width: 375px) {
   .modal input[name="member[first_name]"],
   .modal input[name="member[email]"] {
-    min-width: 33%;
+    flex: 1 33%;
   }
 }

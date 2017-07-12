@@ -152,7 +152,7 @@
     document.getElementById('rotation').appendChild(fragment);
 
     var donate = document.getElementById('donate');
-    if (org.donate) donate.setAttribute('href', org.donate);
+    if (donate && org.donate) donate.setAttribute('href', org.donate);
   }
 
   function addCloseListeners() {

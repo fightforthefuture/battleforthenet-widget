@@ -28,7 +28,7 @@
       },
       'fp': {
         code: 'fp',
-        name: 'Free Press',
+        name: 'Free Press Action Fund',
         url: 'https://www.freepress.net/',
         donate: 'https://freepress.actionkit.com/donate/single/'
       },

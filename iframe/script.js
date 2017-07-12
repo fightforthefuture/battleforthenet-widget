@@ -68,7 +68,7 @@
           className: theme,
           logos: ['images/slow.png'],
           headline: 'Sorry, we\'re stuck in the slow lane.',
-          body: 'Well, not yet. Cable companies want to get rid of net neutrality, so they can slow sites like ours to a crawl and shake us down for extra fees just to reach you. If they get their way, the Internet will never be the same. We can stop them and keep the web fast, open, and awesome if we all contact the U.S. Congress and the FCC, but we only have a few days left.'
+          body: 'Well, not yet. Cable companies want to get rid of net neutrality, so they can slow sites like this one to a crawl and shake us down for extra fees just to reach you. If they get their way, the Internet will never be the same. We can stop them and keep the web fast, open, and awesome if we all contact the U.S. Congress and the FCC, but we only have a few days left.'
         };
         break;
       case 'without':
@@ -77,7 +77,7 @@
           className: 'without',
           logos: ['images/slow.png', 'images/stop_gradient.png', 'images/money_gradient.png'],
           headline: 'This is the web without net neutrality.',
-          body: 'Cable companies want to get rid of net neutrality. Without it, sites like ours could be censored, slowed down, or forced to charge extra fees. We can stop them and keep the Internet open, fast, and awesome if we all contact Congress and the FCC, but we only have a few days left.'
+          body: 'Cable companies want to get rid of net neutrality. Without it, sites like this one could be censored, slowed down, or forced to charge extra fees. We can stop them and keep the Internet open, fast, and awesome if we all contact Congress and the FCC, but we only have a few days left.'
         };
         break;
     }

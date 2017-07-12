@@ -358,6 +358,15 @@
     xhr.send(formData);
   });
 
+  // Send form field data to the video tool
+  document.getElementById('video-link').addEventListener('click', function(e) {
+    var full_name = document.getElementById('full_name').value;
+    var email = document.getElementById('email').value;
+    var address = document.getElementById('address').value;
+    var postcode = document.getElementById('postcode').value;
+    this.setAttribute('href', "https://video.battleforthenet.com?fcc_name="+full_name+"&fcc_email="+email+"&fcc_address="+address+"&fcc_postcode="+postcode);
+  });
+
   // Start animation
   sendMessage('getAnimation');
 })();

@@ -25,10 +25,10 @@
             <h1 id="headline"></h1>
             <p id="content"></p>
             <form id="form" method="post" action="https://queue.fightforthefuture.org/action" accept-charset="UTF-8">
-              <input type="text" name="member[first_name]" placeholder="Full Name" title="Full Name" autocomplete="name" required>
-              <input type="email" name="member[email]" placeholder="Email" title="Email" required>
+              <input id='full_name' type="text" name="member[first_name]" placeholder="Full Name" title="Full Name" autocomplete="name" required>
+              <input id='email' type="email" name="member[email]" placeholder="Email" title="Email" required>
               <div class="flex">
-                <input type="text" name="member[street_address]" placeholder="Street Address" title="Street Address" required>
+                <input id='address' type="text" name="member[street_address]" placeholder="Street Address" title="Street Address" required>
                 <input id="postcode" type="text" name="member[postcode]" placeholder="Postcode" title="Postcode" required>
               </div>
               <input id="phone" type="tel" name="member[phone_number]" placeholder="Phone # (to volunteer)" title="Phone">
@@ -126,7 +126,7 @@
               </a>
             </li>
             <li>
-              <a href="https://video.battleforthenet.com/" target="_blank">
+              <a id='video-link' href="https://video.battleforthenet.com/" target="_blank">
                 <button class="video">
                   <div>
                     <img src="images/video.svg" />

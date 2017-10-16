@@ -11,14 +11,12 @@ Or, follow these [easy instructions for Tumblr](http://tumblr.fightforthefuture.
 The goal of this project is to allow anyone with a web site to run their own campaign to save net neutrality. Simply add one line of JavaScript and you're good to go! The modal animation will show up front-and-center on your page, prompting
 visitors to contact Congress and the FCC.
 
-**NOTE: By default, the widget will not display until midnight July 12, so you can add the code right now. If you'd like it to work normally on your site before then, just set a different date (the current date) using the method below.**
-
 If you have any problems or questions regarding the widget, please [submit an issue](https://github.com/fightforthefuture/battleforthenet-widget/issues).
 
 
 # How it works
 
-The widget is designed to appear on July 12, 2017, and only once, per user, per device. If you'd like to force it to show up on your page for testing, please reload the page with `#ALWAYS_SHOW_BFTN_WIDGET` at the end of the URL.
+The widget is designed to appear once per user, per device, per day, but can be configured to display at a different interval. If you'd like to force it to show up on your page for testing, reload the page with `#ALWAYS_SHOW_BFTN_WIDGET` at the end of the URL.
 
 Please take a look at [**widget.js**](https://github.com/fightforthefuture/battleforthenet-widget/blob/master/widget.js) if you want to see exactly what you'll
 be embedding on your page.
@@ -26,11 +24,11 @@ be embedding on your page.
 * Compatible with Firefox, Chrome, Safari and Internet Explorer 11+.
 * Embed the widget JavaScript code on your page.
 * Optionally pass in customization parameters (see below), or defaults are used.
-* Widget checks to make sure it should be shown (July 12th 2017 and hasn't been shown to this user before, via cookie). You can override this check for testing purposes.
+* Widget checks to make sure it should be shown (hasn't been shown to this user recently and user hasn't initiated a call or clicked a donate link recently, via cookie). You can override this check for testing purposes.
 * Widget preloads any images required for the chosen animation.
 * Widget injects a floating `iframe` onto your page. All but the most trivial styles and interactions take place in the `iframe` so as not to interfere with your CSS and JavaScript.
 * Animation displays in floating `iframe`.
-* The user can dismiss the `iframe` and a cookie is written so it won't show again (unless you override).
+* The user can dismiss the `iframe` and a cookie is written so it won't show again until cookie expires (unless you override).
 
 
 #### Modal customization options:
@@ -73,11 +71,25 @@ you can pass some properties in to customize the default behavior.
     delay: 1000, // @type {number}
     
     /*
-     * Specify a date on which to display the widget. Defaults to July 12th, 2017 if 
-     * omitted. ISO-8601 dates are UTC time, three-argument dates (with a zero-based
-     * month) are local time.
+     * Specify a date for the countdown theme. Defaults to November 23rd, 2017
+     * (when the FCC is expected to announce a vote) if omitted. ISO-8601 dates are
+     * UTC time, three-argument dates (with a zero-based month) are local time.
      */
-    date: new Date(2017, 6, 12), // @type {Date}
+    date: new Date(2017, 10, 23), // @type {Date}
+
+    /*
+     * Specify view cookie expiration. After initial view, modal will not be
+     * displayed to a user again until after this cookie expires. Defaults to one
+     * day.
+     */
+    viewCookieExpires: 1, // @type {number}
+
+    /*
+     * Specify action cookie expiration. After initiating a call or clicking a
+     * donate link, modal will not be displayed to a user again until after this
+     * cookie expires. Defaults to one week.
+     */
+    actionCookieExpires: 7, // @type {number}
     
     /*
      * If you show the modal on your homepage, you should let users close it to
@@ -86,25 +98,18 @@ you can pass some properties in to customize the default behavior.
      * prevent closing the modal - the user can close the tab to dismiss it. Defaults
      * to false.
      */
-    uncloseable: false, // @type {Boolean}
+    uncloseable: false, // @type {boolean}
 
     /*
      * Prevents the widget iframe from loading Google Analytics. Defaults to false.
      */
-    disableGoogleAnalytics: false, // @type {Boolean}
+    disableGoogleAnalytics: false, // @type {boolean}
     
     /*
      * Always show the widget. Useful for testing.
      */
-    always_show_widget: true // @type {Boolean}
+    always_show_widget: true // @type {boolean}
   };
 </script>
 <script src="https://widget.battleforthenet.com/widget.js" async></script>
 ```
-
-# Plugins
-
-- [Cloudflare](https://www.cloudflare.com/apps/net-neutrality)
-- [Cat Signal (WordPress)](https://wordpress.org/plugins/cat-signal/)
-- [Fight for the Future Alerts (WordPress)](https://wordpress.org/plugins/fftf-alerts/)
-- [Net Neutrality (WordPress)](https://wordpress.org/plugins/net-neutrality/)

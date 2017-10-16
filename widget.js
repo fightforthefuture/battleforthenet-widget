@@ -36,7 +36,9 @@
   if (typeof _bftn_options.animation == "undefined") _bftn_options.animation = 'main';
   if (typeof _bftn_options.delay == "undefined") _bftn_options.delay = 1000;
   if (typeof _bftn_options.debug == "undefined") _bftn_options.debug = false;
-  if (typeof _bftn_options.date == "undefined") _bftn_options.date = new Date(2017, 6 /* Zero-based month */, 12);
+  if (typeof _bftn_options.date == "undefined") _bftn_options.date = new Date(2017, 10 /* Zero-based month */, 23);
+  if (typeof _bftn_options.viewCookieExpires == "undefined") _bftn_options.viewCookieExpires = 1;
+  if (typeof _bftn_options.actionCookieExpires == "undefined") _bftn_options.actionCookieExpires = 7;
   if (typeof _bftn_options.always_show_widget == "undefined") _bftn_options.always_show_widget = false;
 
   var _bftn_animations = {
@@ -112,6 +114,9 @@
           case 'stop':
             animation.stop();
             break;
+          case 'cookie':
+            _bftn_util.setCookie(e.data.name, e.data.val, e.data.expires);
+            break;
         }
       }, false);
     },
@@ -174,19 +179,17 @@
     // Should we show the widget, regardless?
     if (!_bftn_options.always_show_widget && window.location.href.indexOf('ALWAYS_SHOW_BFTN_WIDGET') === -1) {
 
-      // Only show once.
-      if (_bftn_util.getCookie('_BFTN_WIDGET_SHOWN')) return;
-
-      // Only show on configured date.
-      var today = new Date();
-      if (today.getFullYear() !== _bftn_options.date.getFullYear() ||
-          today.getMonth() !== _bftn_options.date.getMonth() ||
-          today.getDate() !== _bftn_options.date.getDate()) {
-          return;
+      // Don't show widget if cookie has been set.
+      if (
+        _bftn_util.getCookie('_BFTN_WIDGET_VIEW') ||
+        _bftn_util.getCookie('_BFTN_WIDGET_ACTION')
+      ) {
+        return;
       }
     }
 
-    _bftn_util.setCookie('_BFTN_WIDGET_SHOWN', 'true', 365);
+    // Only show once per day.
+    _bftn_util.setCookie('_BFTN_WIDGET_VIEW', 'true', _bftn_options.viewCookieExpires);
 
     _bftn_util.injectCSS('_bftn_iframe_css', '#_bftn_wrapper { position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 20000; -webkit-overflow-scrolling: touch; overflow-y: auto; } #_bftn_iframe { width: 100%; height: 100%;  }');
 

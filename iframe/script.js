@@ -118,7 +118,7 @@
           className: 'countdown',
           logos: [],
           headline: 'URGENT!',
-          body: 'The FCC is about to vote on its plan to kill net neutrality. We have just days to stop censorship, throttling, and extra fees online. Congress needs to hear from Internet users like you right now.'
+          body: 'The FCC is about to vote on its\' plan to kill net neutrality. We have just days to stop censorship, throttling, and extra fees online. Congress needs to hear from Internet users like you right now.'
         };
         break;
     }
@@ -177,7 +177,7 @@
     if (theme.className === 'countdown' && typeof Countdown === 'function') {
       new Countdown({
         target: '#countdown',
-        date: new Date('November 23, 2017')
+        date: this.options.date
       });
     }
   }
@@ -222,13 +222,14 @@
       init: function(options) {
         for (var k in options) this.options[k] = options[k];
 
-        renderContent(getTheme(this.options.theme));
+        renderContent.call(this, getTheme(this.options.theme));
 
         var org = getOrg(this.options.org);
         var donateLinks = document.querySelectorAll('a.donate');
-        if (donateLinks.length && org.donate) {
+        if (donateLinks.length) {
           for (var i = 0; i < donateLinks.length; i++) {
-            donateLinks[i].setAttribute('href', org.donate);
+            if (org.donate) donateLinks[i].setAttribute('href', org.donate);
+            donateLinks[i].addEventListener('click', setActionCookie);
           }
         }
 
@@ -273,11 +274,21 @@
     if (loading) loading.classList.add('hidden');
   }
 
+  function setActionCookie() {
+    sendMessage('cookie', {
+      name: '_BFTN_WIDGET_ACTION',
+      val: 'true',
+      expires: this.options.actionCookieExpires
+    });
+  }
+
   function onCall(e) {
     if (transitionTimer) clearTimeout(transitionTimer);
 
     // TODO: Error handling
     // if (e && e.code >= 400) return onError(e);
+
+    setActionCookie();
 
     if (loading) {
       loading.addEventListener('transitionend', showCallScript);

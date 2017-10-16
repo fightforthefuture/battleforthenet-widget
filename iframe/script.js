@@ -154,8 +154,14 @@
     document.getElementById('headline').textContent = theme.headline;
 
     var bodyFragment = document.createDocumentFragment();
-    bodyFragment.textContent = theme.body + ' ';
 
+    var bodyparagraphs = theme.body.split("\n");
+    for (var i = 0; i < bodyparagraphs.length; i++) {
+      var paragraph = document.createElement('p');
+      paragraph.textContent = bodyparagraphs[i];
+      bodyFragment.appendChild(paragraph);
+    }
+    
     var learnMore = document.createElement('a');
     learnMore.setAttribute('href', 'https://www.battleforthenet.com/#widget-learn-more');
     learnMore.setAttribute('target', '_blank');

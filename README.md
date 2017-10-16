@@ -42,8 +42,8 @@ you can pass some properties in to customize the default behavior.
 <script type="text/javascript">
   var _bftn_options = {
     /*
-     * Choose from 'money', 'stop', and 'slow'. Omit this property to get the 
-     * default theme.
+     * Choose from 'money', 'stop', 'slow', 'without' and 'countdown'. Omit this
+     * property to get the default 'countdown' theme.
      */
     theme: 'slow', // @type {string}
     

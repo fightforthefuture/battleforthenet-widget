@@ -154,11 +154,12 @@
     document.getElementById('headline').textContent = theme.headline;
 
     var bodyFragment = document.createDocumentFragment();
+    var bodyCopy = theme.body.split('\n');
+    var paragraph;
 
-    var bodyparagraphs = theme.body.split("\n");
-    for (var i = 0; i < bodyparagraphs.length; i++) {
-      var paragraph = document.createElement('p');
-      paragraph.textContent = bodyparagraphs[i];
+    for (var i = 0; i < bodyCopy.length; i++) {
+      paragraph = document.createElement('p');
+      paragraph.textContent = bodyCopy[i];
       bodyFragment.appendChild(paragraph);
     }
     
@@ -166,7 +167,10 @@
     learnMore.setAttribute('href', 'https://www.battleforthenet.com/#widget-learn-more');
     learnMore.setAttribute('target', '_blank');
     learnMore.textContent = 'Learn more.';
-    bodyFragment.appendChild(learnMore);
+
+    // Append link to last paragraph in body copy.
+    paragraph.textContent += ' ';
+    paragraph.appendChild(learnMore);
 
     document.getElementById('content').appendChild(bodyFragment);
 

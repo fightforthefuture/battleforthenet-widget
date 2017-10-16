@@ -99,7 +99,7 @@
       case 'slow':
         themeObj = {
           className: theme,
-          logos: ['images/slow.png'],
+          logos: ['images/slow.svg'],
           headline: 'Sorry, we\'re stuck in the slow lane.',
           body: 'Well, not yet. But the FCC is about to vote to get rid of net neutrality, letting ISPs slow sites like this to a crawl and charge everyone extra fees. Congress can stop them, but only if we flood them with calls right now.'
         };
@@ -107,7 +107,7 @@
       case 'without':
         themeObj = {
           className: theme,
-          logos: ['images/slow.png', 'images/stop_gradient.png', 'images/money_gradient.png'],
+          logos: ['images/slow.svg', 'images/stop_gradient.png', 'images/money_gradient.png'],
           headline: 'This is the web without net neutrality.',
           body: 'The FCC is about to vote to get rid of net neutrality. Without it, sites like this could be censored, slowed down, or forced to charge extra fees. Congress can stop them, but only if we flood them with calls right now.'
         };

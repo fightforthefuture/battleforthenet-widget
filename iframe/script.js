@@ -118,7 +118,7 @@
           className: 'countdown',
           logos: [],
           headline: 'URGENT!',
-          body: 'The FCC is about to announce a vote on its\' plan to kill net neutrality. We have just days to stop censorship, throttling, and extra fees online. Congress needs to hear from Internet users like you right now.'
+          body: 'The FCC is about to announce a vote on its plan to kill net neutrality. We have just days to stop censorship, throttling, and extra fees online. Congress needs to hear from Internet users like you right now.'
         };
         break;
     }

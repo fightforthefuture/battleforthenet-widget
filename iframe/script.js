@@ -311,7 +311,7 @@
 
     transitionTimer = setTimeout(onCall, 500);
 
-    xhr.open(call.getAttribute('method'), call.getAttribute('action'), true);
+    xhr.open(call.getAttribute('method'), call.getAttribute('action') + '?ref=' + document.referrer, true);
     xhr.send(formData);
   });
 

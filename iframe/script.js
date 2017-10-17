@@ -101,7 +101,7 @@
           className: theme,
           logos: ['images/slow.svg'],
           headline: 'Sorry, we\'re stuck in the slow lane.',
-          body: 'Well, not yet. But the FCC is about to announce a vote to get rid of net neutrality, letting ISPs slow sites like this to a crawl and charge everyone extra fees. Congress can stop them, but only if we flood them with calls right now.'
+          body: 'Well, not yet. But the FCC is about to vote to get rid of net neutrality, letting ISPs slow sites like this to a crawl and charge everyone extra fees. Congress can stop them, but only if we flood them with calls right now.'
         };
         break;
       case 'without':
@@ -118,7 +118,7 @@
           className: 'countdown',
           logos: [],
           headline: 'URGENT!',
-          body: 'The FCC is about to vote on its\' plan to kill net neutrality. We have just days to stop censorship, throttling, and extra fees online. Congress needs to hear from Internet users like you right now.'
+          body: 'The FCC is about to announce a vote on its\' plan to kill net neutrality. We have just days to stop censorship, throttling, and extra fees online. Congress needs to hear from Internet users like you right now.'
         };
         break;
     }

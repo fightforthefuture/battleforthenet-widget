@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 PATH=$PATH:$PWD/node_modules/.bin
 
 function minify_html {
@@ -22,16 +24,12 @@ function minify_css {
 }
 
 rm -rf build
-
 mkdir -p build
 cd build
 
 cp -r ../CNAME ../demos ../iframe ../widget.js .
 
 minify_js
-
-cd demos
-minify_html
 
 cd ../iframe
 minify_html
@@ -41,17 +39,3 @@ minify_css
 cd images
 
 svgo -f .
-
-cd ../..
-
-if  [ "$TRAVIS" = "true" -a "$TRAVIS_PULL_REQUEST" = "false"  -a "$TRAVIS_BRANCH" = "production" ]; then
-	git init
-	git config user.name "Travis-CI"
-	git config user.email "travis@example.org"
-	git add .
-	git commit -m "Deployed to Github Pages"
-	git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
-done
-
-cd ..
-# rm -rf build

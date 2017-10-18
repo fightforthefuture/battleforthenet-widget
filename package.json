@@ -12,6 +12,6 @@
     "uglify-js": "^3.1.4"
   },
   "scripts": {
-    "build": "./build.sh"
+    "build": "./scripts/build.sh"
   }
 }

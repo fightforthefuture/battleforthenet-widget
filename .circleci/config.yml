@@ -1,0 +1,32 @@
+version: 2
+jobs:
+  build:
+    docker:
+    - image: circleci/node:8-browsers
+    steps:
+    - add-ssh-keys:
+        fingerprints:
+        - "bd:41:f8:10:a5:9e:5a:78:bd:8e:2c:90:3f:a1:b2:fa"
+    - checkout
+    - restore_cache:
+        keys:
+        - v1-dependencies-{{ checksum "package-lock.json" }}
+    - run: npm install
+    - save_cache:
+        paths:
+        - node_modules
+        key: v1-dependencies-{{ checksum "package-lock.json" }}
+    - run: npm run build
+    - deploy:
+        name: GitHub Pages
+        command: |
+          if [ "${CIRCLE_BRANCH}" == "master" ]; then
+            ./scripts/deploy.sh
+          fi
+    - deploy:
+        name: AWS S3
+        command: |
+          if [ "${CIRCLE_PULL_REQUEST}" ]; then
+            ./scripts/s3-sync.sh
+          fi
+

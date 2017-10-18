@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/fightforthefuture/battleforthenet-widget/tree/master.svg?style=svg)](https://circleci.com/gh/fightforthefuture/battleforthenet-widget/tree/master)
+
 # How to install the widget
 
 Add this to any page, and you're golden: ([**See the demo!**](https://widget.battleforthenet.com/demos/modal.html))

@@ -126,6 +126,7 @@
     if (typeof theme == 'object') {
       var keys = Object.keys(theme);
       var key;
+
       for (var i = 0; i < keys.length; i++) {
         key = keys[i];
         themeObj[key] = theme[key];
@@ -220,7 +221,13 @@
         debug: false,
       },
       init: function(options) {
-        for (var k in options) this.options[k] = options[k];
+        var keys = Object.keys(options);
+        var key;
+
+        for (var k = 0; k < keys.length; k++) {
+          key = keys[k];
+          this.options[key] = options[key];
+        }
 
         renderContent.call(this, getTheme(this.options.theme));
 

@@ -2,7 +2,7 @@
 
 set -e
 
-cd build
+cd dist
 
 git init
 git config user.name "CircleCI"

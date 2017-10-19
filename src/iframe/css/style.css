@@ -208,7 +208,7 @@ body.countdown .modal #countdown {
   border: none;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 .modal input[type="submit"]:hover,
@@ -354,7 +354,7 @@ body.without h1 {
   color: #279cff;
 }
 
-@supports(-webkit-background-clip: text) {
+@supports((-webkit-background-clip: text) and (-webkit-text-fill-color: transparent)) {
   body.countdown h1 {
     background: linear-gradient(#fd4935, #fd6d5a);
     -webkit-background-clip: text;

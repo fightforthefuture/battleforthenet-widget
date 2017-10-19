@@ -229,7 +229,7 @@
         if (donateLinks.length) {
           for (var i = 0; i < donateLinks.length; i++) {
             if (org.donate) donateLinks[i].setAttribute('href', org.donate);
-            donateLinks[i].addEventListener('click', setActionCookie);
+            donateLinks[i].addEventListener('click', setActionCookie.bind(this));
           }
         }
 
@@ -241,7 +241,69 @@
 
         if (!(this.options.disableGoogleAnalytics || navigator.doNotTrack)) initGoogleAnalytics();
 
-        return this;
+        function onError(e) {
+          // TODO: Error handling
+        }
+
+        function showCallScript(e) {
+          if (transitionTimer) clearTimeout(transitionTimer);
+
+          if (callScript) callScript.classList.remove('invisible');
+          if (main) main.classList.add('invisible');
+          if (loading) loading.classList.add('hidden');
+        }
+
+        function setActionCookie() {
+          sendMessage('cookie', {
+            name: '_BFTN_WIDGET_ACTION',
+            val: 'true',
+            expires: this.options.actionCookieExpires
+          });
+        }
+
+        function onCall(e) {
+          if (transitionTimer) clearTimeout(transitionTimer);
+
+          // TODO: Error handling
+          // if (e && e.code >= 400) return onError(e);
+
+          setActionCookie.call(this);
+
+          if (loading) {
+            loading.addEventListener('transitionend', showCallScript);
+            loading.classList.add('invisible');
+          }
+
+          transitionTimer = setTimeout(showCallScript, 500);
+        }
+
+        var call = document.getElementById('call');
+        call.addEventListener('submit', function submitCall(e) {
+          e.preventDefault();
+
+          var footer = document.getElementById('footer');
+          if (footer) {
+            footer.classList.remove('hidden');
+            footer.classList.remove('invisible');
+          }
+
+          if (callScript) callScript.classList.remove('hidden');
+          if (main) main.classList.add('hidden');
+
+          var formData = new FormData(call);
+          var xhr = new XMLHttpRequest();
+
+          if (loading) {
+            loading.addEventListener('transitionend', onCall.bind(this));
+            loading.classList.remove('hidden');
+            loading.classList.remove('invisible');
+          }
+
+          transitionTimer = setTimeout(onCall.bind(this), 500);
+
+          xhr.open(call.getAttribute('method'), call.getAttribute('action') + '?ref=' + document.referrer, true);
+          xhr.send(formData);
+        }.bind(this));
       },
       log: function() {
         if (this.options.debug) console.log.apply(console, arguments);
@@ -260,70 +322,6 @@
         animations[e.data.modalAnimation].init(e.data);
         break;
     }
-  });
-
-  function onError(e) {
-    // TODO: Error handling
-  }
-
-  function showCallScript(e) {
-    if (transitionTimer) clearTimeout(transitionTimer);
-
-    if (callScript) callScript.classList.remove('invisible');
-    if (main) main.classList.add('invisible');
-    if (loading) loading.classList.add('hidden');
-  }
-
-  function setActionCookie() {
-    sendMessage('cookie', {
-      name: '_BFTN_WIDGET_ACTION',
-      val: 'true',
-      expires: this.options.actionCookieExpires
-    });
-  }
-
-  function onCall(e) {
-    if (transitionTimer) clearTimeout(transitionTimer);
-
-    // TODO: Error handling
-    // if (e && e.code >= 400) return onError(e);
-
-    setActionCookie();
-
-    if (loading) {
-      loading.addEventListener('transitionend', showCallScript);
-      loading.classList.add('invisible');
-    }
-
-    transitionTimer = setTimeout(showCallScript, 500);
-  }
-
-  var call = document.getElementById('call');
-  call.addEventListener('submit', function submitCall(e) {
-    e.preventDefault();
-
-    var footer = document.getElementById('footer');
-    if (footer) {
-      footer.classList.remove('hidden');
-      footer.classList.remove('invisible');
-    }
-
-    if (callScript) callScript.classList.remove('hidden');
-    if (main) main.classList.add('hidden');
-
-    var formData = new FormData(call);
-    var xhr = new XMLHttpRequest();
-
-    if (loading) {
-      loading.addEventListener('transitionend', onCall);
-      loading.classList.remove('hidden');
-      loading.classList.remove('invisible');
-    }
-
-    transitionTimer = setTimeout(onCall, 500);
-
-    xhr.open(call.getAttribute('method'), call.getAttribute('action') + '?ref=' + document.referrer, true);
-    xhr.send(formData);
   });
 
   // Start animation

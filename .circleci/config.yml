@@ -30,4 +30,7 @@ jobs:
           if [ "${CIRCLE_PULL_REQUEST}" ]; then
             ./scripts/s3-sync.sh
           fi
+    branches:
+      ignore:
+      - gh-pages
 

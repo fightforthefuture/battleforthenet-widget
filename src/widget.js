@@ -15,7 +15,11 @@
         modalAnimation: 'main'
       },
       init: function(options) {
-        for (var k in options) this.options[k] = options[k];
+        var keys = Object.keys(options);
+        for (var k = 0; k < keys.length; k++) {
+          this.options[keys[k]] = options[keys[k]];
+        }
+
         return this;
       },
       start: function() {

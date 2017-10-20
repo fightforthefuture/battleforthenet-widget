@@ -93,11 +93,8 @@
 
     if (typeof theme == 'object') {
       var keys = Object.keys(theme);
-      var key;
-
-      for (var i = 0; i < keys.length; i++) {
-        key = keys[i];
-        themeObj[key] = theme[key];
+      for (var k = 0; k < keys.length; k++) {
+        themeObj[keys[k]] = theme[keys[k]];
       }
     }
 
@@ -190,11 +187,8 @@
       },
       init: function(options) {
         var keys = Object.keys(options);
-        var key;
-
         for (var k = 0; k < keys.length; k++) {
-          key = keys[k];
-          this.options[key] = options[key];
+          this.options[keys[k]] = options[keys[k]];
         }
 
         renderContent.call(this, getTheme(this.options.theme));
@@ -279,6 +273,8 @@
           xhr.open(call.getAttribute('method'), call.getAttribute('action') + '?ref=' + document.referrer, true);
           xhr.send(formData);
         }.bind(this));
+
+        return this;
       },
       log: function() {
         if (this.options.debug) console.log.apply(console, arguments);

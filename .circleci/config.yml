@@ -22,7 +22,6 @@ jobs:
         command: |
           if [ "${CIRCLE_BRANCH}" == "master" ]; then
             ./scripts/deploy.sh
-            ./scripts/sentry-release.sh
           fi
     - deploy:
         name: AWS S3

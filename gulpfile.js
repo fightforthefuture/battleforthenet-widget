@@ -48,7 +48,7 @@ gulp.task('html', cb => {
     gulp.src(paths.html),
     htmlmin({
       collapseBooleanAttributes: true,
-      collapseWhitespace: true,
+      collapseWhitespace: false,
       decodeEntities: true,
       minifyCSS: true,
       minifyJS: true,

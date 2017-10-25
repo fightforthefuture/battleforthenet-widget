@@ -1,6 +1,8 @@
 const gulp = require('gulp');
 const pump = require('pump');
 const { sync: del } = require('del');
+const replace = require('gulp-replace');
+const commitHash = require('./scripts/commit-hash');
 const htmlmin = require('gulp-htmlmin');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
@@ -43,9 +45,11 @@ gulp.task('license', () => {
   });
 });
 
-gulp.task('html', cb => {
+gulp.task('html', async cb => {
   pump([
     gulp.src(paths.html),
+    // Set release from base branch instead of generated output
+    replace(/\{\{\s*site.github.build_revision\s*\}\}/, await commitHash())
     htmlmin({
       collapseBooleanAttributes: true,
       collapseWhitespace: false,

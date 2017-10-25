@@ -123,10 +123,10 @@
       Raven.config('https://43506d8b2eba47b0b05ad9466243493c@sentry.io/187468', {
         // https://help.github.com/articles/repository-metadata-on-github-pages/
         release: '{{ site.github.build_revision }}',
-        refs: [{
-          'repository': '{{ site.github.repository_name }}',
-          'commit': '{{ site.github.build_revision }}'
-        }],
+        tags: {
+          git_commit: '{{ site.github.build_revision }}'
+        },
+        include_paths: ['{{ site.github.url }}']
       }).install();
     }
   </script>

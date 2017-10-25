@@ -211,7 +211,7 @@
         if (!(this.options.disableGoogleAnalytics || navigator.doNotTrack)) initGoogleAnalytics();
 
         function onError(e) {
-          // TODO: Error handling
+          if (Raven) Raven.captureException(e);
         }
 
         function showCallScript(e) {

@@ -118,9 +118,12 @@ gulp.task('images', () => {
   ]);
 });
 
-gulp.task('cname', () => {
+gulp.task('copy', () => {
   return pump([
-    gulp.src('CNAME'),
+    gulp.src([
+      '_config.yml',
+      'CNAME'
+    ]),
     gulp.dest('dist')
   ]);
 });
@@ -140,5 +143,5 @@ gulp.task('default', [
   'widget',
   'scripts',
   'images',
-  'cname'
+  'copy'
 ]);

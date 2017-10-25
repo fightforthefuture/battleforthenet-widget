@@ -49,7 +49,7 @@ gulp.task('html', async cb => {
   pump([
     gulp.src(paths.html),
     // Set release from base branch instead of generated output
-    replace(/\{\{\s*site.github.build_revision\s*\}\}/, await commitHash())
+    replace(/\{\{\s*site.github.build_revision\s*\}\}/, await commitHash()),
     htmlmin({
       collapseBooleanAttributes: true,
       collapseWhitespace: false,

@@ -1,5 +1,6 @@
 const gulp = require('gulp');
-const pump = require('pump');
+const util = require('util');
+const pump = util.promisify(require('pump'));
 const { sync: del } = require('del');
 const replace = require('gulp-replace');
 const commitHash = require('./scripts/commit-hash');
@@ -45,8 +46,8 @@ gulp.task('license', () => {
   });
 });
 
-gulp.task('html', async cb => {
-  pump([
+gulp.task('html', async () => {
+  return pump([
     gulp.src(paths.html),
     // Set release from base branch instead of generated output
     replace(/\{\{\s*site.github.build_revision\s*\}\}/, await commitHash()),
@@ -68,11 +69,11 @@ gulp.task('html', async cb => {
       useShortDoctype: true
     }),
     gulp.dest('dist')
-  ], cb);
+  ]);
 });
 
-gulp.task('css', cb => {
-  pump([
+gulp.task('css', () => {
+  return pump([
     gulp.src(paths.css),
     sourcemaps.init(),
     postcss([
@@ -82,22 +83,22 @@ gulp.task('css', cb => {
     ]),
     sourcemaps.write('.'),
     gulp.dest('dist')
-  ], cb);
+  ]);
 });
 
-gulp.task('widget', ['license'], cb => {
-  pump([
+gulp.task('widget', ['license'], () => {
+  return pump([
     gulp.src(paths.widget),
     sourcemaps.init(),
     uglify(),
     prepend(licenseComment),
     sourcemaps.write('.'),
     gulp.dest('dist')
-  ], cb);
+  ]);
 });
 
-gulp.task('scripts', ['license'], cb => {
-  pump([
+gulp.task('scripts', ['license'], () => {
+  return pump([
     gulp.src(paths.scripts),
     sourcemaps.init(),
     uglify(),
@@ -106,22 +107,22 @@ gulp.task('scripts', ['license'], cb => {
     prepend(licenseComment),
     sourcemaps.write('.'),
     gulp.dest('dist/iframe/js')
-  ], cb);
+  ]);
 });
 
-gulp.task('images', cb => {
-  pump([
+gulp.task('images', () => {
+  return pump([
     gulp.src(paths.images),
     imagemin(),
     gulp.dest('dist')
-  ], cb);
+  ]);
 });
 
-gulp.task('cname', cb => {
-  pump([
+gulp.task('cname', () => {
+  return pump([
     gulp.src('CNAME'),
     gulp.dest('dist')
-  ], cb);
+  ]);
 });
 
 gulp.task('watch', ['default'], () => {

@@ -54,7 +54,7 @@ gulp.task('html', cb => {
       minifyJS: true,
       minifyURLs: true,
       removeAttributeQuotes: true,
-      removeComments: false,
+      removeComments: true,
       removeOptionalTags: true,
       removeRedundantAttributes: true,
       removeScriptTypeAttributes: true,

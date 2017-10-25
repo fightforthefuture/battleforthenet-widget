@@ -125,8 +125,7 @@
         release: '{{ site.github.build_revision }}',
         tags: {
           git_commit: '{{ site.github.build_revision }}'
-        },
-        include_paths: ['{{ site.github.url }}']
+        }
       }).install();
     }
   </script>

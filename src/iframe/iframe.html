@@ -120,9 +120,9 @@
   <script src="https://cdn.ravenjs.com/3.16.1/raven.min.js" crossorigin="anonymous"></script>
   <script type="text/javascript">
     if (typeof Raven !== 'undefined') {
-      Raven.config('{{ site.sentry_dsn_public }}', {
+      Raven.config('https://43506d8b2eba47b0b05ad9466243493c@sentry.io/187468', {
         // https://help.github.com/articles/repository-metadata-on-github-pages/
-        release: {{ site.github.build_revision }}
+        release: '{{ site.github.build_revision }}'
       }).install();
     }
   </script>

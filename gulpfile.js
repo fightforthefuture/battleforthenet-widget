@@ -121,7 +121,6 @@ gulp.task('images', () => {
 gulp.task('copy', () => {
   return pump([
     gulp.src([
-      '_config.yml',
       'CNAME'
     ]),
     gulp.dest('dist')

@@ -233,8 +233,8 @@
         function onCall(e) {
           if (transitionTimer) clearTimeout(transitionTimer);
 
-          // TODO: Error handling
-          // if (e && e.code >= 400) return onError(e);
+          // TODO: Display error instead of capturing silently?
+          if (e && e.code >= 300) onError(e);
 
           setActionCookie.call(this);
 

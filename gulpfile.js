@@ -12,6 +12,7 @@ const cssnano = require('cssnano');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
 const { prepend } = require('gulp-insert');
+const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
 const imagemin = require('gulp-imagemin');
 const { createInterface } = require('readline');
@@ -81,6 +82,7 @@ gulp.task('css', () => {
       flexbugs,
       cssnano
     ]),
+    rename({ extname: '.min.css' }),
     sourcemaps.write('.'),
     gulp.dest('dist')
   ]);
@@ -101,10 +103,10 @@ gulp.task('scripts', ['license'], () => {
   return pump([
     gulp.src(paths.scripts),
     sourcemaps.init(),
-    uglify(),
     concat('main.js'),
     uglify(),
     prepend(licenseComment),
+    rename({ extname: '.min.js' }),
     sourcemaps.write('.'),
     gulp.dest('dist/iframe/js')
   ]);

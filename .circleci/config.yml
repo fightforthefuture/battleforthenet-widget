@@ -22,6 +22,7 @@ jobs:
         command: |
           if [ "${CIRCLE_BRANCH}" == "master" ]; then
             ./scripts/deploy.sh
+            ./scripts/cloudflare-purge.js
           fi
     - deploy:
         name: AWS S3
@@ -32,4 +33,3 @@ jobs:
     branches:
       ignore:
       - gh-pages
-

@@ -101,6 +101,17 @@
     return themeObj;
   }
 
+  function addCustomDisclaimerLink(link) {
+    var p = document.createElement('p');
+    var a = document.createElement('a');
+    a.setAttribute('href', link.href);
+    a.setAttribute('target', '_blank');
+    a.textContent = link.text;
+    p.appendChild(a);
+
+    document.getElementById("disclaimer").appendChild(p);
+  }
+
   function renderContent(theme) {
     document.body.classList.add(theme.className);
 
@@ -192,6 +203,9 @@
         }
 
         renderContent.call(this, getTheme(this.options.theme));
+        if (this.options.custom_disclaimer_link) {
+          addCustomDisclaimerLink(this.options.custom_disclaimer_link);
+        }
 
         var org = getOrg(this.options.org);
         var donateLinks = document.querySelectorAll('a.donate');

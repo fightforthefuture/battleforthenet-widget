@@ -5,6 +5,7 @@
   if (typeof _bftn_options.delay == "undefined") _bftn_options.delay = 1000;
   if (typeof _bftn_options.debug == "undefined") _bftn_options.debug = false;
   if (typeof _bftn_options.date == "undefined") _bftn_options.date = new Date(2017, 10 /* Zero-based month */, 23);
+  if (typeof _bftn_options.custom_disclaimer_link == "undefined") _bftn_options.custom_disclaimer_link = null;
   if (typeof _bftn_options.viewCookieExpires == "undefined") _bftn_options.viewCookieExpires = 1;
   if (typeof _bftn_options.actionCookieExpires == "undefined") _bftn_options.actionCookieExpires = 7;
   if (typeof _bftn_options.always_show_widget == "undefined") _bftn_options.always_show_widget = false;

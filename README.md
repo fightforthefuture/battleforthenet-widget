@@ -106,6 +106,14 @@ you can pass some properties in to customize the default behavior.
      * Prevents the widget iframe from loading Google Analytics. Defaults to false.
      */
     disableGoogleAnalytics: false, // @type {boolean}
+
+    /*
+     * To add a custom link to the modal footer.
+     */
+    custom_disclaimer_link: {
+      text: 'Link text', // @type {string} link text
+      href: 'http://battleforthenet.com/' // @type {string} link href attribute
+    },
     
     /*
      * Always show the widget. Useful for testing.

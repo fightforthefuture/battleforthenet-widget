@@ -5,6 +5,7 @@ const { sync: del } = require('del');
 const replace = require('gulp-replace');
 const commitHash = require('./scripts/commit-hash');
 const htmlmin = require('gulp-htmlmin');
+const inlinesource = require('gulp-inline-source');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const flexbugs = require('postcss-flexbugs-fixes');
@@ -17,6 +18,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const imagemin = require('gulp-imagemin');
 const { createInterface } = require('readline');
 const { createReadStream } = require('fs');
+const runSequence = require('run-sequence');
 
 const paths = {
   html: 'src/**/*.html',
@@ -129,6 +131,15 @@ gulp.task('copy', () => {
   ]);
 });
 
+gulp.task('inline', () => {
+  var opts = {
+    compress: false
+  };
+  return gulp.src('./dist/iframe/iframe.html')
+    .pipe(inlinesource(opts))
+    .pipe(gulp.dest('./dist/iframe/'));
+});
+
 gulp.task('watch', ['default'], () => {
   gulp.watch(paths.demos, ['demos']);
   gulp.watch(paths.html, ['html']);
@@ -137,12 +148,15 @@ gulp.task('watch', ['default'], () => {
   gulp.watch(paths.images, ['images']);
 });
 
-gulp.task('default', [
-  'clean',
-  'html',
-  'css',
-  'widget',
-  'scripts',
-  'images',
-  'copy'
-]);
+gulp.task('default', function(callback) {
+  runSequence(
+    'clean',
+    'html',
+    'css',
+    'widget',
+    'scripts',
+    'images',
+    'copy',
+    'inline',
+    callback)
+})

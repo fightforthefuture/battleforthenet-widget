@@ -13,6 +13,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "^3.0.0",
     "gulp-imagemin": "^3.4.0",
+    "gulp-inline-source": "^3.1.0",
     "gulp-insert": "^0.5.0",
     "gulp-postcss": "^7.0.0",
     "gulp-rename": "^1.2.2",
@@ -20,7 +21,8 @@
     "gulp-sourcemaps": "^2.6.1",
     "gulp-uglify": "^3.0.0",
     "postcss-flexbugs-fixes": "^3.2.0",
-    "pump": "^1.0.2"
+    "pump": "^1.0.2",
+    "run-sequence": "^2.2.0"
   },
   "scripts": {
     "build": "gulp",

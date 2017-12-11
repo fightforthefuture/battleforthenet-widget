@@ -412,6 +412,51 @@ body.without .modal button {
   border: none;
 }
 
+body.glitch .modal {
+  background-color: red;
+}
+
+body.glitch .modal #logos img {
+  width: 500px;
+  height: 68px;
+}
+
+body.glitch {
+  color: white;
+}
+
+body.glitch a {
+  color: white;
+  text-decoration: underline;
+}
+
+body.glitch input {
+  color: white;
+  background-color: red;
+  border: 1px solid white;
+  font-weight: bold;
+}
+
+body.glitch input::placeholder {
+  color: white;
+  text-transform: uppercase;
+}
+
+body.glitch .modal button {
+  background-color: white;
+  color: red;
+  font-size: 1.6rem;
+}
+
+body.glitch .modal button img {
+  display: none;
+}
+
+body.glitch .modal .disclaimer,
+body.glitch .modal .disclaimer a {
+  color: white;
+}
+
 /* Animations */
 @keyframes fade-in {
   from { opacity: 0; }

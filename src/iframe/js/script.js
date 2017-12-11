@@ -80,6 +80,13 @@
           body: 'The FCC is about to vote to get rid of net neutrality. Without it, sites like this could be censored, slowed down, or forced to charge extra fees. Congress can stop them, but only if we flood them with calls right now.'
         };
         break;
+      case 'glitch':
+        themeObj = {
+          className: theme,
+          logos: ['images/glitch.png'],
+          body: 'Well, not yet. But the FCC is about to vote to get rid of the net neutrality, letting ISP\'s censor and throttle websites, and charge extra fees. Congress can stop them, but they need to hear from internet users like you right now, before the vote on Thursday.'
+        };
+        break;
       case 'countdown':
       default:
         themeObj = {

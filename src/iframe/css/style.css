@@ -308,6 +308,11 @@ body.countdown .modal #countdown {
   margin-right: 0.5rem;
 }
 
+.modal footer button a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .modal footer button.facebook {
   background-color: #2b48a7;
   border: none;

@@ -310,6 +310,7 @@ body.countdown .modal #countdown {
 
 .modal footer button a {
   color: #fff;
+  text-decoration: none;
 }
 
 .modal footer button.facebook {

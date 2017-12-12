@@ -341,7 +341,7 @@ body.countdown .modal #countdown {
   height: 2rem;
   padding: 0 0.6rem;
   background: transparent;
-  border: 1px solid #3d459a;
+  border: none;
   border-radius: 0.2rem;
   color: #fff;
   font-size: 0.6rem;
@@ -494,7 +494,7 @@ body.glitch a {
   text-decoration: underline;
 }
 
-body.glitch input {
+body.glitch .modal input, body.glitch .modal textarea {
   color: white;
   background-color: red;
   border: 1px solid white;
@@ -506,7 +506,8 @@ body.glitch input::placeholder {
   text-transform: uppercase;
 }
 
-body.glitch .modal button {
+body.glitch .modal button,
+body.glitch .modal input[type="submit"] {
   background-color: white;
   color: red;
   font-size: 1.6rem;
@@ -520,6 +521,13 @@ body.glitch .modal .disclaimer,
 body.glitch .modal .disclaimer a {
   color: white;
 }
+
+body.glitch .modal footer button a {
+  color: red;
+}
+
+body.glitch footer h3 { color: rgba(255, 255, 255, .66); }
+body.glitch footer { background: rgba(0, 0, 0, .33); }
 
 /* Animations */
 @keyframes fade-in {

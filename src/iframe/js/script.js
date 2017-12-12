@@ -5,6 +5,7 @@
 
   var loading = document.getElementById('loading');
   var main = document.getElementById('main');
+  var callPrompt = document.getElementById('prompt');
   var callScript = document.getElementById('script');
 
   function getOrg(org) {
@@ -230,6 +231,88 @@
           });
         }
 
+        // Handle form submission
+        var form = document.getElementById('form');
+        form.addEventListener('submit', function submitForm(e) {
+          e.preventDefault();
+
+          // Prefill after-action call form
+          var userPhone = document.getElementById('userPhone');
+          var phone = document.getElementById('phone');
+          if (userPhone && phone && phone.value) userPhone.value = phone.value;
+
+          var postcode = document.getElementById('postcode');
+
+          var protest = document.getElementById('protest');
+          if (protest && postcode.value) {
+            protest.setAttribute('href', [protest.href, '?zipcode=', postcode.value].join(''));
+          }
+
+          var zipcode = document.getElementById('zipcode');
+          if (postcode && postcode.value && zipcode) zipcode.value = postcode.value;
+
+          var footer = document.getElementById('footer');
+          if (footer) {
+            footer.classList.remove('hidden');
+            footer.classList.remove('invisible');
+          }
+
+          if (callPrompt) callPrompt.classList.remove('hidden');
+          if (main) main.classList.add('hidden');
+
+          // TODO: Add config option to skip real submit?
+          // loading.addEventListener('transitionend', onSuccess);
+          // transitionTimer = setTimeout(onSuccess, 500);
+
+          var source = document.getElementById('source');
+          if (source) source.value = document.referrer;
+
+          var formData = new FormData(form);
+          var xhr = new XMLHttpRequest();
+
+          // TODO: Error handling
+          xhr.addEventListener('error', onSuccess);
+          xhr.addEventListener('load', onSuccess);
+
+          xhr.open(form.getAttribute('method'), form.getAttribute('action'), true);
+          xhr.send(formData);
+          setActionCookie.call(this);
+
+          if (loading) {
+            loading.classList.remove('hidden');
+            loading.classList.remove('invisible');
+          }
+        });
+
+        function onSuccess(e) {
+            if (transitionTimer) clearTimeout(transitionTimer);
+
+            // TODO: Error handling
+            // if (e && e.code >= 400) return onError(e);
+
+            if (loading) {
+              loading.addEventListener('transitionend', showAfterAction);
+              loading.classList.add('invisible');
+            }
+
+            transitionTimer = setTimeout(showAfterAction, 500);
+        }
+
+        function showAfterAction(e) {
+            if (transitionTimer) clearTimeout(transitionTimer);
+
+            console.log('callPrompt: ', callPrompt);
+
+            if (callPrompt) callPrompt.classList.remove('invisible');
+
+            if (main) {
+              main.classList.add('invisible');
+              main.classList.add('hidden');
+            }
+
+            if (loading) loading.classList.add('hidden');
+        }
+
         function onCall(e) {
           if (transitionTimer) clearTimeout(transitionTimer);
 
@@ -257,7 +340,7 @@
           }
 
           if (callScript) callScript.classList.remove('hidden');
-          if (main) main.classList.add('hidden');
+          if (callPrompt) callPrompt.classList.add('hidden');
 
           var formData = new FormData(call);
           var xhr = new XMLHttpRequest();

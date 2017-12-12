@@ -149,6 +149,41 @@
     }
   }
 
+  function renderOrgRotation(org) {
+    var fragment = document.createDocumentFragment();
+
+    var orgInput = document.createElement('input');
+    orgInput.setAttribute('type', 'hidden');
+    orgInput.setAttribute('name', 'org');
+    orgInput.setAttribute('value', org.code);
+    fragment.appendChild(orgInput);
+
+    var checkbox = document.createElement('input');
+    checkbox.setAttribute('type', 'checkbox');
+    checkbox.setAttribute('id', '_opt_in');
+    checkbox.setAttribute('checked', 'checked');
+    fragment.appendChild(checkbox);
+
+    var orgLink = document.createElement('a');
+    orgLink.setAttribute('href', org.url);
+    orgLink.setAttribute('target', '_blank');
+    orgLink.textContent = org.name;
+    fragment.appendChild(orgLink);
+
+    var disclaimer = document.createElement('span');
+    disclaimer.textContent = ' will contact you about future campaigns. FCC comments are public records.';
+    fragment.appendChild(disclaimer);
+
+    document.getElementById('rotation').appendChild(fragment);
+
+    var donateLinks = document.querySelectorAll('a.donate');
+    if (donateLinks.length) {
+      for (var i = 0; i < donateLinks.length; i++) {
+        if (org.donate) donateLinks[i].setAttribute('href', org.donate);
+      }
+    }
+  }
+
   function addCloseListeners() {
     // Add close button listener.
     document.getElementById('close').addEventListener('mousedown', function(e) {
@@ -193,15 +228,9 @@
         }
 
         renderContent.call(this, getTheme(this.options.theme));
+        renderOrgRotation(getOrg(this.options.org));
 
         var org = getOrg(this.options.org);
-        var donateLinks = document.querySelectorAll('a.donate');
-        if (donateLinks.length) {
-          for (var i = 0; i < donateLinks.length; i++) {
-            if (org.donate) donateLinks[i].setAttribute('href', org.donate);
-            donateLinks[i].addEventListener('click', setActionCookie.bind(this));
-          }
-        }
 
         if (this.options.uncloseable) {
           document.getElementById('close').classList.add('hidden');
@@ -251,18 +280,18 @@
           var zipcode = document.getElementById('zipcode');
           if (postcode && postcode.value && zipcode) zipcode.value = postcode.value;
 
-          var footer = document.getElementById('footer');
-          if (footer) {
-            footer.classList.remove('hidden');
-            footer.classList.remove('invisible');
-          }
+          // var footer = document.getElementById('footer');
+          // if (footer) {
+          //   footer.classList.remove('hidden');
+          //   footer.classList.remove('invisible');
+          // }
 
           if (callPrompt) callPrompt.classList.remove('hidden');
           if (main) main.classList.add('hidden');
 
           // TODO: Add config option to skip real submit?
-          // loading.addEventListener('transitionend', onSuccess);
-          // transitionTimer = setTimeout(onSuccess, 500);
+          // loading.addEventListener('transitionend', onSuccess.bind(this));
+          // transitionTimer = setTimeout(onSuccess.bind(this), 500);
 
           var source = document.getElementById('source');
           if (source) source.value = document.referrer;
@@ -270,25 +299,29 @@
           var formData = new FormData(form);
           var xhr = new XMLHttpRequest();
 
+          // handle opt-out
+          var opt_in = document.getElementById('_opt_in');
+          if (!opt_in.checked) formData.append('opt_out', 1); 
+
           // TODO: Error handling
-          xhr.addEventListener('error', onSuccess);
-          xhr.addEventListener('load', onSuccess);
+          xhr.addEventListener('error', onSuccess.bind(this));
+          xhr.addEventListener('load', onSuccess.bind(this));
 
           xhr.open(form.getAttribute('method'), form.getAttribute('action'), true);
           xhr.send(formData);
-          setActionCookie.call(this);
 
           if (loading) {
             loading.classList.remove('hidden');
             loading.classList.remove('invisible');
           }
-        });
+        }.bind(this));
 
         function onSuccess(e) {
             if (transitionTimer) clearTimeout(transitionTimer);
 
             // TODO: Error handling
             // if (e && e.code >= 400) return onError(e);
+            setActionCookie.call(this);
 
             if (loading) {
               loading.addEventListener('transitionend', showAfterAction);
@@ -300,8 +333,6 @@
 
         function showAfterAction(e) {
             if (transitionTimer) clearTimeout(transitionTimer);
-
-            console.log('callPrompt: ', callPrompt);
 
             if (callPrompt) callPrompt.classList.remove('invisible');
 

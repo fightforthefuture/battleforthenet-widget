@@ -171,7 +171,7 @@ body.countdown .modal #countdown {
 }
 
 .modal form ::placeholder {
-  color: #0d0a24;
+  color: #9399c7;
   opacity: 1;
 }
 
@@ -185,15 +185,18 @@ body.countdown .modal #countdown {
 .modal button {
   min-width: 9%;
   margin: 0 0 0.5rem 0;
-  padding: 1rem;
-  color: #9399c7;
+  padding: 0.6rem;
+  color: #0d0a24;
   background-color: #fff;
   border: none;
   border-radius: 0.2rem;
   font-family: 'Open Sans', sans-serif;
-  font-size: 1.2rem;
-  letter-spacing: 0.1rem;
+  font-size: 0.9rem;
+  // letter-spacing: 0.1rem;
   flex: 1 0 40%;
+}
+.modal textarea {
+  padding-bottom: 0px;
 }
 
 .modal input[type="submit"],
@@ -222,6 +225,62 @@ body.countdown .modal #countdown {
   max-height: 1.4rem;
   vertical-align: bottom;
 }
+
+.modal input[type="checkbox"] {
+  min-width: 0;
+  margin: 0 0.5rem 0 0;
+}
+
+.modal input[name="member[first_name]"],
+.modal input[name="member[email]"] {
+  flex: 1 0 43%;
+}
+
+.modal input[name="member[first_name]"] {
+  margin-right: 0.25rem;
+}
+
+.modal input[name="member[email]"] {
+  margin-left: 0.25rem;
+}
+
+.modal input[name="member[street_address]"] {
+  margin-right: 0.5rem;
+  flex: 3;
+}
+
+.modal input[name="member[postcode]"] {
+  margin-right: 0.25rem;
+  flex: 2;
+}
+
+.modal input[name="member[phone_number]"] {
+  margin-left: 0.25rem;
+}
+
+.modal input[name="userPhone"] {
+  margin-right: 0.5rem;
+  flex: 3;
+}
+
+.modal textarea {
+  flex: 1 100%;
+}
+
+.modal input[type="submit"] {
+  flex: 1 100%;
+  margin-bottom: 0;
+  padding: 1rem;
+  background-color: #49c7ae;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  -webkit-appearance: none;
+}
+
 
 .modal .disclaimer {
   width: 100%;
@@ -502,6 +561,20 @@ body.glitch .modal .disclaimer a {
     max-width: 100%;
     flex: 0 0 100%;
   }
+
+  .modal input[name="member[first_name]"],
+  .modal input[name="member[email]"] {
+    flex: 1 36%;
+  }
+
+  .modal input[name="member[postcode]"] {
+    margin-right: 0;
+  }
+
+  .modal input[name="member[phone_number]"] {
+    flex: 1 80%;
+    margin-left: 0;
+  }
 }
 
 @media (min-width: 530px) {
@@ -515,8 +588,19 @@ body.glitch .modal .disclaimer a {
 }
 
 @media (max-width: 430px) {
+  .modal input[name="userPhone"] {
+    min-width: 90%;
+    margin: 0 0 0.5rem 0;
+  }
   .modal .prompt input[type="submit"],
   .modal .prompt button {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 375px) {
+  .modal input[name="member[first_name]"],
+  .modal input[name="member[email]"] {
+    flex: 1 33%;
   }
 }

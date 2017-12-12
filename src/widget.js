@@ -8,6 +8,7 @@
   if (typeof _bftn_options.viewCookieExpires == "undefined") _bftn_options.viewCookieExpires = 1;
   if (typeof _bftn_options.actionCookieExpires == "undefined") _bftn_options.actionCookieExpires = 7;
   if (typeof _bftn_options.always_show_widget == "undefined") _bftn_options.always_show_widget = false;
+  if (typeof _bftn_options.theme == "undefined") _bftn_options.theme = 'countdown';
 
   var _bftn_animations = {
     main: {

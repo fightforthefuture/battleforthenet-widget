@@ -146,6 +146,7 @@ gulp.task('watch', ['default'], () => {
   gulp.watch(paths.css, ['css']);
   gulp.watch(paths.scripts, ['scripts']);
   gulp.watch(paths.images, ['images']);
+  gulp.watch(paths.widget, ['widget']);
 });
 
 gulp.task('default', function(callback) {

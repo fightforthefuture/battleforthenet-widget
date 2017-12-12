@@ -481,8 +481,9 @@ body.glitch .modal {
 }
 
 body.glitch .modal #logos img {
-  width: 500px;
-  height: 68px;
+  max-width: 500px;
+  width: 100%;
+  height: auto;
 }
 
 body.glitch {

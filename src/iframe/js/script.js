@@ -54,7 +54,7 @@
           className: theme,
           logos: ['images/money.png'],
           headline: 'Please upgrade your plan to proceed.',
-          body: 'Well, not yet. But without net neutrality, cable companies could censor websites based on their content, or to favor their own business partners. Congress can stop them, but only if we flood them with calls right now.'
+          body: 'Well, not yet. But the FCC just voted to gut net neutrality rules, letting Internet providers like Verizon and Comcast control what we can see and do online with new fees, throttling, and censorship. But we can still get Congress to stop this - by passing a "Resolution of Disapproval" to overturn the FCC vote.\n\nWe can win. Write and call Congress now!'
         };
         break;
       case 'stop':
@@ -62,7 +62,7 @@
           className: theme,
           logos: ['images/stop.png'],
           headline: 'This site has been blocked by your ISP.',
-          body: 'Well, not yet. But without net neutrality, cable companies could censor websites, favoring their own business partners. We can stop them and keep the Internet open, fast, and awesome if we all contact the U.S. Congress, but we only have a few days left.'
+          body: 'Well, not yet. But the FCC just voted to gut net neutrality rules, letting Internet providers like Verizon and Comcast control what we can see and do online with new fees, throttling, and censorship. But we can still get Congress to stop this - by passing a "Resolution of Disapproval" to overturn the FCC vote.\n\nWe can win. Write and call Congress now!'
         };
         break;
       case 'slow':
@@ -70,7 +70,7 @@
           className: theme,
           logos: ['images/slow.svg'],
           headline: 'Sorry, we\'re stuck in the slow lane.',
-          body: 'Well, not yet. But the FCC is about to vote to get rid of net neutrality, letting ISPs slow sites like this to a crawl and charge everyone extra fees. Congress can stop them, but only if we flood them with calls right now.'
+          body: 'The FCC just voted to gut net neutrality rules, letting ISPs slow sites like this to a crawl and charge everyone extra fees. But we can still get Congress to stop this - by passing a "Resolution of Disapproval" to overturn the FCC vote.\n\nWe can win. Write and call Congress now!'
         };
         break;
       case 'without':
@@ -78,14 +78,14 @@
           className: theme,
           logos: ['images/slow.svg', 'images/stop_gradient.png', 'images/money_gradient.png'],
           headline: 'This is the web without net neutrality.',
-          body: 'The FCC is about to vote to get rid of net neutrality. Without it, sites like this could be censored, slowed down, or forced to charge extra fees. Congress can stop them, but only if we flood them with calls right now.'
+          body: 'The FCC just voted to gut net neutrality rules, letting Internet providers like Verizon and Comcast control what we can see and do online with new fees, throttling, and censorship. But we can still get Congress to stop this - by passing a "Resolution of Disapproval" to overturn the FCC vote.\n\nWe can win. Write and call Congress now!'
         };
         break;
       case 'glitch':
         themeObj = {
           className: theme,
           logos: ['images/glitch.png'],
-          body: 'Well, not yet. But the FCC is about to vote to get rid of the net neutrality, letting ISP\'s censor and throttle websites, and charge extra fees. Congress can stop them, but they need to hear from internet users like you right now, before the vote on Thursday.'
+          body: 'Well, not yet. But the FCC just voted to gut net neutrality rules, letting Internet providers like Verizon and Comcast control what we can see and do online with new fees, throttling, and censorship. But we can still get Congress to stop this - by passing a "Resolution of Disapproval" to overturn the FCC vote.\n\nWe can win. Write and call Congress now!'
         };
         break;
       case 'countdown':
@@ -94,7 +94,7 @@
           className: 'countdown',
           logos: [],
           headline: 'URGENT!',
-          body: 'The FCC is about to vote on its plan to kill net neutrality. We have just days to stop censorship, throttling, and extra fees online. Congress needs to hear from Internet users like you right now.'
+          body: 'The FCC just voted to gut net neutrality rules, letting Internet providers like Verizon and Comcast control what we can see and do online with new fees, throttling, and censorship. But we can still get Congress to stop this - by passing a "Resolution of Disapproval" to overturn the FCC vote.\n\nWe can win. Write and call Congress now!'
         };
         break;
     }

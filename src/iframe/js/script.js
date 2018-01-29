@@ -54,7 +54,7 @@
           className: theme,
           logos: ['images/money.png'],
           headline: 'Please upgrade your plan to proceed.',
-          body: 'Well, not yet. But the FCC just voted to gut net neutrality rules, letting Internet providers like Verizon and Comcast control what we can see and do online with new fees, throttling, and censorship. But we can still get Congress to stop this - by passing a "Resolution of Disapproval" to overturn the FCC vote.\n\nWe can win. Write and call Congress now!'
+          body: 'Well, not yet. But the FCC just voted to gut net neutrality rules, letting Internet providers like Verizon and Comcast control what we can see and do online with new fees, throttling, and censorship. But we can still get Congress to stop this by using the Congressional Review Act (CRA) to overturn the FCC vote.\n\nWe need one more vote to win in the Senate. Write and call now!'
         };
         break;
       case 'stop':
@@ -62,7 +62,7 @@
           className: theme,
           logos: ['images/stop.png'],
           headline: 'This site has been blocked by your ISP.',
-          body: 'Well, not yet. But the FCC just voted to gut net neutrality rules, letting Internet providers like Verizon and Comcast control what we can see and do online with new fees, throttling, and censorship. But we can still get Congress to stop this - by passing a "Resolution of Disapproval" to overturn the FCC vote.\n\nWe can win. Write and call Congress now!'
+          body: 'Well, not yet. But the FCC just voted to gut net neutrality rules, letting Internet providers like Verizon and Comcast control what we can see and do online with new fees, throttling, and censorship. But we can still get Congress to stop this by using the Congressional Review Act (CRA) to overturn the FCC vote.\n\nWe need one more vote to win in the Senate. Write and call now!'
         };
         break;
       case 'slow':
@@ -70,7 +70,7 @@
           className: theme,
           logos: ['images/slow.svg'],
           headline: 'Sorry, we\'re stuck in the slow lane.',
-          body: 'The FCC just voted to gut net neutrality rules, letting ISPs slow sites like this to a crawl and charge everyone extra fees. But we can still get Congress to stop this - by passing a "Resolution of Disapproval" to overturn the FCC vote.\n\nWe can win. Write and call Congress now!'
+          body: 'Well, not yet. But the FCC just voted to gut net neutrality rules, letting Internet providers like Verizon and Comcast control what we can see and do online with new fees, throttling, and censorship. But we can still get Congress to stop this by using the Congressional Review Act (CRA) to overturn the FCC vote.\n\nWe need one more vote to win in the Senate. Write and call now!'
         };
         break;
       case 'without':
@@ -78,14 +78,14 @@
           className: theme,
           logos: ['images/slow.svg', 'images/stop_gradient.png', 'images/money_gradient.png'],
           headline: 'This is the web without net neutrality.',
-          body: 'The FCC just voted to gut net neutrality rules, letting Internet providers like Verizon and Comcast control what we can see and do online with new fees, throttling, and censorship. But we can still get Congress to stop this - by passing a "Resolution of Disapproval" to overturn the FCC vote.\n\nWe can win. Write and call Congress now!'
+          body: 'The FCC just voted to gut net neutrality rules, letting Internet providers like Verizon and Comcast control what we can see and do online with new fees, throttling, and censorship. But we can still get Congress to stop this by using the Congressional Review Act (CRA) to overturn the FCC vote.\n\nWe need one more vote to win in the Senate. Write and call now!'
         };
         break;
       case 'glitch':
         themeObj = {
           className: theme,
           logos: ['images/glitch.png'],
-          body: 'Well, not yet. But the FCC just voted to gut net neutrality rules, letting Internet providers like Verizon and Comcast control what we can see and do online with new fees, throttling, and censorship. But we can still get Congress to stop this - by passing a "Resolution of Disapproval" to overturn the FCC vote.\n\nWe can win. Write and call Congress now!'
+          body: 'The FCC just voted to gut net neutrality rules, letting Internet providers like Verizon and Comcast control what we can see and do online with new fees, throttling, and censorship. But we can still get Congress to stop this by using the Congressional Review Act (CRA) to overturn the FCC vote.\n\nWe need one more vote to win in the Senate. Write and call now!'
         };
         break;
       case 'countdown':
@@ -94,7 +94,7 @@
           className: 'countdown',
           logos: [],
           headline: 'URGENT!',
-          body: 'The FCC just voted to gut net neutrality rules, letting Internet providers like Verizon and Comcast control what we can see and do online with new fees, throttling, and censorship. But we can still get Congress to stop this - by passing a "Resolution of Disapproval" to overturn the FCC vote.\n\nWe can win. Write and call Congress now!'
+          body: 'The FCC just voted to gut net neutrality rules, letting Internet providers like Verizon and Comcast control what we can see and do online with new fees, throttling, and censorship. But we can still get Congress to stop this by using the Congressional Review Act (CRA) to overturn the FCC vote.\n\nWe need one more vote to win in the Senate. Write and call now!'
         };
         break;
     }

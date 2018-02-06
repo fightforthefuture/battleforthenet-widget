@@ -530,6 +530,219 @@ body.glitch .modal footer button a {
 body.glitch footer h3 { color: rgba(255, 255, 255, .66); }
 body.glitch footer { background: rgba(0, 0, 0, .33); }
 
+/* One More Vote Theme */
+
+body.onemorevote .modal {
+  background-color: #171b24;
+  border-radius: 4px;
+}
+
+body.onemorevote .modal > main {
+  padding: 0;
+}
+
+body.onemorevote section {
+  padding: 2rem 2rem .5rem;
+}
+
+body.onemorevote a#close {
+  top: 0;
+}
+
+body.onemorevote a#close:hover {
+  text-decoration: none;
+}
+
+body.onemorevote a#close img {
+  display: none;
+}
+
+body.onemorevote a#close::before {
+  content:"\00d7";
+  text-decoration: none;
+  color: #cad7ee;
+  font-size: 36px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body.onemorevote-capitol #main {
+  background-image: url(../images/one-more-vote-bg.png);
+  padding-top: 270px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+body.onemorevote-text #main {
+  background-image: url(../images/one-more-vote-text.png);
+  padding-top: 135px;
+  background-size: 379.5px 67px;
+  background-repeat: no-repeat;
+  background-position: center 50px;
+}
+
+body.onemorevote input[type="submit"] {
+  color: #13161c;
+  background-color: #f6ec40;
+}
+
+body.onemorevote .disclaimer p#rotation {
+  margin-bottom: 40px;
+}
+
+body.onemorevote .footer-links {
+  color: #1d222d;
+  background-color: #13161e;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 12px;
+  border-radius: 0 0 4px 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+body.onemorevote .footer-links a {
+  color: #3f495d;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+@keyframes blink-last-bar {
+  from { background-color: #f7ea54; }
+  to   { background-color: #a1afc8; }
+}
+
+body.onemorevote .progress-bar {
+  animation: fade-in 3s;
+  white-space: nowrap;
+}
+
+body.onemorevote .progress-bar .bar {
+  display: inline-block;
+  height: 20px;
+  width: 6px;
+  background-color: #f7ea54;
+  border-radius: 3px;
+  margin: 0 2px;
+}
+
+body.onemorevote .progress-bar .bar.active {
+  background-color: #a1afc8;
+}
+
+body.onemorevote .progress-bar.done .bar:last-child {
+  animation: blink-last-bar 1.5s infinite;
+}
+
+body.onemorevote #prompt h1 {
+  background-image: url(../images/one-more-vote-thanks.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 366px;
+  height: 28px;
+  margin: 20px auto;
+}
+
+body.onemorevote #prompt h1 span {
+  display: none;
+}
+
+body.onemorevote #prompt input[name="userPhone"],
+body.onemorevote #prompt input[type="submit"] {
+  width: 50%;
+  flex: 1;
+  height: 3em;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 1em;
+}
+
+body.onemorevote #script h1 {
+  background-image: url(../images/one-more-vote-calling-now.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 222.5px;
+  height: 25.5px;
+  margin: 20px auto;
+}
+
+body.onemorevote #script h1 span {
+  display: none;
+}
+
+body.onemorevote #script .polite {
+  font-weight: bold;
+  color: #fff;
+}
+
+body.onemorevote #script .polite .quote {
+  display: block;
+  color: #a2b0ca;
+  font-weight: normal;
+  font-style: italic;
+  margin: 10px;
+}
+
+body.onemorevote #script .busy {
+  background-color: #212733;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  display: inline-block;
+  padding: 4px 8px;
+  background-image: url(../images/warning-icon.svg);
+  background-repeat: no-repeat;
+  background-size: 15px 15px;
+  background-position: 5px center;
+  padding-left: 26px;
+}
+
+body.onemorevote #footer {
+  background-color: #0f1219;
+}
+
+body.onemorevote #footer h3 {
+  text-align: center;
+  color: #94a3c3;
+}
+
+body.onemorevote #footer button {
+  background-color: #2d3444;
+  background-size: 15px 15px;
+  background-color: #2d3444;
+  background-size: auto 15px;
+  color: #94a3c3;
+  background-repeat: no-repeat;
+  background-position: 8px center;
+  padding-left: 22px;
+}
+
+body.onemorevote #footer button img {
+  display: none;
+}
+
+body.onemorevote #footer button.facebook {
+  background-image: url(../images/facebook-circle-icon.png);
+}
+
+body.onemorevote #footer button.twitter {
+  background-image: url(../images/twitter-circle-icon.png);
+}
+
+body.onemorevote #footer .donate button {
+  background-image: url(../images/donate-icon.png);
+}
+
+body.onemorevote #footer button.ooni {
+  background-image: url(../images/phone-icon.png);
+}
+
 /* Animations */
 @keyframes fade-in {
   from { opacity: 0; }

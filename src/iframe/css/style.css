@@ -312,6 +312,10 @@ body.countdown .modal #countdown {
   vertical-align: middle;
 }
 
+.modal #prompt .footer-links {
+  display: none;
+}
+
 .modal footer {
   padding: 1rem 2rem;
   background-color: #141037;
@@ -617,6 +621,10 @@ body.onemorevote .footer-links a {
   margin: 0 5px;
 }
 
+body.onemorevote .footer-links img.github {
+  display: none;
+}
+
 body.onemorevote-capitol #progress-bar {
   height: 20px;
 }
@@ -664,6 +672,14 @@ body.onemorevote #prompt input[type="submit"] {
   padding-top: 0;
   padding-bottom: 0;
   font-size: 1em;
+}
+
+body.onemorevote #prompt .disclaimer a.privacy-policy {
+  display: none;
+}
+
+body.onemorevote #prompt .footer-links {
+  display: block;
 }
 
 body.onemorevote #script h1 {

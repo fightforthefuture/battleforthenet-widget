@@ -55,7 +55,7 @@ ProgressBar.prototype.tick = function() {
   if (this.currentIndex < this.barCount) {
     this.currentIndex++;
 
-    var bars = document.querySelectorAll('.progress-bar .bar:nth-child(-n+' + this.currentIndex + ')');
+    var bars = this.DOMNode.querySelectorAll('.progress-bar .bar:nth-child(-n+' + this.currentIndex + ')');
     
     for (var i = 0; i < bars.length; i++) {
       var bar = bars[i];
@@ -63,7 +63,7 @@ ProgressBar.prototype.tick = function() {
     }
   }
   else {
-    this.DOMNode.classList.add('done');
+    this.DOMNode.querySelector('.progress-bar').classList.add('done');
     this.stop();
   }
 };

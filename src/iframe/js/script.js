@@ -151,7 +151,9 @@
     document.getElementById('logos').appendChild(fragment);
 
     // Render headline and body copy
-    document.getElementById('headline').textContent = theme.headline;
+    if (theme.headline) {
+      document.getElementById('headline').textContent = theme.headline;
+    }
 
     if (theme.htmlContent) {
       document.getElementById('content').innerHTML = theme.htmlContent;

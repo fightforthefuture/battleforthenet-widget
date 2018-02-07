@@ -77,11 +77,14 @@ a:hover {
 
 .modal {
   margin: 0 auto;
-  width: 532px;
   display: table;
   border-radius: 0.5rem;
   background-color: #0d0a24;
   box-shadow: 0px 3px 20px rgba(0, 0, 0, .4);
+}
+
+.modal, #form {
+  width: 532px;
 }
 
 .modal > main {

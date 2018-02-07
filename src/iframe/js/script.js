@@ -88,11 +88,12 @@
           body: 'The FCC just voted to gut net neutrality rules, letting Internet providers like Verizon and Comcast control what we can see and do online with new fees, throttling, and censorship. But we can still get Congress to stop this by using the Congressional Review Act (CRA) to overturn the FCC vote.\n\nWe need one more vote to win in the Senate. Write and call now!'
         };
         break;
-      case 'capitol':
+      case 'countdown':
         themeObj = {
-          className: 'onemorevote onemorevote-capitol',
-          logos: ['images/one-more-vote-bg.png'],
-          htmlContent: 'The FCC voted to repeal net neutrality, letting internet providers like Verizon and Comcast impose new fees, throttle bandwidth, and censor online content.  But we can stop them by using the Congressional Review Act (CRA).<br><strong>We need one more vote to win the Senate.  Fill out the form below to join the mission, or <a href="https://www.battleforthenet.com/#widget-learn-more">learn more here</a>.</strong>'
+          className: 'countdown',
+          logos: [],
+          headline: 'URGENT!',
+          body: 'The FCC just voted to gut net neutrality rules, letting Internet providers like Verizon and Comcast control what we can see and do online with new fees, throttling, and censorship. But we can still get Congress to stop this by using the Congressional Review Act (CRA) to overturn the FCC vote.\n\nWe need one more vote to win in the Senate. Write and call now!'
         };
         break;
       case 'onemorevote':
@@ -102,13 +103,12 @@
           htmlContent: 'The FCC voted to repeal net neutrality, letting internet providers like Verizon and Comcast impose new fees, throttle bandwidth, and censor online content.  But we can stop them by using the Congressional Review Act (CRA).<br><strong>We need one more vote to win the Senate.  Fill out the form below to join the mission, or <a href="https://www.battleforthenet.com/#widget-learn-more">learn more here</a>.</strong>'
         };
         break;
-      case 'countdown':
+      case 'capitol':
       default:
         themeObj = {
-          className: 'countdown',
-          logos: [],
-          headline: 'URGENT!',
-          body: 'The FCC just voted to gut net neutrality rules, letting Internet providers like Verizon and Comcast control what we can see and do online with new fees, throttling, and censorship. But we can still get Congress to stop this by using the Congressional Review Act (CRA) to overturn the FCC vote.\n\nWe need one more vote to win in the Senate. Write and call now!'
+          className: 'onemorevote onemorevote-capitol',
+          logos: ['images/one-more-vote-bg.png'],
+          htmlContent: 'The FCC voted to repeal net neutrality, letting internet providers like Verizon and Comcast impose new fees, throttle bandwidth, and censor online content.  But we can stop them by using the Congressional Review Act (CRA).<br><strong>We need one more vote to win the Senate.  Fill out the form below to join the mission, or <a href="https://www.battleforthenet.com/#widget-learn-more">learn more here</a>.</strong>'
         };
         break;
     }

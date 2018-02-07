@@ -139,9 +139,9 @@ a:hover {
   display: none;
 }
 
-body.countdown .modal #countdown {
+/*body.countdown .modal #countdown {
   display: flex;
-}
+}*/
 
 .modal #countdown figure {
   margin: 0 0.5rem;

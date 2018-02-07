@@ -12,11 +12,13 @@ function ProgressBar(params) {
     this.tick = this.tick.bind(this);
     this.currentIndex = 0;
 
-    var innerHTML = '';
+    var innerHTML = '<div class="progress-bar">';
 
     for (var i = 0; i < this.barCount; i++) {
       innerHTML += '<div class="bar"></div>';
     }
+
+    innerHTML += '</div>';
 
     this.DOMNode.innerHTML = innerHTML;
     this.DOMNode.classList.remove('hidden');

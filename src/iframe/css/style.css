@@ -108,8 +108,8 @@ a:hover {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  bottom: 0;
+  right: 0;
 }
 
 .modal #loading img {
@@ -565,19 +565,22 @@ body.onemorevote a#close::before {
   font-family: 'Montserrat', sans-serif;
 }
 
-body.onemorevote-capitol #main {
-  background-image: url(../images/one-more-vote-bg.png);
-  padding-top: 270px;
-  background-size: 100%;
-  background-repeat: no-repeat;
+body.onemorevote-capitol #logos {
+  margin: -2rem -2rem 0.5rem;
 }
 
-body.onemorevote-text #main {
-  background-image: url(../images/one-more-vote-text.png);
-  padding-top: 135px;
-  background-size: 379.5px 67px;
-  background-repeat: no-repeat;
-  background-position: center 50px;
+body.onemorevote-text #logos {
+  margin-top: 1rem;
+}
+
+body.onemorevote #logos img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+body.onemorevote-text #logos img {
+  max-width: 380px;
 }
 
 body.onemorevote input[type="submit"] {
@@ -611,13 +614,11 @@ body.onemorevote .footer-links a {
   margin: 0 5px;
 }
 
-@keyframes blink-last-bar {
-  from { background-color: #f7ea54; }
-  to   { background-color: #a1afc8; }
+body.onemorevote-capitol #progress-bar {
+  height: 20px;
 }
 
 body.onemorevote .progress-bar {
-  animation: fade-in 3s;
   white-space: nowrap;
 }
 
@@ -635,7 +636,7 @@ body.onemorevote .progress-bar .bar.active {
 }
 
 body.onemorevote .progress-bar.done .bar:last-child {
-  animation: blink-last-bar 1.5s infinite;
+  animation: progress-bar-done 1.5s infinite;
 }
 
 body.onemorevote #prompt h1 {
@@ -696,7 +697,7 @@ body.onemorevote #script .busy {
   color: #fff;
   display: inline-block;
   padding: 4px 8px;
-  background-image: url(../images/warning-icon.svg);
+  background-image: url(../images/warning-icon.png);
   background-repeat: no-repeat;
   background-size: 15px 15px;
   background-position: 5px center;
@@ -754,6 +755,11 @@ body.onemorevote #footer button.ooni {
   100% { transform: translateY(0); opacity: 1; }
 }
 
+@keyframes progress-bar-done {
+  from { background-color: #f7ea54; }
+  to   { background-color: #a1afc8; }
+}
+
 .modal {
   animation-duration: 1s;
   animation-name: modal;
@@ -797,6 +803,11 @@ body.onemorevote #footer button.ooni {
     flex: 1 80%;
     margin-left: 0;
   }
+
+  .progress-bar {
+    zoom: 0.6;
+    white-space: normal;
+  }
 }
 
 @media (min-width: 530px) {
@@ -824,5 +835,11 @@ body.onemorevote #footer button.ooni {
   .modal input[name="member[first_name]"],
   .modal input[name="member[email]"] {
     flex: 1 33%;
+  }
+}
+
+@media (max-width: 320px) {
+  .progress-bar {
+    zoom: 0.5;
   }
 }

@@ -6,7 +6,6 @@
   "license": "BSD-2-Clause",
   "devDependencies": {
     "autoprefixer": "^7.1.5",
-    "cloudflare": "^2.2.0",
     "cssnano": "^3.10.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",

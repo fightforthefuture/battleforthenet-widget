@@ -77,11 +77,14 @@ a:hover {
 
 .modal {
   margin: 0 auto;
-  width: 532px;
   display: table;
   border-radius: 0.5rem;
   background-color: #0d0a24;
   box-shadow: 0px 3px 20px rgba(0, 0, 0, .4);
+}
+
+.modal, #form {
+  width: 532px;
 }
 
 .modal > main {
@@ -108,8 +111,8 @@ a:hover {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  bottom: 0;
+  right: 0;
 }
 
 .modal #loading img {
@@ -136,9 +139,9 @@ a:hover {
   display: none;
 }
 
-body.countdown .modal #countdown {
+/*body.countdown .modal #countdown {
   display: flex;
-}
+}*/
 
 .modal #countdown figure {
   margin: 0 0.5rem;
@@ -307,6 +310,10 @@ body.countdown .modal #countdown {
   margin-left: 0.2rem;
   padding-bottom: 0.2rem;
   vertical-align: middle;
+}
+
+.modal #prompt .footer-links {
+  display: none;
 }
 
 .modal footer {
@@ -530,6 +537,232 @@ body.glitch .modal footer button a {
 body.glitch footer h3 { color: rgba(255, 255, 255, .66); }
 body.glitch footer { background: rgba(0, 0, 0, .33); }
 
+/* One More Vote Theme */
+
+body.onemorevote .modal {
+  background-color: #171b24;
+  border-radius: 4px;
+}
+
+body.onemorevote .modal > main {
+  padding: 0;
+}
+
+body.onemorevote section {
+  padding: 2rem 2rem .5rem;
+}
+
+body.onemorevote a#close {
+  top: 0;
+}
+
+body.onemorevote a#close:hover {
+  text-decoration: none;
+}
+
+body.onemorevote a#close img {
+  display: none;
+}
+
+body.onemorevote a#close::before {
+  content:"\00d7";
+  text-decoration: none;
+  color: #cad7ee;
+  font-size: 36px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body.onemorevote-capitol #logos {
+  margin: -2rem -2rem 0.5rem;
+}
+
+body.onemorevote-text #logos {
+  margin-top: 1rem;
+}
+
+body.onemorevote #logos img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+body.onemorevote-text #logos img {
+  max-width: 380px;
+}
+
+body.onemorevote input[type="submit"] {
+  color: #13161c;
+  background-color: #f6ec40;
+}
+
+body.onemorevote .disclaimer p#rotation {
+  margin-bottom: 40px;
+}
+
+body.onemorevote .footer-links {
+  color: #1d222d;
+  background-color: #13161e;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 12px;
+  border-radius: 0 0 4px 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+body.onemorevote .footer-links a {
+  color: #3f495d;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+body.onemorevote .footer-links img.github {
+  display: none;
+}
+
+body.onemorevote-capitol #progress-bar {
+  height: 20px;
+}
+
+body.onemorevote .progress-bar {
+  white-space: nowrap;
+}
+
+body.onemorevote .progress-bar .bar {
+  display: inline-block;
+  height: 20px;
+  width: 6px;
+  background-color: #f7ea54;
+  border-radius: 3px;
+  margin: 0 2px;
+}
+
+body.onemorevote .progress-bar .bar.active {
+  background-color: #a1afc8;
+}
+
+body.onemorevote .progress-bar.done .bar:last-child {
+  animation: progress-bar-done 1.5s infinite;
+}
+
+body.onemorevote #prompt h1 {
+  background-image: url(../images/one-more-vote-thanks.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 366px;
+  height: 28px;
+  margin: 20px auto;
+}
+
+body.onemorevote #prompt h1 span {
+  display: none;
+}
+
+body.onemorevote #prompt input[name="userPhone"],
+body.onemorevote #prompt input[type="submit"] {
+  width: 50%;
+  flex: 1;
+  height: 3em;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 1em;
+}
+
+body.onemorevote #prompt .disclaimer a.privacy-policy {
+  display: none;
+}
+
+body.onemorevote #prompt .footer-links {
+  display: block;
+}
+
+body.onemorevote #script h1 {
+  background-image: url(../images/one-more-vote-calling-now.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 222.5px;
+  height: 25.5px;
+  margin: 20px auto;
+}
+
+body.onemorevote #script h1 span {
+  display: none;
+}
+
+body.onemorevote #script .polite {
+  font-weight: bold;
+  color: #fff;
+}
+
+body.onemorevote #script .polite .quote {
+  display: block;
+  color: #a2b0ca;
+  font-weight: normal;
+  font-style: italic;
+  margin: 10px;
+}
+
+body.onemorevote #script .busy {
+  background-color: #212733;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  display: inline-block;
+  padding: 4px 8px;
+  background-image: url(../images/warning-icon.png);
+  background-repeat: no-repeat;
+  background-size: 15px 15px;
+  background-position: 5px center;
+  padding-left: 26px;
+}
+
+body.onemorevote #footer {
+  background-color: #0f1219;
+}
+
+body.onemorevote #footer h3 {
+  text-align: center;
+  color: #94a3c3;
+}
+
+body.onemorevote #footer button {
+  background-color: #2d3444;
+  background-size: 15px 15px;
+  background-color: #2d3444;
+  background-size: auto 15px;
+  color: #94a3c3;
+  background-repeat: no-repeat;
+  background-position: 8px center;
+  padding-left: 22px;
+}
+
+body.onemorevote #footer button img {
+  display: none;
+}
+
+body.onemorevote #footer button.facebook {
+  background-image: url(../images/facebook-circle-icon.png);
+}
+
+body.onemorevote #footer button.twitter {
+  background-image: url(../images/twitter-circle-icon.png);
+}
+
+body.onemorevote #footer .donate button {
+  background-image: url(../images/donate-icon.png);
+}
+
+body.onemorevote #footer button.ooni {
+  background-image: url(../images/phone-icon.png);
+}
+
 /* Animations */
 @keyframes fade-in {
   from { opacity: 0; }
@@ -539,6 +772,17 @@ body.glitch footer { background: rgba(0, 0, 0, .33); }
 @keyframes modal {
   0% { transform: translateY(100px); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes progress-bar-done {
+  from { 
+    background-color: #f7ea54;
+    box-shadow: 0px 0px 8px 2px rgba(246, 236, 64, 0.5); 
+  }
+  to {
+    background-color: #a1afc8;
+    box-shadow: none;
+  }
 }
 
 .modal {
@@ -584,6 +828,11 @@ body.glitch footer { background: rgba(0, 0, 0, .33); }
     flex: 1 80%;
     margin-left: 0;
   }
+
+  .progress-bar {
+    zoom: 0.6;
+    white-space: normal;
+  }
 }
 
 @media (min-width: 530px) {
@@ -611,5 +860,11 @@ body.glitch footer { background: rgba(0, 0, 0, .33); }
   .modal input[name="member[first_name]"],
   .modal input[name="member[email]"] {
     flex: 1 33%;
+  }
+}
+
+@media (max-width: 320px) {
+  .progress-bar {
+    zoom: 0.5;
   }
 }

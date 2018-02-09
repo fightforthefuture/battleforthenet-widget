@@ -89,12 +89,26 @@
         };
         break;
       case 'countdown':
-      default:
         themeObj = {
           className: 'countdown',
           logos: [],
           headline: 'URGENT!',
           body: 'The FCC just voted to gut net neutrality rules, letting Internet providers like Verizon and Comcast control what we can see and do online with new fees, throttling, and censorship. But we can still get Congress to stop this by using the Congressional Review Act (CRA) to overturn the FCC vote.\n\nWe need one more vote to win in the Senate. Write and call now!'
+        };
+        break;
+      case 'onemorevote':
+        themeObj = {
+          className: 'onemorevote onemorevote-text',
+          logos: ['images/one-more-vote-text.png'],
+          htmlContent: 'The FCC voted to repeal net neutrality, letting internet providers like Verizon and Comcast impose new fees, throttle bandwidth, and censor online content.  But we can stop them by using the Congressional Review Act (CRA).<br><strong>We need one more vote to win the Senate.  Fill out the form below to join the mission, or <a href="https://www.battleforthenet.com/#widget-learn-more">learn more here</a>.</strong>'
+        };
+        break;
+      case 'capitol':
+      default:
+        themeObj = {
+          className: 'onemorevote onemorevote-capitol',
+          logos: ['images/one-more-vote-bg.png'],
+          htmlContent: 'The FCC voted to repeal net neutrality, letting internet providers like Verizon and Comcast impose new fees, throttle bandwidth, and censor online content.  But we can stop them by using the Congressional Review Act (CRA).<br><strong>We need one more vote to win the Senate.  Fill out the form below to join the mission, or <a href="https://www.battleforthenet.com/#widget-learn-more">learn more here</a>.</strong>'
         };
         break;
     }
@@ -110,7 +124,10 @@
   }
 
   function renderContent(theme) {
-    document.body.classList.add(theme.className);
+    var classNames = theme.className.split(' ');
+    for (var i = 0; i < classNames.length; i++) {
+      document.body.classList.add(classNames[i]);
+    }
 
     // Render logos
     var fragment = document.createDocumentFragment();
@@ -122,31 +139,47 @@
       fragment.appendChild(img);
     }
 
+    // if this is the capitol theme, start the progress bar after the logo loads
+    if (theme.className.indexOf('onemorevote-capitol') !== -1 && typeof ProgressBar === 'function') {
+      img.onload = function(){
+        new ProgressBar({
+          target: '#progress-bar'
+        });
+      };
+    }
+
     document.getElementById('logos').appendChild(fragment);
 
     // Render headline and body copy
-    document.getElementById('headline').textContent = theme.headline;
-
-    var bodyFragment = document.createDocumentFragment();
-    var bodyCopy = theme.body.split('\n');
-    var paragraph;
-
-    for (var i = 0; i < bodyCopy.length; i++) {
-      paragraph = document.createElement('p');
-      paragraph.textContent = bodyCopy[i];
-      bodyFragment.appendChild(paragraph);
+    if (theme.headline) {
+      document.getElementById('headline').textContent = theme.headline;
     }
-    
-    var learnMore = document.createElement('a');
-    learnMore.setAttribute('href', 'https://www.battleforthenet.com/#widget-learn-more');
-    learnMore.setAttribute('target', '_blank');
-    learnMore.textContent = 'Learn more.';
 
-    // Append link to last paragraph in body copy.
-    paragraph.textContent += ' ';
-    paragraph.appendChild(learnMore);
+    if (theme.htmlContent) {
+      document.getElementById('content').innerHTML = theme.htmlContent;
+    }
+    else {
+      var bodyFragment = document.createDocumentFragment();
+      var bodyCopy = theme.body.split('\n');
+      var paragraph;
 
-    document.getElementById('content').appendChild(bodyFragment);
+      for (var i = 0; i < bodyCopy.length; i++) {
+        paragraph = document.createElement('p');
+        paragraph.textContent = bodyCopy[i];
+        bodyFragment.appendChild(paragraph);
+      }
+      
+      var learnMore = document.createElement('a');
+      learnMore.setAttribute('href', 'https://www.battleforthenet.com/#widget-learn-more');
+      learnMore.setAttribute('target', '_blank');
+      learnMore.textContent = 'Learn more.';
+
+      // Append link to last paragraph in body copy.
+      paragraph.textContent += ' ';
+      paragraph.appendChild(learnMore);
+
+      document.getElementById('content').appendChild(bodyFragment);
+    }
 
     if (theme.className === 'countdown' && typeof Countdown === 'function') {
       new Countdown({

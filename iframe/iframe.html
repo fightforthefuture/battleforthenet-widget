@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700" rel=stylesheet>
+  <link rel=stylesheet href=css/style.min.css>
+  <meta charset=utf-8>
+  <meta content="width=device-width,initial-scale=1" name=viewport>
+</head>
+
+<body>
+  <div class="gutter table">
+    <div id=background class=cell>
+      <div class="modal fade">
+        <main>
+          <a id=close href=#><img src=images/close.svg alt=Close></a>
+
+          <section id=loading class="hidden invisible fade">
+            <div class=table>
+              <div class=cell>
+                <img src=images/slow.svg>
+              </div>
+            </div>
+          </section>
+
+          <section id=main class=fade>
+            <div id=logos></div>
+            <div id=progress-bar></div>
+            <h1 id=headline></h1>
+            <p id=content></p>
+
+            <div id=countdown>
+              <figure>
+                <div class=days></div>
+                <figcaption>Days</figcaption>
+              </figure>
+              <div class=separator>:</div>
+              <figure>
+                <div class=hours></div>
+                <figcaption>Hours</figcaption>
+              </figure>
+              <div class=separator>:</div>
+              <figure>
+                <div class=minutes></div>
+                <figcaption>Minutes</figcaption>
+              </figure>
+              <div class=separator>:</div>
+              <figure>
+                <div class=seconds></div>
+                <figcaption>Seconds</figcaption>
+              </figure>
+            </div>
+
+            <form id=form method=post action=https://queue.fightforthefuture.org/action accept-charset=UTF-8>
+              <input id=full_name name=member[first_name] placeholder="Full Name" title="Full Name" autocomplete=name required>
+              <input id=email type=email name=member[email] placeholder=Email title=Email required>
+              <div class=flex>
+                <input id=address name=member[street_address] placeholder="Street Address" title="Street Address" required>
+                <input id=postcode name=member[postcode] placeholder="Zip Code" title="Zip Code" required>
+              </div>
+              <input id=phone type=tel name=member[phone_number] placeholder="Phone # (to volunteer)" title=Phone>
+              <input type=hidden name=subject value="Protect Net Neutrality!">
+              <textarea name=action_comment title=Comment required>The FCC vote to destroy the Net Neutrality protections on Dec. 14 cannot stand. 
+
+I’m calling on you to work with your colleagues to use the Congressional Review Act to pass a "resolution of disapproval" reversing the FCC's vote.
+
+The FCC's Dec. 14 decision willfully ignored the outcry from tens of millions of people, and it abdicated the FCC's responsibility to protect the internet from ISP blocking and discrimination. The FCC has injured our economy and free speech in just one action, all without so much as a single public hearing.
+
+We need members of Congress to stand up for the open internet and for the digital civil rights of their constituents now. Please use the CRA to pass a Resolution of Disapproval to overturn the FCC's December 14 "Restoring Internet Freedom" vote.
+
+Thank you.</textarea>
+              <input type=submit value="WRITE CONGRESS">
+
+              <div class=disclaimer>
+                
+                <p id=rotation></p>
+
+                <p class=footer-links><a href=https://www.battleforthenet.com/privacy/ target=_blank>Privacy Policy</a> | <a href=https://github.com/fightforthefuture/battleforthenet-widget#how-to-install-the-widget target=_blank>Get the code <img class=github src=images/github.svg alt=GitHub></a> | <a href=https://github.com/fightforthefuture/battleforthenet-widget/issues target=_blank>Issues?</a></p>
+              </div>
+
+              
+              <input class=hidden type=checkbox checked name=hp_enabled>
+              <input class=hidden type=checkbox name=hp_disabled>
+              <input class=hidden name=guard>
+
+              
+              <input type=hidden name=contact_congress value=1>
+              <input type=hidden name=fcc_ecfs_docket value=17-108>
+
+              
+              <input type=hidden name=an_tags value='["net-neutrality"]'>
+              <input type=hidden name=an_petition_id value=5de97f0d-fd08-4b3a-904d-f808e380dbd6>
+              <input id=source type=hidden name=subscription[source] value="">
+            </form>
+          </section>
+
+          <section id=prompt class="prompt hidden invisible fade">
+            <h1><span>Thanks for emailing!<br>Now, can you call?</span></h1>
+            <p>Enter your number and we'll connect you to Congress and the FCC. <strong>We'll also give you suggestions on what to say.</strong></p>
+            <form id=call method=post action=https://call-congress.fightforthefuture.org/create accept-charset=UTF-8>
+              <input id=userPhone type=phone name=userPhone placeholder=Phone title=Phone required>
+              <input id=zipcode type=hidden name=zipcode>
+              <input type=hidden name=campaignId value=battleforthenet-2017>
+              <input type=submit value="Call Now">
+
+              <div class=disclaimer>
+                <p>We will only use your phone number to connect this call. <a href=https://www.battleforthenet.com/privacy/ target=_blank class=privacy-policy>Privacy policy.</a></p>
+                <p class=footer-links><a href=https://github.com/fightforthefuture/battleforthenet-widget#how-to-install-the-widget target=_blank>Get the code <img class=github src=images/github.svg alt=GitHub></a> | <a href=https://github.com/fightforthefuture/battleforthenet-widget/issues target=_blank>Issues?</a></p>
+              </div>
+            </form>
+          </section>
+
+          <section id=script class="hidden invisible fade">
+            <h1><span>Calling you now!</span></h1>
+            <p class=polite>Be polite, introduce yourself, and say: <span class=quote>“I support Title Two net neutrality and I urge you to use the Congressional Review Act to pass a "resolution of disapproval" reversing the FCC's December vote to repeal the Open Internet Order.”</span></p>
+            <p class=busy>If lines are busy, we may call you in a few minutes.</p>
+          </section>
+        </main>
+
+        <footer id=footer class="hidden invisible">
+          <h3>Done calling? Do these things too!</h3>
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/sharer.php?u=https://www.battleforthenet.com/" target=_blank>
+                <button class=facebook>
+                  <div>
+                    <img src=images/facebook.svg>
+                    <span>Share</span>
+                  </div>
+                </button>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/intent/tweet?related=fightfortheftr&text=What%0A%0A%20if%0A%0A%20the%0A%0A%20Internet%0A%0A%20was%0A%0A%20so%0A%0A%20slow%0A%0A%20it%0A%0A%20loaded%0A%0A%20one%0A%0A%20word%0A%0A%20at%0A%0A%20a%0A%0A%20time?%0A%0A%20Defend %23NetNeutrality. https://www.battleforthenet.com" target=_blank>
+                <button class=twitter>
+                  <div>
+                    <img src=images/twitter.svg>
+                    <span>Tweet</span>
+                  </div>
+                </button>
+              </a>
+            </li>
+            <li style=display:none> 
+              <a id=protest href=https://actionnetwork.org/event_campaigns/show-up-and-speak-out-for-net-neutrality target=_blank>
+                <button class=protest>
+                  <div>
+                    <img src=images/pin.svg>
+                    <span>Protest</span>
+                  </div>
+                </button>
+              </a>
+            </li>
+            <li>
+              <a class=donate href=https://donate.fightforthefuture.org/campaigns/bftnprotests/ target=_blank>
+                <button>
+                  <div>
+                    <img src=images/heart.svg>
+                    <span>Donate</span>
+                  </div>
+                </button>
+              </a>
+            </li>
+            <li>                
+              <button class=ooni>
+                <div>
+                  <img src=images/mobile.svg>
+                  <span>
+                    <a href=http://testyourinter.net target=_blank>TestYourInter.net</a>
+                  </span>
+                </div>
+              </button>
+            </li>
+        </ul></footer>
+      </div>
+    </div>
+  </div>
+
+  
+  <script src=js/main.min.js></script>
+
+  
+  <script src=https://cdn.ravenjs.com/3.16.1/raven.min.js crossorigin=anonymous></script>
+  <script>"undefined"!=typeof Raven&&Raven.config("https://43506d8b2eba47b0b05ad9466243493c@sentry.io/187468",{release:"96cb20b34e3d3ce8e37145f4a82ccaa11333ed5b",tags:{git_commit:"{{ site.github.build_revision }}"}}).install()</script>
+
+

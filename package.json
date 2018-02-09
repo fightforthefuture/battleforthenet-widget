@@ -26,6 +26,7 @@
   },
   "scripts": {
     "build": "gulp",
-    "watch": "gulp watch"
+    "watch": "gulp watch",
+    "deploy": "aws s3 sync dist s3://widget.battleforthenet.com --delete"
   }
 }

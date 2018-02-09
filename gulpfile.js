@@ -50,10 +50,13 @@ gulp.task('license', () => {
 });
 
 gulp.task('html', async () => {
+  const rev = await commitHash()
+
   return pump([
     gulp.src(paths.html),
     // Set release from base branch instead of generated output
-    replace(/\{\{\s*site.github.build_revision\s*\}\}/, await commitHash()),
+    replace(/\{\{\s*site.github.build_revision\s*\}\}/, rev),
+    replace('CACHE_BUST', rev),
     htmlmin({
       collapseBooleanAttributes: true,
       collapseWhitespace: false,

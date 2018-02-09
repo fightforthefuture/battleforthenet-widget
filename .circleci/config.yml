@@ -2,34 +2,51 @@ version: 2
 jobs:
   build:
     docker:
-    - image: circleci/node:8-browsers
+      # circleci/ruby:2.4-node-browsers + awscli
+      - image: kenmickles/fftf-static-site-builder:0.0.1
+
     steps:
-    - add-ssh-keys:
-        fingerprints:
-        - "bd:41:f8:10:a5:9e:5a:78:bd:8e:2c:90:3f:a1:b2:fa"
-    - checkout
-    - restore_cache:
-        keys:
-        - v1-dependencies-{{ checksum "package-lock.json" }}
-    - run: npm install
-    - save_cache:
-        paths:
-        - node_modules
-        key: v1-dependencies-{{ checksum "package-lock.json" }}
-    - run: npm run build
-    - deploy:
-        name: GitHub Pages
-        command: |
-          if [ "${CIRCLE_BRANCH}" == "master" ]; then
-            ./scripts/deploy.sh
-            ./scripts/cloudflare-purge.js
-          fi
-    - deploy:
-        name: AWS S3
-        command: |
-          if [ "${CIRCLE_PULL_REQUEST}" ]; then
-            ./scripts/s3-sync.sh
-          fi
-    branches:
-      ignore:
-      - gh-pages
+      - checkout
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package-lock.json" }}
+
+      - run:
+          name: Install dependencies
+          command: |
+            npm install
+
+      - save_cache:
+          paths:
+          - node_modules
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
+
+      - run: 
+          name: Build
+          command: |
+            NODE_ENV=production npm run build
+
+      - deploy:
+          name: Deploy to S3
+          command: |
+            npm run deploy
+
+      - run:
+          name: Purge CloudFlare cache
+          command: |
+            curl -X DELETE "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE}/purge_cache" \
+              -H "X-Auth-Email: ${CLOUDFLARE_EMAIL}" \
+              -H "X-Auth-Key: ${CLOUDFLARE_SECRET}" \
+              -H "Content-Type: application/json" \
+              --data '{"purge_everything":true}'
+
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - master

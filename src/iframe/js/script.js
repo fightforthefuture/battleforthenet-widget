@@ -107,7 +107,7 @@
         themeObj = {
           className: 'onemorevote onemorevote-capitol onemorevote-capitol-phone',
           logos: ['images/one-more-vote-bg.png'],
-          htmlContent: 'The FCC voted to repeal net neutrality, but we can stop them by using the Congressional Review Act (CRA). <strong>Enter your phone number below to contact Congress.</strong>'
+          htmlContent: 'The FCC voted to repeal net neutrality, but we can stop them by using the Congressional Review Act (CRA). Enter your phone number below. <strong>Answer a few quick questions by text message and you can contact congress to support net neutrality.</strong>'
         };
         break;
       case 'capitol':

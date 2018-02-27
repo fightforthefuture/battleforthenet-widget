@@ -572,6 +572,27 @@ body.onemorevote a#close::before {
   font-family: 'Montserrat', sans-serif;
 }
 
+body.onemorevote-capitol #content {
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+
+body.onemorevote-capitol .modal button,
+body.onemorevote-capitol .modal input,
+body.onemorevote-capitol .modal textarea {
+  font-size: 0.8rem;
+}
+
+body.onemorevote-capitol .modal input[type="submit"] {
+  padding: 0.6rem;
+  font-size: 1rem;
+}
+
+body.onemorevote-capitol .modal .disclaimer #rotation {
+  font-size: 0.6rem;
+  margin-bottom: 30px;
+}
+
 body.onemorevote-capitol #logos {
   margin: -2rem -2rem 0.5rem;
 }

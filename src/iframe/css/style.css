@@ -809,14 +809,11 @@ body.onemorevote-capitol-phone #rapidpro-form {
   margin-bottom: 20px;
 }
 
-body.onemorevote-capitol-phone #rapidpro-form .row {
-  display: flex;
-}
-
 body.onemorevote-capitol-phone #rapidpro-form input {
-  margin: 0.25em;
-  font-size: 1rem;
-  flex: 1;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  font-size: 1em;
 }
 
 /* Animations */

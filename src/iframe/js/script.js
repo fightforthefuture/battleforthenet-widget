@@ -103,6 +103,13 @@
           htmlContent: 'The FCC voted to repeal net neutrality, letting internet providers like Verizon and Comcast impose new fees, throttle bandwidth, and censor online content.  But we can stop them by using the Congressional Review Act (CRA). <strong>Fill out the form below to join the mission.</strong>'
         };
         break;
+      case 'capitol-phone':
+        themeObj = {
+          className: 'onemorevote onemorevote-capitol onemorevote-capitol-phone',
+          logos: ['images/one-more-vote-bg.png'],
+          htmlContent: 'The FCC voted to repeal net neutrality, but we can stop them by using the Congressional Review Act (CRA). <strong>Enter your phone number below to contact Congress.</strong>'
+        };
+        break;
       case 'capitol':
       default:
         themeObj = {
@@ -463,6 +470,37 @@
 
           xhr.open(call.getAttribute('method'), call.getAttribute('action') + '?ref=' + document.referrer, true);
           xhr.send(formData);
+        }.bind(this));
+
+        // Handle RapidPro form submission
+        document.getElementById('rapidpro-form').addEventListener('submit', function(e) {
+          e.preventDefault();
+
+          var flowId = '17f1f58a-b56d-4d95-ac83-a8586dbcb99c'; // ONEMOREVOTE
+          var phone = document.getElementById('rapidpro_phone').value;
+
+          // start text flow
+          var xhr = new XMLHttpRequest();
+          xhr.addEventListener('error', onSuccess.bind(this));
+          xhr.addEventListener('load', onSuccess.bind(this));
+          xhr.open('POST', 'https://utdy3yxx7l.execute-api.us-east-1.amazonaws.com/v1/flow-starts', true);
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.send(JSON.stringify({
+            flow: flowId,
+            phone: phone
+          }));
+
+          // show Call Prompt screen
+          if (callPrompt) callPrompt.classList.remove('hidden');
+          if (main) main.classList.add('hidden');
+          document.getElementById('userPhone').value = phone;
+          trackScreenLoad('Call Prompt');
+
+          // hide loader
+          if (loading) {
+            loading.classList.remove('hidden');
+            loading.classList.remove('invisible');
+          }
         }.bind(this));
 
         return this;

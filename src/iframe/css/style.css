@@ -84,7 +84,17 @@ a:hover {
 }
 
 .modal, #form {
-  max-width: 532px;
+  width: 532px;
+}
+
+@media (max-width: 532px) {
+  .modal, #form {
+    width: 100%;
+  }
+}
+
+#rapidpro-form {
+  display: none;
 }
 
 .modal > main {
@@ -788,6 +798,25 @@ body.onemorevote #footer button.protest {
 
 body.onemorevote #footer button.ooni {
   background-image: url(../images/phone-icon.png);
+}
+
+body.onemorevote-capitol-phone #form {
+  display: none;
+}
+
+body.onemorevote-capitol-phone #rapidpro-form {
+  display: block;
+  margin-bottom: 20px;
+}
+
+body.onemorevote-capitol-phone #rapidpro-form .row {
+  display: flex;
+}
+
+body.onemorevote-capitol-phone #rapidpro-form input {
+  margin: 0.25em;
+  font-size: 1rem;
+  flex: 1;
 }
 
 /* Animations */

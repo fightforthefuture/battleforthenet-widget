@@ -258,17 +258,23 @@
 
   // send event to Google Analytics
   function trackEvent(category, action, label, value) {
-    if (!window.ga) return;
+    if (window.ga) {
+      var params = {
+        hitType: 'event',
+        eventCategory: category,
+        eventAction: action
+      };
 
-    if (typeof label === undefined) {
-      label = null;
+      if (label) {
+        params.eventLabel = label;
+      }
+
+      if (value) {
+        params.eventValue = value;
+      }
+
+      window.ga('send', params);
     }
-
-    if (typeof value === undefined) {
-      value = null;
-    }
-
-    window.ga('send', 'event', category, action, label, value);
   }
 
   var animations = {
@@ -307,7 +313,7 @@
           if (main) main.classList.add('invisible');
           if (loading) loading.classList.add('hidden');
 
-          trackScreenLoad('call-script');
+          trackScreenLoad('Call Script');
         }
 
         function setActionCookie() {
@@ -319,11 +325,11 @@
         }
 
         function trackScreenLoad(screen) {
-          trackEvent('screen', 'loaded', screen, themeName);
+          trackEvent('screen', 'loaded', screen + ' (' + themeName + ' theme)');
         }
 
         // track initial screen load
-        trackScreenLoad('main-form');
+        trackScreenLoad('Main Form');
 
         // Handle form submission
         var form = document.getElementById('form');
@@ -353,7 +359,7 @@
 
           if (callPrompt) callPrompt.classList.remove('hidden');
           if (main) main.classList.add('hidden');
-          trackScreenLoad('call-prompt');
+          trackScreenLoad('Call Prompt');
 
           // TODO: Add config option to skip real submit?
           // loading.addEventListener('transitionend', onSuccess.bind(this));

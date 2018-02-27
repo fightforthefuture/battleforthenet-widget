@@ -115,3 +115,4 @@ you can pass some properties in to customize the default behavior.
 </script>
 <script src="https://widget.battleforthenet.com/widget.js" async></script>
 ```
+

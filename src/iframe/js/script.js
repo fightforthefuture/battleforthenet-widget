@@ -100,7 +100,7 @@
         themeObj = {
           className: 'onemorevote onemorevote-text',
           logos: ['images/one-more-vote-text.png'],
-          htmlContent: 'The FCC voted to repeal net neutrality, letting internet providers like Verizon and Comcast impose new fees, throttle bandwidth, and censor online content.  But we can stop them by using the Congressional Review Act (CRA).<br><strong>We need one more vote to win the Senate.  Fill out the form below to join the mission, or <a href="https://www.battleforthenet.com/#widget-learn-more">learn more here</a>.</strong>'
+          htmlContent: 'The FCC voted to repeal net neutrality, letting internet providers like Verizon and Comcast impose new fees, throttle bandwidth, and censor online content.  But we can stop them by using the Congressional Review Act (CRA). <strong>Fill out the form below to join the mission.</strong>'
         };
         break;
       case 'capitol':
@@ -108,7 +108,7 @@
         themeObj = {
           className: 'onemorevote onemorevote-capitol',
           logos: ['images/one-more-vote-bg.png'],
-          htmlContent: 'The FCC voted to repeal net neutrality, letting internet providers like Verizon and Comcast impose new fees, throttle bandwidth, and censor online content.  But we can stop them by using the Congressional Review Act (CRA).<br><strong>We need one more vote to win the Senate.  Fill out the form below to join the mission, or <a href="https://www.battleforthenet.com/#widget-learn-more">learn more here</a>.</strong>'
+          htmlContent: 'The FCC voted to repeal net neutrality, letting internet providers like Verizon and Comcast impose new fees, throttle bandwidth, and censor online content.  But we can stop them by using the Congressional Review Act (CRA). <strong>Fill out the form below to join the mission.</strong>'
         };
         break;
     }

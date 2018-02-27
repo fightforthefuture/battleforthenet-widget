@@ -256,6 +256,21 @@
     }
   }
 
+  // send event to Google Analytics
+  function trackEvent(category, action, label, value) {
+    if (!window.ga) return;
+
+    if (typeof label === undefined) {
+      label = null;
+    }
+
+    if (typeof value === undefined) {
+      value = null;
+    }
+
+    window.ga('send', 'event', category, action, label, value);
+  }
+
   var animations = {
     main: {
       options: {
@@ -271,6 +286,7 @@
         renderOrgRotation(getOrg(this.options.org));
 
         var org = getOrg(this.options.org);
+        var themeName = typeof this.options.theme === 'object' ? 'custom' : this.options.theme;
 
         if (this.options.uncloseable) {
           document.getElementById('close').classList.add('hidden');
@@ -290,6 +306,8 @@
           if (callScript) callScript.classList.remove('invisible');
           if (main) main.classList.add('invisible');
           if (loading) loading.classList.add('hidden');
+
+          trackScreenLoad('call-script');
         }
 
         function setActionCookie() {
@@ -299,6 +317,13 @@
             expires: this.options.actionCookieExpires
           });
         }
+
+        function trackScreenLoad(screen) {
+          trackEvent('screen', 'loaded', screen, themeName);
+        }
+
+        // track initial screen load
+        trackScreenLoad('main-form');
 
         // Handle form submission
         var form = document.getElementById('form');
@@ -328,6 +353,7 @@
 
           if (callPrompt) callPrompt.classList.remove('hidden');
           if (main) main.classList.add('hidden');
+          trackScreenLoad('call-prompt');
 
           // TODO: Add config option to skip real submit?
           // loading.addEventListener('transitionend', onSuccess.bind(this));

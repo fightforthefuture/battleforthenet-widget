@@ -674,8 +674,9 @@ body.onemorevote #prompt input[type="submit"] {
   font-size: 1em;
 }
 
-body.onemorevote #prompt .disclaimer a.privacy-policy {
-  display: none;
+body.onemorevote #prompt .disclaimer {
+  height: 80px;
+  margin-top: -5px;
 }
 
 body.onemorevote #prompt .footer-links {
@@ -733,11 +734,8 @@ body.onemorevote #footer h3 {
 }
 
 body.onemorevote #footer button {
-  background-color: #2d3444;
-  background-size: 15px 15px;
-  background-color: #2d3444;
   background-size: auto 15px;
-  color: #94a3c3;
+  color: #fff;
   background-repeat: no-repeat;
   background-position: 8px center;
   padding-left: 22px;
@@ -748,15 +746,23 @@ body.onemorevote #footer button img {
 }
 
 body.onemorevote #footer button.facebook {
-  background-image: url(../images/facebook-circle-icon.png);
+  background-image: url(../images/facebook.svg);
+  background-color: #446ae5;
 }
 
 body.onemorevote #footer button.twitter {
-  background-image: url(../images/twitter-circle-icon.png);
+  background-image: url(../images/twitter.svg);
 }
 
 body.onemorevote #footer .donate button {
-  background-image: url(../images/donate-icon.png);
+  background-image: url(../images/heart.svg);
+  background-color: #2d3444;
+}
+
+body.onemorevote #footer button.protest {
+  background-image: url(../images/pin.svg);
+  border: 1px solid #282f3e;
+  background-position: 15% center;
 }
 
 body.onemorevote #footer button.ooni {

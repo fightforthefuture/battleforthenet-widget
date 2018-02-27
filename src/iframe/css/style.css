@@ -84,7 +84,7 @@ a:hover {
 }
 
 .modal, #form {
-  width: 532px;
+  max-width: 532px;
 }
 
 .modal > main {

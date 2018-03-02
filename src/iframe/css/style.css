@@ -195,7 +195,8 @@ a:hover {
 
 .modal input,
 .modal textarea,
-.modal button {
+.modal button,
+.modal .btn {
   min-width: 9%;
   margin: 0 0 0.5rem 0;
   padding: 0.6rem;
@@ -213,7 +214,8 @@ a:hover {
 }
 
 .modal input[type="submit"],
-.modal button {
+.modal button,
+.modal .btn {
   flex: 1 100%;
   margin-bottom: 0;
   padding: 1rem;
@@ -225,11 +227,14 @@ a:hover {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   appearance: none;
+  display: inline-block;
 }
 
 .modal input[type="submit"]:hover,
-.modal button:hover {
+.modal button:hover,
+.modal .btn:hover {
   cursor: pointer;
+  text-decoration: none;
 }
 
 .modal input[type="submit"] img,
@@ -814,6 +819,54 @@ body.onemorevote-capitol-phone #rapidpro-form input {
   display: block;
   width: 100%;
   font-size: 1em;
+}
+
+/* Take Action theme */
+
+body.take-action #headline,
+body.take-action #form {
+  display: none;
+}
+
+body.take-action #content, 
+body.take-action #content strong {
+  color: #f6ec40;
+}
+
+body.take-action #content {
+  font-size: 1.7rem;
+}
+
+body.take-action #take-action {
+  display: block !important;
+  margin-bottom: 3rem;
+}
+
+body.take-action .btn {
+  color: #13161c;
+  background-color: #f6ec40;
+  width: 80%;
+  font-size: 1.7rem;
+}
+
+body.take-action a#close {
+  top: 0;
+}
+
+body.take-action a#close:hover {
+  text-decoration: none;
+}
+
+body.take-action a#close img {
+  display: none;
+}
+
+body.take-action a#close::before {
+  content:"\00d7";
+  text-decoration: none;
+  color: #cad7ee;
+  font-size: 36px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Animations */

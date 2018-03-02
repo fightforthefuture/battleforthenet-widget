@@ -823,30 +823,34 @@ body.onemorevote-capitol-phone #rapidpro-form input {
 
 /* Take Action theme */
 
+body.take-action .modal {
+  background-color: #171b24;
+}
+
 body.take-action #headline,
 body.take-action #form {
   display: none;
 }
 
-body.take-action #content, 
+body.take-action #content {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
 body.take-action #content strong {
   color: #f6ec40;
 }
 
-body.take-action #content {
-  font-size: 1.7rem;
-}
-
 body.take-action #take-action {
   display: block !important;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 body.take-action .btn {
   color: #13161c;
   background-color: #f6ec40;
-  width: 80%;
-  font-size: 1.7rem;
+  width: 90%;
+  font-size: 1.5rem;
 }
 
 body.take-action a#close {
@@ -867,6 +871,32 @@ body.take-action a#close::before {
   color: #cad7ee;
   font-size: 36px;
   font-family: 'Montserrat', sans-serif;
+}
+
+body.take-action .footer-links {
+  color: #1d222d;
+  background-color: #13161f;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 16px;
+  border-radius: 0 0 4px 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+body.take-action .footer-links a {
+  color: #3f495d;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+body.take-action .footer-links img.github {
+  display: none;
 }
 
 /* Animations */

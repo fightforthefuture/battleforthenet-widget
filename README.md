@@ -42,8 +42,8 @@ you can pass some properties in to customize the default behavior.
 <script type="text/javascript">
   var _bftn_options = {
     /*
-     * Choose from 'capitol', 'onemorevote', 'countdown', 'glitch', 'money', 'stop', 'slow', 'without'.
-     * Default is 'capitol'.
+     * Choose from 'take-action', 'capitol', 'onemorevote', 'countdown', 'glitch', 'money', 'stop', 'slow', 'without'.
+     * Default is 'take-action'.
      */
     theme: 'onemorevote', // @type {string}
     

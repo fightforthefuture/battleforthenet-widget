@@ -103,13 +103,6 @@
           htmlContent: 'The FCC voted to repeal net neutrality, letting internet providers like Verizon and Comcast impose new fees, throttle bandwidth, and censor online content.  But we can stop them by using the Congressional Review Act (CRA). <strong>Fill out the form below to join the mission.</strong>'
         };
         break;
-      case 'take-action':
-        themeObj = {
-          className: 'take-action',
-          logos: [],
-          htmlContent: 'The US government is planning to end net neutrality and allow throttling, censorship, and new fees online. <strong>This will affect every single Internet user in the world.</strong>'
-        };
-        break;
       case 'capitol-phone':
         themeObj = {
           className: 'onemorevote onemorevote-capitol onemorevote-capitol-phone',
@@ -118,11 +111,18 @@
         };
         break;
       case 'capitol':
-      default:
         themeObj = {
           className: 'onemorevote onemorevote-capitol',
           logos: ['images/one-more-vote-bg.png'],
           htmlContent: 'The FCC voted to repeal net neutrality, letting internet providers like Verizon and Comcast impose new fees, throttle bandwidth, and censor online content.  But we can stop them by using the Congressional Review Act (CRA). <strong>Fill out the form below to join the mission.</strong>'
+        };
+        break;
+      case 'take-action':
+      default:
+        themeObj = {
+          className: 'take-action',
+          logos: [],
+          htmlContent: 'The US government is planning to end net neutrality and allow throttling, censorship, and new fees online. <strong>This will affect every single Internet user in the world.</strong>'
         };
         break;
     }

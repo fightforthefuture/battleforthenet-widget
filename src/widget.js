@@ -8,7 +8,35 @@
   if (typeof _bftn_options.viewCookieExpires == "undefined") _bftn_options.viewCookieExpires = 1;
   if (typeof _bftn_options.actionCookieExpires == "undefined") _bftn_options.actionCookieExpires = 7;
   if (typeof _bftn_options.always_show_widget == "undefined") _bftn_options.always_show_widget = false;
-  if (typeof _bftn_options.theme == "undefined") _bftn_options.theme = 'take-action';
+  if (typeof _bftn_options.theme == "undefined") _bftn_options.theme = 'redalert';
+
+  // if the theme is redalert, load the other widget
+  if (_bftn_options.theme === 'redalert') {
+    window.RED_ALERT_OPTIONS = {}
+
+    if (_bftn_options.org) {
+      RED_ALERT_OPTIONS.org = _bftn_options.org
+    }
+
+    if (_bftn_options.viewCookieExpires !== undefined) {
+      RED_ALERT_OPTIONS.cookieExpirationDays = _bftn_options.viewCookieExpires
+    }
+
+    if (_bftn_options.disableGoogleAnalytics !== undefined) {
+      RED_ALERT_OPTIONS.disableGoogleAnalytics = _bftn_options.disableGoogleAnalytics
+    }
+
+    if (_bftn_options.always_show_widget !== undefined) {
+      RED_ALERT_OPTIONS.alwaysShow = _bftn_options.always_show_widget
+    }
+
+    var script = document.createElement('script');
+    script.src = 'https://redalert.battleforthenet.com/widget.js';
+    document.head.appendChild(script);
+
+    // all done. (the redalert widget will take care of everything else)
+    return;
+  }
 
   var _bftn_animations = {
     main: {

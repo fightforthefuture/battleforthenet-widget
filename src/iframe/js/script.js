@@ -483,17 +483,17 @@
         document.getElementById('rapidpro-form').addEventListener('submit', function(e) {
           e.preventDefault();
 
-          var flowId = '17f1f58a-b56d-4d95-ac83-a8586dbcb99c'; // ONEMOREVOTE
+          var flowId = 'OP5953C0BBD1870756CE4041DD8F00C7C1'; // BFTN auto-reply
           var phone = document.getElementById('rapidpro_phone').value;
 
           // start text flow
           var xhr = new XMLHttpRequest();
           xhr.addEventListener('error', onSuccess.bind(this));
           xhr.addEventListener('load', onSuccess.bind(this));
-          xhr.open('POST', 'https://utdy3yxx7l.execute-api.us-east-1.amazonaws.com/v1/flow-starts', true);
+          xhr.open('POST', 'https://text-flow-starter.fftf.xyz/opt-ins', true);
           xhr.setRequestHeader('Content-Type', 'application/json');
           xhr.send(JSON.stringify({
-            flow: flowId,
+            opt_in_path: flowId,
             phone: phone
           }));
 
